@@ -8,12 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		D4605B6F1E1369DF006575E0 /* ZWUtilityKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D4605B6D1E1369DF006575E0 /* ZWUtilityKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4605B7A1E136E5F006575E0 /* UtilityUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D4605B761E136E5E006575E0 /* UtilityUIKit.m */; };
+		D4605B7B1E136E5F006575E0 /* UtilityKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D4605B771E136E5E006575E0 /* UtilityKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4605B7C1E136E5F006575E0 /* UtilityKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D4605B781E136E5E006575E0 /* UtilityKit.m */; };
+		D4605B7D1E136E5F006575E0 /* UtilityUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D4605B791E136E5E006575E0 /* UtilityUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4605B801E136E7F006575E0 /* ZWLog.h in Headers */ = {isa = PBXBuildFile; fileRef = D4605B7E1E136E7F006575E0 /* ZWLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4605B811E136E7F006575E0 /* ZWLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D4605B7F1E136E7F006575E0 /* ZWLog.m */; };
+		D4605B831E136F0E006575E0 /* ZWMacroDef.h in Headers */ = {isa = PBXBuildFile; fileRef = D4605B821E136F0E006575E0 /* ZWMacroDef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4605B861E138E79006575E0 /* UIView+AddLine.h in Headers */ = {isa = PBXBuildFile; fileRef = D4605B841E138E79006575E0 /* UIView+AddLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4605B871E138E79006575E0 /* UIView+AddLine.m in Sources */ = {isa = PBXBuildFile; fileRef = D4605B851E138E79006575E0 /* UIView+AddLine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D4605B6A1E1369DF006575E0 /* ZWUtilityKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZWUtilityKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4605B6D1E1369DF006575E0 /* ZWUtilityKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWUtilityKit.h; sourceTree = "<group>"; };
 		D4605B6E1E1369DF006575E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4605B761E136E5E006575E0 /* UtilityUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityUIKit.m; sourceTree = "<group>"; };
+		D4605B771E136E5E006575E0 /* UtilityKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityKit.h; sourceTree = "<group>"; };
+		D4605B781E136E5E006575E0 /* UtilityKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityKit.m; sourceTree = "<group>"; };
+		D4605B791E136E5E006575E0 /* UtilityUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityUIKit.h; sourceTree = "<group>"; };
+		D4605B7E1E136E7F006575E0 /* ZWLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWLog.h; sourceTree = "<group>"; };
+		D4605B7F1E136E7F006575E0 /* ZWLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWLog.m; sourceTree = "<group>"; };
+		D4605B821E136F0E006575E0 /* ZWMacroDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWMacroDef.h; path = "../../../../../Users/eadkenny/Documents/公司项目/SmartSVN/ios_database_mine/common/ZWUtilityKit-static/ZWUtilityKit/ZWMacroDef.h"; sourceTree = "<group>"; };
+		D4605B841E138E79006575E0 /* UIView+AddLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+AddLine.h"; path = "Category/UIView+AddLine.h"; sourceTree = "<group>"; };
+		D4605B851E138E79006575E0 /* UIView+AddLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+AddLine.m"; path = "Category/UIView+AddLine.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +64,27 @@
 		D4605B6C1E1369DF006575E0 /* ZWUtilityKit */ = {
 			isa = PBXGroup;
 			children = (
+				D4605B751E136D18006575E0 /* Category */,
 				D4605B6D1E1369DF006575E0 /* ZWUtilityKit.h */,
+				D4605B821E136F0E006575E0 /* ZWMacroDef.h */,
 				D4605B6E1E1369DF006575E0 /* Info.plist */,
+				D4605B771E136E5E006575E0 /* UtilityKit.h */,
+				D4605B781E136E5E006575E0 /* UtilityKit.m */,
+				D4605B791E136E5E006575E0 /* UtilityUIKit.h */,
+				D4605B761E136E5E006575E0 /* UtilityUIKit.m */,
+				D4605B7E1E136E7F006575E0 /* ZWLog.h */,
+				D4605B7F1E136E7F006575E0 /* ZWLog.m */,
 			);
 			path = ZWUtilityKit;
+			sourceTree = "<group>";
+		};
+		D4605B751E136D18006575E0 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D4605B841E138E79006575E0 /* UIView+AddLine.h */,
+				D4605B851E138E79006575E0 /* UIView+AddLine.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +94,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4605B801E136E7F006575E0 /* ZWLog.h in Headers */,
+				D4605B7B1E136E5F006575E0 /* UtilityKit.h in Headers */,
+				D4605B831E136F0E006575E0 /* ZWMacroDef.h in Headers */,
 				D4605B6F1E1369DF006575E0 /* ZWUtilityKit.h in Headers */,
+				D4605B861E138E79006575E0 /* UIView+AddLine.h in Headers */,
+				D4605B7D1E136E5F006575E0 /* UtilityUIKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4605B871E138E79006575E0 /* UIView+AddLine.m in Sources */,
+				D4605B811E136E7F006575E0 /* ZWLog.m in Sources */,
+				D4605B7A1E136E5F006575E0 /* UtilityUIKit.m in Sources */,
+				D4605B7C1E136E5F006575E0 /* UtilityKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +289,7 @@
 				INFOPLIST_FILE = ZWUtilityKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = zx.ZWUtilityKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -263,6 +308,7 @@
 				INFOPLIST_FILE = ZWUtilityKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = zx.ZWUtilityKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -288,6 +334,7 @@
 				D4605B741E1369DF006575E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
