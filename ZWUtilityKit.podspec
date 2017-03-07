@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '3.0.0'
+  s.version          = '3.0.1'
   s.summary          = '使用频率非常高的代码.'
 
 # This description is used to generate tags and improve search results.
@@ -30,14 +30,23 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.ios.deployment_target = '6.0'
+    s.default_subspec = 'Foundation'
+
+    s.subspec 'Foundation' do |foundation|
+        foundation.source_files = 'ZWUtilityKit/{*,Category/Foundation/*}.{h,m}'
+        #foundation.exclude_files = 'SDWebImage/UIImage+WebP.{h,m}'
+    end
+
+    s.subspec 'CategoryUI' do |cate_ui|
+        cate_ui.source_files = 'ZWUtilityKit/Category/UIKit/*.{h,m}'
+        #cate_ui.exclude_files = 'SDWebImage/UIImage+WebP.{h,m}'
+    end
 
 #s.frameworks = 'SystemConfiguration','Security','CoreLocation','QuartzCore','CFNetwork','MessageUI'
   
   # s.resource_bundles = {
   #   'ZWUtilityKit' => ['ZWUtilityKit/Assets/*.png']
   # }
-  s.source_files = 'ZWUtilityKit/**/*.{h,m}'
-  s.public_header_files = 'ZWUtilityKit/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
