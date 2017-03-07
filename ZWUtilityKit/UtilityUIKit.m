@@ -135,8 +135,8 @@ void cancelFirstRespond()
 {
     id keyWindow = [[UIApplication sharedApplication] keyWindow];
     SEL selector = NSSelectorFromString(@"firstResponder");
-    UIView   *firstResponder = [keyWindow performSelector:selector];
-    [firstResponder resignFirstResponder];
+    SuppressPerformSelectorLeakWarning(UIView   *firstResponder = [keyWindow performSelector:selector];
+                                       [firstResponder resignFirstResponder];);
 }
 
 /*

@@ -30,14 +30,13 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.ios.deployment_target = '6.0'
-  s.vendored_frameworks ='ZWUtilityKit.framework'
 
 #s.frameworks = 'SystemConfiguration','Security','CoreLocation','QuartzCore','CFNetwork','MessageUI'
   
   # s.resource_bundles = {
   #   'ZWUtilityKit' => ['ZWUtilityKit/Assets/*.png']
   # }
-s.source_files = 'ZWUtilityKit/**/*.{h,m}'
+  s.source_files = 'ZWUtilityKit/**/*.{h,m}'
   s.public_header_files = 'ZWUtilityKit/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
