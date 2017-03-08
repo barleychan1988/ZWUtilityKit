@@ -268,9 +268,12 @@ void showAlertMsg(UIViewController<UIAlertViewDelegate> *vc, NSString *strMsg, N
     }
     else
     {
+_Pragma("clang diagnostic push")
+_Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
         UIAlertView *sheet = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:vc cancelButtonTitle:strBtnTitleCancel otherButtonTitles:strBtnTitleOk, nil];
         dispatch_async(dispatch_get_main_queue(), ^{
             [sheet show];
         });
+_Pragma("clang diagnostic pop")
     }
 }

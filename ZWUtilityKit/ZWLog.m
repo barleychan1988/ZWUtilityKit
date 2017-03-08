@@ -283,20 +283,21 @@ static ZWLog *zwLog = nil;
     }
     else
     {
+_Pragma("clang diagnostic push")
+_Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
         if (UIRemoteNotificationTypeNone == [app enabledRemoteNotificationTypes])
+_Pragma("clang diagnostic pop")
             bEnableRemoteNotification = NO;
         else
             bEnableRemoteNotification = YES;
     }
     [self writeLogWithParams:@"\n\t-------- 应用信息 --------",
-     @"\n\tApp Name:",strAppDisplayName,
-     @"\n\tBundle ID:", strBundleID,
-     @"\n\tVersion:", strCurVersion,
-     @"\n\tBuild version:", strBuildVersion,
-     [NSString stringWithFormat:@"\n\tbattery Level:%.2f%%", device.batteryLevel * 100],
-     //通知开关
-     [NSString stringWithFormat:@"\n\tRemote Notification enable:%@", stringForBool(bEnableRemoteNotification)],
-     nil];
+                            @"\n\tApp Name:",strAppDisplayName,
+                            @"\n\tBundle ID:", strBundleID,
+                            @"\n\tVersion:", strCurVersion,
+                            @"\n\tBuild version:", strBuildVersion,
+                            [NSString stringWithFormat:@"\n\tbattery Level:%.2f%%", device.batteryLevel * 100],
+                            [NSString stringWithFormat:@"\n\tRemote Notification enable:%@", stringForBool(bEnableRemoteNotification)], nil];//通知开关
     device.batteryMonitoringEnabled = NO;
 }
 

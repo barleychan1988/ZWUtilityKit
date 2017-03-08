@@ -7,17 +7,14 @@
 //
 
 #import "NSURL+EncodeString.h"
+#import "ZWMacroDef.h"
 
 @implementation NSURL (EncodeString)
 
 + (NSURL *)URLEncodedString:(NSString *)strUrl
 {
-    NSString *encodedString = (NSString *)
-    CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                              (CFStringRef)strUrl,
-                                                              (CFStringRef)@"!$&'()*+,-./:;=?@_~%#[]",
-                                                              NULL,
-                                                              kCFStringEncodingUTF8));
+    NSCharacterSet *allowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:@"!$&'()*+,-./:;=?@_~%#[]"] invertedSet];        
+    NSString *encodedString = [strUrl stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
     return [NSURL URLWithString:encodedString];
 }
 
