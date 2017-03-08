@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '3.0.1'
-  s.summary          = '使用频率非常高的代码.'
+  s.version          = '3.0.4'
+  s.summary          = '默认头文件导入修改'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -33,11 +33,13 @@ Pod::Spec.new do |s|
     s.default_subspec = 'Foundation'
 
     s.subspec 'Foundation' do |foundation|
+        foundation.ios.deployment_target = '6.0'
         foundation.source_files = 'ZWUtilityKit/{*,Category/Foundation/*}.{h,m}'
         #foundation.exclude_files = 'SDWebImage/UIImage+WebP.{h,m}'
     end
 
     s.subspec 'CategoryUI' do |cate_ui|
+        cate_ui.ios.deployment_target = '6.0'
         cate_ui.source_files = 'ZWUtilityKit/Category/UIKit/*.{h,m}'
         #cate_ui.exclude_files = 'SDWebImage/UIImage+WebP.{h,m}'
     end
