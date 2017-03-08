@@ -13,6 +13,7 @@
 #import <Foundation/Foundation.h>
 #import "NSObject+Block.h"
 #import "NSObject+ParseDicToObj.h"
+#import "NSURL+EncodeString.h"
 
 //! Project version number for ZWUtilityKit.
 FOUNDATION_EXPORT double ZWUtilityKitVersionNumber;

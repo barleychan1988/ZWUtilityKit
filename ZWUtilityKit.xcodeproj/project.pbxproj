@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4547AEC1E6FA93B0084AB41 /* NSURL+EncodeString.h in Headers */ = {isa = PBXBuildFile; fileRef = D4547AEA1E6FA93B0084AB41 /* NSURL+EncodeString.h */; };
+		D4547AED1E6FA93B0084AB41 /* NSURL+EncodeString.m in Sources */ = {isa = PBXBuildFile; fileRef = D4547AEB1E6FA93B0084AB41 /* NSURL+EncodeString.m */; };
 		D4605B6F1E1369DF006575E0 /* ZWUtilityKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D4605B6D1E1369DF006575E0 /* ZWUtilityKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4605B7A1E136E5F006575E0 /* UtilityUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D4605B761E136E5E006575E0 /* UtilityUIKit.m */; };
 		D4605B7B1E136E5F006575E0 /* UtilityKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D4605B771E136E5E006575E0 /* UtilityKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4547AEA1E6FA93B0084AB41 /* NSURL+EncodeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+EncodeString.h"; path = "Category/Foundation/NSURL+EncodeString.h"; sourceTree = "<group>"; };
+		D4547AEB1E6FA93B0084AB41 /* NSURL+EncodeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+EncodeString.m"; path = "Category/Foundation/NSURL+EncodeString.m"; sourceTree = "<group>"; };
 		D4605B6A1E1369DF006575E0 /* ZWUtilityKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZWUtilityKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4605B6D1E1369DF006575E0 /* ZWUtilityKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWUtilityKit.h; sourceTree = "<group>"; };
 		D4605B6E1E1369DF006575E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 				D470C9E31E6EA4A600FB212E /* NSObject+Block.m */,
 				D470C9E41E6EA4A600FB212E /* NSObject+ParseDicToObj.h */,
 				D470C9E51E6EA4A600FB212E /* NSObject+ParseDicToObj.m */,
+				D4547AEA1E6FA93B0084AB41 /* NSURL+EncodeString.h */,
+				D4547AEB1E6FA93B0084AB41 /* NSURL+EncodeString.m */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -140,6 +146,7 @@
 				D4605B831E136F0E006575E0 /* ZWMacroDef.h in Headers */,
 				D470C9E61E6EA4A600FB212E /* Dictionary+SafeValue.h in Headers */,
 				D4605B6F1E1369DF006575E0 /* ZWUtilityKit.h in Headers */,
+				D4547AEC1E6FA93B0084AB41 /* NSURL+EncodeString.h in Headers */,
 				D4605B861E138E79006575E0 /* UIView+AddLine.h in Headers */,
 				D470C9EA1E6EA4A600FB212E /* NSObject+Block.h in Headers */,
 				D470C9EC1E6EA4A600FB212E /* NSObject+ParseDicToObj.h in Headers */,
@@ -222,6 +229,7 @@
 				D470C9EB1E6EA4A600FB212E /* NSObject+Block.m in Sources */,
 				D470C9E71E6EA4A600FB212E /* Dictionary+SafeValue.m in Sources */,
 				D470C9E91E6EA4A600FB212E /* NSDictionary+NSData.m in Sources */,
+				D4547AED1E6FA93B0084AB41 /* NSURL+EncodeString.m in Sources */,
 				D470C9ED1E6EA4A600FB212E /* NSObject+ParseDicToObj.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

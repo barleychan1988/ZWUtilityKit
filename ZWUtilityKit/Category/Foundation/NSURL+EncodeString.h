@@ -6,7 +6,8 @@
 //  Copyright © 2016年 zwchen. All rights reserved.
 //
 
-#import <Foundation/NSString.h>
+#import <Foundation/Foundation.h>
+#import <CoreFoundation/CoreFoundation.h>
 
 @interface NSURL (EncodeString)
 
