@@ -54,8 +54,8 @@
 		D470C9E31E6EA4A600FB212E /* NSObject+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Block.m"; path = "Category/Foundation/NSObject+Block.m"; sourceTree = "<group>"; };
 		D470C9E41E6EA4A600FB212E /* NSObject+ParseDicToObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ParseDicToObj.h"; path = "Category/Foundation/NSObject+ParseDicToObj.h"; sourceTree = "<group>"; };
 		D470C9E51E6EA4A600FB212E /* NSObject+ParseDicToObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ParseDicToObj.m"; path = "Category/Foundation/NSObject+ParseDicToObj.m"; sourceTree = "<group>"; };
-		D4E615071E710524008D74C4 /* NetworkApply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkApply.h; sourceTree = "<group>"; };
-		D4E615081E710524008D74C4 /* NetworkApply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkApply.m; sourceTree = "<group>"; };
+		D4E615071E710524008D74C4 /* NetworkApply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkApply.h; path = Network/NetworkApply.h; sourceTree = "<group>"; };
+		D4E615081E710524008D74C4 /* NetworkApply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkApply.m; path = Network/NetworkApply.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
