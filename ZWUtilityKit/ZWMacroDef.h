@@ -46,4 +46,5 @@ typedef void (^BlockBoolObject)(BOOL bFlage, id object);
 typedef void (^BlockObject)(id object);
 typedef void (^BlockBoolStrObject)(BOOL, NSString *, id);
 
+
 #endif /* macroDef_h */

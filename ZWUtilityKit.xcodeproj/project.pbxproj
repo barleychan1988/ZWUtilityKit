@@ -27,6 +27,8 @@
 		D470C9EB1E6EA4A600FB212E /* NSObject+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = D470C9E31E6EA4A600FB212E /* NSObject+Block.m */; };
 		D470C9EC1E6EA4A600FB212E /* NSObject+ParseDicToObj.h in Headers */ = {isa = PBXBuildFile; fileRef = D470C9E41E6EA4A600FB212E /* NSObject+ParseDicToObj.h */; };
 		D470C9ED1E6EA4A600FB212E /* NSObject+ParseDicToObj.m in Sources */ = {isa = PBXBuildFile; fileRef = D470C9E51E6EA4A600FB212E /* NSObject+ParseDicToObj.m */; };
+		D4E615091E710524008D74C4 /* NetworkApply.h in Headers */ = {isa = PBXBuildFile; fileRef = D4E615071E710524008D74C4 /* NetworkApply.h */; };
+		D4E6150A1E710524008D74C4 /* NetworkApply.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E615081E710524008D74C4 /* NetworkApply.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		D470C9E31E6EA4A600FB212E /* NSObject+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Block.m"; path = "Category/Foundation/NSObject+Block.m"; sourceTree = "<group>"; };
 		D470C9E41E6EA4A600FB212E /* NSObject+ParseDicToObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ParseDicToObj.h"; path = "Category/Foundation/NSObject+ParseDicToObj.h"; sourceTree = "<group>"; };
 		D470C9E51E6EA4A600FB212E /* NSObject+ParseDicToObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ParseDicToObj.m"; path = "Category/Foundation/NSObject+ParseDicToObj.m"; sourceTree = "<group>"; };
+		D4E615071E710524008D74C4 /* NetworkApply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkApply.h; sourceTree = "<group>"; };
+		D4E615081E710524008D74C4 /* NetworkApply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkApply.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		D4605B6C1E1369DF006575E0 /* ZWUtilityKit */ = {
 			isa = PBXGroup;
 			children = (
+				D4E615061E7103F8008D74C4 /* Network */,
 				D4605B751E136D18006575E0 /* Category */,
 				D4605B821E136F0E006575E0 /* ZWMacroDef.h */,
 				D4605B6D1E1369DF006575E0 /* ZWUtilityKit.h */,
@@ -133,6 +138,15 @@
 			name = Foundation;
 			sourceTree = "<group>";
 		};
+		D4E615061E7103F8008D74C4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D4E615071E710524008D74C4 /* NetworkApply.h */,
+				D4E615081E710524008D74C4 /* NetworkApply.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -148,6 +162,7 @@
 				D4605B6F1E1369DF006575E0 /* ZWUtilityKit.h in Headers */,
 				D4547AEC1E6FA93B0084AB41 /* NSURL+EncodeString.h in Headers */,
 				D4605B861E138E79006575E0 /* UIView+AddLine.h in Headers */,
+				D4E615091E710524008D74C4 /* NetworkApply.h in Headers */,
 				D470C9EA1E6EA4A600FB212E /* NSObject+Block.h in Headers */,
 				D470C9EC1E6EA4A600FB212E /* NSObject+ParseDicToObj.h in Headers */,
 				D4605B7D1E136E5F006575E0 /* UtilityUIKit.h in Headers */,
@@ -229,6 +244,7 @@
 				D470C9EB1E6EA4A600FB212E /* NSObject+Block.m in Sources */,
 				D470C9E71E6EA4A600FB212E /* Dictionary+SafeValue.m in Sources */,
 				D470C9E91E6EA4A600FB212E /* NSDictionary+NSData.m in Sources */,
+				D4E6150A1E710524008D74C4 /* NetworkApply.m in Sources */,
 				D4547AED1E6FA93B0084AB41 /* NSURL+EncodeString.m in Sources */,
 				D470C9ED1E6EA4A600FB212E /* NSObject+ParseDicToObj.m in Sources */,
 			);

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '3.0.6'
+  s.version          = '3.0.7'
   s.summary          = '编译警告移除'
 
 # This description is used to generate tags and improve search results.
@@ -42,6 +42,17 @@ Pod::Spec.new do |s|
         cate_ui.ios.deployment_target = '6.0'
         cate_ui.source_files = 'ZWUtilityKit/Category/UIKit/*.{h,m}'
         #cate_ui.exclude_files = 'SDWebImage/UIImage+WebP.{h,m}'
+    end
+
+    s.subspec 'Network' do |network|
+    network.ios.deployment_target = '6.0'
+    network.source_files = 'ZWUtilityKit/Network/*.{h,m}'
+    network.dependency 'Reachability'
+    #network.exclude_files = ''
+    network.xcconfig = {
+    'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
+    #'OTHER_LDFLAGS' => '"$(inherited)" "-lxml2" "-objc"'
+    }
     end
 
 #s.frameworks = 'SystemConfiguration','Security','CoreLocation','QuartzCore','CFNetwork','MessageUI'
