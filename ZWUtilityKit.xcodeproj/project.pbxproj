@@ -19,6 +19,16 @@
 		D4605B831E136F0E006575E0 /* ZWMacroDef.h in Headers */ = {isa = PBXBuildFile; fileRef = D4605B821E136F0E006575E0 /* ZWMacroDef.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4605B861E138E79006575E0 /* UIView+AddLine.h in Headers */ = {isa = PBXBuildFile; fileRef = D4605B841E138E79006575E0 /* UIView+AddLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4605B871E138E79006575E0 /* UIView+AddLine.m in Sources */ = {isa = PBXBuildFile; fileRef = D4605B851E138E79006575E0 /* UIView+AddLine.m */; };
+		D4656A4E1E72456C00628EC2 /* UIImage+StrethImage.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A441E72456C00628EC2 /* UIImage+StrethImage.h */; };
+		D4656A4F1E72456C00628EC2 /* UIImage+StrethImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A451E72456C00628EC2 /* UIImage+StrethImage.m */; };
+		D4656A501E72456C00628EC2 /* UINavigationController+Animation.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A461E72456C00628EC2 /* UINavigationController+Animation.h */; };
+		D4656A511E72456C00628EC2 /* UINavigationController+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A471E72456C00628EC2 /* UINavigationController+Animation.m */; };
+		D4656A521E72456C00628EC2 /* UINavigationController+BarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A481E72456C00628EC2 /* UINavigationController+BarButtonItem.h */; };
+		D4656A531E72456C00628EC2 /* UINavigationController+BarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A491E72456C00628EC2 /* UINavigationController+BarButtonItem.m */; };
+		D4656A541E72456C00628EC2 /* UINavigationController+Orientation.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A4A1E72456C00628EC2 /* UINavigationController+Orientation.h */; };
+		D4656A551E72456C00628EC2 /* UINavigationController+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A4B1E72456C00628EC2 /* UINavigationController+Orientation.m */; };
+		D4656A561E72456C00628EC2 /* UITabBarController+Orientation.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A4C1E72456C00628EC2 /* UITabBarController+Orientation.h */; };
+		D4656A571E72456C00628EC2 /* UITabBarController+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A4D1E72456C00628EC2 /* UITabBarController+Orientation.m */; };
 		D470C9E61E6EA4A600FB212E /* Dictionary+SafeValue.h in Headers */ = {isa = PBXBuildFile; fileRef = D470C9DE1E6EA4A600FB212E /* Dictionary+SafeValue.h */; };
 		D470C9E71E6EA4A600FB212E /* Dictionary+SafeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D470C9DF1E6EA4A600FB212E /* Dictionary+SafeValue.m */; };
 		D470C9E81E6EA4A600FB212E /* NSDictionary+NSData.h in Headers */ = {isa = PBXBuildFile; fileRef = D470C9E01E6EA4A600FB212E /* NSDictionary+NSData.h */; };
@@ -46,6 +56,16 @@
 		D4605B821E136F0E006575E0 /* ZWMacroDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWMacroDef.h; sourceTree = "<group>"; };
 		D4605B841E138E79006575E0 /* UIView+AddLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+AddLine.h"; path = "Category/UIKit/UIView+AddLine.h"; sourceTree = "<group>"; };
 		D4605B851E138E79006575E0 /* UIView+AddLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+AddLine.m"; path = "Category/UIKit/UIView+AddLine.m"; sourceTree = "<group>"; };
+		D4656A441E72456C00628EC2 /* UIImage+StrethImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+StrethImage.h"; path = "Category/UIKit/UIImage+StrethImage.h"; sourceTree = "<group>"; };
+		D4656A451E72456C00628EC2 /* UIImage+StrethImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+StrethImage.m"; path = "Category/UIKit/UIImage+StrethImage.m"; sourceTree = "<group>"; };
+		D4656A461E72456C00628EC2 /* UINavigationController+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Animation.h"; path = "Category/UIKit/UINavigationController+Animation.h"; sourceTree = "<group>"; };
+		D4656A471E72456C00628EC2 /* UINavigationController+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Animation.m"; path = "Category/UIKit/UINavigationController+Animation.m"; sourceTree = "<group>"; };
+		D4656A481E72456C00628EC2 /* UINavigationController+BarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+BarButtonItem.h"; path = "Category/UIKit/UINavigationController+BarButtonItem.h"; sourceTree = "<group>"; };
+		D4656A491E72456C00628EC2 /* UINavigationController+BarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+BarButtonItem.m"; path = "Category/UIKit/UINavigationController+BarButtonItem.m"; sourceTree = "<group>"; };
+		D4656A4A1E72456C00628EC2 /* UINavigationController+Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Orientation.h"; path = "Category/UIKit/UINavigationController+Orientation.h"; sourceTree = "<group>"; };
+		D4656A4B1E72456C00628EC2 /* UINavigationController+Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Orientation.m"; path = "Category/UIKit/UINavigationController+Orientation.m"; sourceTree = "<group>"; };
+		D4656A4C1E72456C00628EC2 /* UITabBarController+Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITabBarController+Orientation.h"; path = "Category/UIKit/UITabBarController+Orientation.h"; sourceTree = "<group>"; };
+		D4656A4D1E72456C00628EC2 /* UITabBarController+Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITabBarController+Orientation.m"; path = "Category/UIKit/UITabBarController+Orientation.m"; sourceTree = "<group>"; };
 		D470C9DE1E6EA4A600FB212E /* Dictionary+SafeValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Dictionary+SafeValue.h"; path = "Category/Foundation/Dictionary+SafeValue.h"; sourceTree = "<group>"; };
 		D470C9DF1E6EA4A600FB212E /* Dictionary+SafeValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Dictionary+SafeValue.m"; path = "Category/Foundation/Dictionary+SafeValue.m"; sourceTree = "<group>"; };
 		D470C9E01E6EA4A600FB212E /* NSDictionary+NSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+NSData.h"; path = "Category/Foundation/NSDictionary+NSData.h"; sourceTree = "<group>"; };
@@ -117,6 +137,16 @@
 			children = (
 				D4605B841E138E79006575E0 /* UIView+AddLine.h */,
 				D4605B851E138E79006575E0 /* UIView+AddLine.m */,
+				D4656A441E72456C00628EC2 /* UIImage+StrethImage.h */,
+				D4656A451E72456C00628EC2 /* UIImage+StrethImage.m */,
+				D4656A461E72456C00628EC2 /* UINavigationController+Animation.h */,
+				D4656A471E72456C00628EC2 /* UINavigationController+Animation.m */,
+				D4656A481E72456C00628EC2 /* UINavigationController+BarButtonItem.h */,
+				D4656A491E72456C00628EC2 /* UINavigationController+BarButtonItem.m */,
+				D4656A4A1E72456C00628EC2 /* UINavigationController+Orientation.h */,
+				D4656A4B1E72456C00628EC2 /* UINavigationController+Orientation.m */,
+				D4656A4C1E72456C00628EC2 /* UITabBarController+Orientation.h */,
+				D4656A4D1E72456C00628EC2 /* UITabBarController+Orientation.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -155,10 +185,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D470C9E81E6EA4A600FB212E /* NSDictionary+NSData.h in Headers */,
+				D4656A4E1E72456C00628EC2 /* UIImage+StrethImage.h in Headers */,
 				D4605B801E136E7F006575E0 /* ZWLog.h in Headers */,
+				D4656A541E72456C00628EC2 /* UINavigationController+Orientation.h in Headers */,
+				D4656A501E72456C00628EC2 /* UINavigationController+Animation.h in Headers */,
 				D4605B7B1E136E5F006575E0 /* UtilityKit.h in Headers */,
 				D4605B831E136F0E006575E0 /* ZWMacroDef.h in Headers */,
 				D470C9E61E6EA4A600FB212E /* Dictionary+SafeValue.h in Headers */,
+				D4656A561E72456C00628EC2 /* UITabBarController+Orientation.h in Headers */,
 				D4605B6F1E1369DF006575E0 /* ZWUtilityKit.h in Headers */,
 				D4547AEC1E6FA93B0084AB41 /* NSURL+EncodeString.h in Headers */,
 				D4605B861E138E79006575E0 /* UIView+AddLine.h in Headers */,
@@ -166,6 +200,7 @@
 				D470C9EA1E6EA4A600FB212E /* NSObject+Block.h in Headers */,
 				D470C9EC1E6EA4A600FB212E /* NSObject+ParseDicToObj.h in Headers */,
 				D4605B7D1E136E5F006575E0 /* UtilityUIKit.h in Headers */,
+				D4656A521E72456C00628EC2 /* UINavigationController+BarButtonItem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,11 +276,16 @@
 				D4605B811E136E7F006575E0 /* ZWLog.m in Sources */,
 				D4605B7A1E136E5F006575E0 /* UtilityUIKit.m in Sources */,
 				D4605B7C1E136E5F006575E0 /* UtilityKit.m in Sources */,
+				D4656A551E72456C00628EC2 /* UINavigationController+Orientation.m in Sources */,
+				D4656A4F1E72456C00628EC2 /* UIImage+StrethImage.m in Sources */,
 				D470C9EB1E6EA4A600FB212E /* NSObject+Block.m in Sources */,
 				D470C9E71E6EA4A600FB212E /* Dictionary+SafeValue.m in Sources */,
 				D470C9E91E6EA4A600FB212E /* NSDictionary+NSData.m in Sources */,
+				D4656A531E72456C00628EC2 /* UINavigationController+BarButtonItem.m in Sources */,
 				D4E6150A1E710524008D74C4 /* NetworkApply.m in Sources */,
 				D4547AED1E6FA93B0084AB41 /* NSURL+EncodeString.m in Sources */,
+				D4656A571E72456C00628EC2 /* UITabBarController+Orientation.m in Sources */,
+				D4656A511E72456C00628EC2 /* UINavigationController+Animation.m in Sources */,
 				D470C9ED1E6EA4A600FB212E /* NSObject+ParseDicToObj.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

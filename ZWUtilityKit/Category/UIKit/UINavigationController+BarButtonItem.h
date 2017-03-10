@@ -12,7 +12,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "UtilityKit.h"
+#import "ZWMacroDef.h"
 
 #define TOP_STATUS_BAR_HEIGHT (IOS7 ? Status_Bar_Height : 0)
 #define Nav_Left_BarItem_Offset (IOS7 ? -16.0f : 0.0f)
