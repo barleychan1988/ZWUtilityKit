@@ -29,18 +29,20 @@
 		D4656A551E72456C00628EC2 /* UINavigationController+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A4B1E72456C00628EC2 /* UINavigationController+Orientation.m */; };
 		D4656A561E72456C00628EC2 /* UITabBarController+Orientation.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A4C1E72456C00628EC2 /* UITabBarController+Orientation.h */; };
 		D4656A571E72456C00628EC2 /* UITabBarController+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A4D1E72456C00628EC2 /* UITabBarController+Orientation.m */; };
-		D4656A6C1E72587600628EC2 /* ZWInputButton.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A621E72587600628EC2 /* ZWInputButton.h */; };
-		D4656A6D1E72587600628EC2 /* ZWInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A631E72587600628EC2 /* ZWInputButton.m */; };
-		D4656A6E1E72587600628EC2 /* ZWButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A641E72587600628EC2 /* ZWButtonCell.h */; };
-		D4656A6F1E72587600628EC2 /* ZWButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A651E72587600628EC2 /* ZWButtonCell.m */; };
-		D4656A701E72587600628EC2 /* ZWTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A661E72587600628EC2 /* ZWTableViewCell.h */; };
-		D4656A711E72587600628EC2 /* ZWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A671E72587600628EC2 /* ZWTableViewCell.m */; };
-		D4656A721E72587600628EC2 /* UITransluentToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A681E72587600628EC2 /* UITransluentToolbar.h */; };
-		D4656A731E72587600628EC2 /* UITransluentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A691E72587600628EC2 /* UITransluentToolbar.m */; };
-		D4656A741E72587600628EC2 /* ZWNoneCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A6A1E72587600628EC2 /* ZWNoneCell.h */; };
-		D4656A751E72587600628EC2 /* ZWNoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A6B1E72587600628EC2 /* ZWNoneCell.m */; };
 		D4656A781E7258D700628EC2 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A761E7258D700628EC2 /* Reachability.h */; };
 		D4656A791E7258D700628EC2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A771E7258D700628EC2 /* Reachability.m */; };
+		D4656A861E72A45600628EC2 /* UITransluentToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A7A1E72A45600628EC2 /* UITransluentToolbar.h */; };
+		D4656A871E72A45600628EC2 /* UITransluentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A7B1E72A45600628EC2 /* UITransluentToolbar.m */; };
+		D4656A881E72A45600628EC2 /* ZWButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A7C1E72A45600628EC2 /* ZWButtonCell.h */; };
+		D4656A891E72A45600628EC2 /* ZWButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A7D1E72A45600628EC2 /* ZWButtonCell.m */; };
+		D4656A8A1E72A45600628EC2 /* ZWInputButton.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A7E1E72A45600628EC2 /* ZWInputButton.h */; };
+		D4656A8B1E72A45600628EC2 /* ZWInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A7F1E72A45600628EC2 /* ZWInputButton.m */; };
+		D4656A8C1E72A45600628EC2 /* ZWNoneCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A801E72A45600628EC2 /* ZWNoneCell.h */; };
+		D4656A8D1E72A45600628EC2 /* ZWNoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A811E72A45600628EC2 /* ZWNoneCell.m */; };
+		D4656A8E1E72A45600628EC2 /* ZWTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A821E72A45600628EC2 /* ZWTableViewCell.h */; };
+		D4656A8F1E72A45600628EC2 /* ZWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A831E72A45600628EC2 /* ZWTableViewCell.m */; };
+		D4656A901E72A45600628EC2 /* ZWCycleBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = D4656A841E72A45600628EC2 /* ZWCycleBannerView.h */; };
+		D4656A911E72A45600628EC2 /* ZWCycleBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4656A851E72A45600628EC2 /* ZWCycleBannerView.m */; };
 		D470C9E61E6EA4A600FB212E /* Dictionary+SafeValue.h in Headers */ = {isa = PBXBuildFile; fileRef = D470C9DE1E6EA4A600FB212E /* Dictionary+SafeValue.h */; };
 		D470C9E71E6EA4A600FB212E /* Dictionary+SafeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D470C9DF1E6EA4A600FB212E /* Dictionary+SafeValue.m */; };
 		D470C9E81E6EA4A600FB212E /* NSDictionary+NSData.h in Headers */ = {isa = PBXBuildFile; fileRef = D470C9E01E6EA4A600FB212E /* NSDictionary+NSData.h */; };
@@ -78,18 +80,20 @@
 		D4656A4B1E72456C00628EC2 /* UINavigationController+Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Orientation.m"; path = "Category/UIKit/UINavigationController+Orientation.m"; sourceTree = "<group>"; };
 		D4656A4C1E72456C00628EC2 /* UITabBarController+Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITabBarController+Orientation.h"; path = "Category/UIKit/UITabBarController+Orientation.h"; sourceTree = "<group>"; };
 		D4656A4D1E72456C00628EC2 /* UITabBarController+Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITabBarController+Orientation.m"; path = "Category/UIKit/UITabBarController+Orientation.m"; sourceTree = "<group>"; };
-		D4656A621E72587600628EC2 /* ZWInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWInputButton.h; path = ZWCustomUI/ZWInputButton.h; sourceTree = "<group>"; };
-		D4656A631E72587600628EC2 /* ZWInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWInputButton.m; path = ZWCustomUI/ZWInputButton.m; sourceTree = "<group>"; };
-		D4656A641E72587600628EC2 /* ZWButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWButtonCell.h; path = ZWCustomUI/ZWButtonCell.h; sourceTree = "<group>"; };
-		D4656A651E72587600628EC2 /* ZWButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWButtonCell.m; path = ZWCustomUI/ZWButtonCell.m; sourceTree = "<group>"; };
-		D4656A661E72587600628EC2 /* ZWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWTableViewCell.h; path = ZWCustomUI/ZWTableViewCell.h; sourceTree = "<group>"; };
-		D4656A671E72587600628EC2 /* ZWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWTableViewCell.m; path = ZWCustomUI/ZWTableViewCell.m; sourceTree = "<group>"; };
-		D4656A681E72587600628EC2 /* UITransluentToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UITransluentToolbar.h; path = ZWCustomUI/UITransluentToolbar.h; sourceTree = "<group>"; };
-		D4656A691E72587600628EC2 /* UITransluentToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UITransluentToolbar.m; path = ZWCustomUI/UITransluentToolbar.m; sourceTree = "<group>"; };
-		D4656A6A1E72587600628EC2 /* ZWNoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWNoneCell.h; path = ZWCustomUI/ZWNoneCell.h; sourceTree = "<group>"; };
-		D4656A6B1E72587600628EC2 /* ZWNoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWNoneCell.m; path = ZWCustomUI/ZWNoneCell.m; sourceTree = "<group>"; };
 		D4656A761E7258D700628EC2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = SOURCE_ROOT; };
 		D4656A771E7258D700628EC2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = SOURCE_ROOT; };
+		D4656A7A1E72A45600628EC2 /* UITransluentToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UITransluentToolbar.h; path = CustomUI/UITransluentToolbar.h; sourceTree = "<group>"; };
+		D4656A7B1E72A45600628EC2 /* UITransluentToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UITransluentToolbar.m; path = CustomUI/UITransluentToolbar.m; sourceTree = "<group>"; };
+		D4656A7C1E72A45600628EC2 /* ZWButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWButtonCell.h; path = CustomUI/ZWButtonCell.h; sourceTree = "<group>"; };
+		D4656A7D1E72A45600628EC2 /* ZWButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWButtonCell.m; path = CustomUI/ZWButtonCell.m; sourceTree = "<group>"; };
+		D4656A7E1E72A45600628EC2 /* ZWInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWInputButton.h; path = CustomUI/ZWInputButton.h; sourceTree = "<group>"; };
+		D4656A7F1E72A45600628EC2 /* ZWInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWInputButton.m; path = CustomUI/ZWInputButton.m; sourceTree = "<group>"; };
+		D4656A801E72A45600628EC2 /* ZWNoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWNoneCell.h; path = CustomUI/ZWNoneCell.h; sourceTree = "<group>"; };
+		D4656A811E72A45600628EC2 /* ZWNoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWNoneCell.m; path = CustomUI/ZWNoneCell.m; sourceTree = "<group>"; };
+		D4656A821E72A45600628EC2 /* ZWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWTableViewCell.h; path = CustomUI/ZWTableViewCell.h; sourceTree = "<group>"; };
+		D4656A831E72A45600628EC2 /* ZWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWTableViewCell.m; path = CustomUI/ZWTableViewCell.m; sourceTree = "<group>"; };
+		D4656A841E72A45600628EC2 /* ZWCycleBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWCycleBannerView.h; path = CustomUI/ZWCycleBannerView.h; sourceTree = "<group>"; };
+		D4656A851E72A45600628EC2 /* ZWCycleBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWCycleBannerView.m; path = CustomUI/ZWCycleBannerView.m; sourceTree = "<group>"; };
 		D470C9DE1E6EA4A600FB212E /* Dictionary+SafeValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Dictionary+SafeValue.h"; path = "Category/Foundation/Dictionary+SafeValue.h"; sourceTree = "<group>"; };
 		D470C9DF1E6EA4A600FB212E /* Dictionary+SafeValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Dictionary+SafeValue.m"; path = "Category/Foundation/Dictionary+SafeValue.m"; sourceTree = "<group>"; };
 		D470C9E01E6EA4A600FB212E /* NSDictionary+NSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+NSData.h"; path = "Category/Foundation/NSDictionary+NSData.h"; sourceTree = "<group>"; };
@@ -160,16 +164,18 @@
 		D4656A611E72586A00628EC2 /* ZWCustomUI */ = {
 			isa = PBXGroup;
 			children = (
-				D4656A621E72587600628EC2 /* ZWInputButton.h */,
-				D4656A631E72587600628EC2 /* ZWInputButton.m */,
-				D4656A641E72587600628EC2 /* ZWButtonCell.h */,
-				D4656A651E72587600628EC2 /* ZWButtonCell.m */,
-				D4656A661E72587600628EC2 /* ZWTableViewCell.h */,
-				D4656A671E72587600628EC2 /* ZWTableViewCell.m */,
-				D4656A681E72587600628EC2 /* UITransluentToolbar.h */,
-				D4656A691E72587600628EC2 /* UITransluentToolbar.m */,
-				D4656A6A1E72587600628EC2 /* ZWNoneCell.h */,
-				D4656A6B1E72587600628EC2 /* ZWNoneCell.m */,
+				D4656A7A1E72A45600628EC2 /* UITransluentToolbar.h */,
+				D4656A7B1E72A45600628EC2 /* UITransluentToolbar.m */,
+				D4656A7C1E72A45600628EC2 /* ZWButtonCell.h */,
+				D4656A7D1E72A45600628EC2 /* ZWButtonCell.m */,
+				D4656A7E1E72A45600628EC2 /* ZWInputButton.h */,
+				D4656A7F1E72A45600628EC2 /* ZWInputButton.m */,
+				D4656A801E72A45600628EC2 /* ZWNoneCell.h */,
+				D4656A811E72A45600628EC2 /* ZWNoneCell.m */,
+				D4656A821E72A45600628EC2 /* ZWTableViewCell.h */,
+				D4656A831E72A45600628EC2 /* ZWTableViewCell.m */,
+				D4656A841E72A45600628EC2 /* ZWCycleBannerView.h */,
+				D4656A851E72A45600628EC2 /* ZWCycleBannerView.m */,
 			);
 			name = ZWCustomUI;
 			sourceTree = "<group>";
@@ -231,7 +237,9 @@
 				D470C9E81E6EA4A600FB212E /* NSDictionary+NSData.h in Headers */,
 				D4656A4E1E72456C00628EC2 /* UIImage+StrethImage.h in Headers */,
 				D4605B801E136E7F006575E0 /* ZWLog.h in Headers */,
+				D4656A881E72A45600628EC2 /* ZWButtonCell.h in Headers */,
 				D4656A541E72456C00628EC2 /* UINavigationController+Orientation.h in Headers */,
+				D4656A8C1E72A45600628EC2 /* ZWNoneCell.h in Headers */,
 				D4656A501E72456C00628EC2 /* UINavigationController+Animation.h in Headers */,
 				D4605B7B1E136E5F006575E0 /* UtilityKit.h in Headers */,
 				D4605B831E136F0E006575E0 /* ZWMacroDef.h in Headers */,
@@ -240,17 +248,16 @@
 				D4605B6F1E1369DF006575E0 /* ZWUtilityKit.h in Headers */,
 				D4547AEC1E6FA93B0084AB41 /* NSURL+EncodeString.h in Headers */,
 				D4605B861E138E79006575E0 /* UIView+AddLine.h in Headers */,
-				D4656A6C1E72587600628EC2 /* ZWInputButton.h in Headers */,
+				D4656A901E72A45600628EC2 /* ZWCycleBannerView.h in Headers */,
 				D4E615091E710524008D74C4 /* NetworkApply.h in Headers */,
-				D4656A721E72587600628EC2 /* UITransluentToolbar.h in Headers */,
 				D470C9EA1E6EA4A600FB212E /* NSObject+Block.h in Headers */,
 				D470C9EC1E6EA4A600FB212E /* NSObject+ParseDicToObj.h in Headers */,
-				D4656A6E1E72587600628EC2 /* ZWButtonCell.h in Headers */,
+				D4656A8E1E72A45600628EC2 /* ZWTableViewCell.h in Headers */,
 				D4656A781E7258D700628EC2 /* Reachability.h in Headers */,
+				D4656A8A1E72A45600628EC2 /* ZWInputButton.h in Headers */,
 				D4605B7D1E136E5F006575E0 /* UtilityUIKit.h in Headers */,
+				D4656A861E72A45600628EC2 /* UITransluentToolbar.h in Headers */,
 				D4656A521E72456C00628EC2 /* UINavigationController+BarButtonItem.h in Headers */,
-				D4656A701E72587600628EC2 /* ZWTableViewCell.h in Headers */,
-				D4656A741E72587600628EC2 /* ZWNoneCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,25 +329,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4656A751E72587600628EC2 /* ZWNoneCell.m in Sources */,
+				D4656A891E72A45600628EC2 /* ZWButtonCell.m in Sources */,
 				D4605B871E138E79006575E0 /* UIView+AddLine.m in Sources */,
 				D4605B811E136E7F006575E0 /* ZWLog.m in Sources */,
 				D4605B7A1E136E5F006575E0 /* UtilityUIKit.m in Sources */,
+				D4656A8D1E72A45600628EC2 /* ZWNoneCell.m in Sources */,
 				D4605B7C1E136E5F006575E0 /* UtilityKit.m in Sources */,
 				D4656A551E72456C00628EC2 /* UINavigationController+Orientation.m in Sources */,
 				D4656A4F1E72456C00628EC2 /* UIImage+StrethImage.m in Sources */,
 				D470C9EB1E6EA4A600FB212E /* NSObject+Block.m in Sources */,
-				D4656A731E72587600628EC2 /* UITransluentToolbar.m in Sources */,
-				D4656A6D1E72587600628EC2 /* ZWInputButton.m in Sources */,
 				D4656A791E7258D700628EC2 /* Reachability.m in Sources */,
-				D4656A711E72587600628EC2 /* ZWTableViewCell.m in Sources */,
+				D4656A911E72A45600628EC2 /* ZWCycleBannerView.m in Sources */,
 				D470C9E71E6EA4A600FB212E /* Dictionary+SafeValue.m in Sources */,
 				D470C9E91E6EA4A600FB212E /* NSDictionary+NSData.m in Sources */,
+				D4656A8B1E72A45600628EC2 /* ZWInputButton.m in Sources */,
 				D4656A531E72456C00628EC2 /* UINavigationController+BarButtonItem.m in Sources */,
+				D4656A8F1E72A45600628EC2 /* ZWTableViewCell.m in Sources */,
+				D4656A871E72A45600628EC2 /* UITransluentToolbar.m in Sources */,
 				D4E6150A1E710524008D74C4 /* NetworkApply.m in Sources */,
 				D4547AED1E6FA93B0084AB41 /* NSURL+EncodeString.m in Sources */,
 				D4656A571E72456C00628EC2 /* UITabBarController+Orientation.m in Sources */,
-				D4656A6F1E72587600628EC2 /* ZWButtonCell.m in Sources */,
 				D4656A511E72456C00628EC2 /* UINavigationController+Animation.m in Sources */,
 				D470C9ED1E6EA4A600FB212E /* NSObject+ParseDicToObj.m in Sources */,
 			);
