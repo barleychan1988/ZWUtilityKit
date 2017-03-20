@@ -51,6 +51,8 @@
 		D470C9EB1E6EA4A600FB212E /* NSObject+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = D470C9E31E6EA4A600FB212E /* NSObject+Block.m */; };
 		D470C9EC1E6EA4A600FB212E /* NSObject+ParseDicToObj.h in Headers */ = {isa = PBXBuildFile; fileRef = D470C9E41E6EA4A600FB212E /* NSObject+ParseDicToObj.h */; };
 		D470C9ED1E6EA4A600FB212E /* NSObject+ParseDicToObj.m in Sources */ = {isa = PBXBuildFile; fileRef = D470C9E51E6EA4A600FB212E /* NSObject+ParseDicToObj.m */; };
+		D47E2D3F1E7FCC4700B9E3B6 /* UINavigationController+TitleBar.h in Headers */ = {isa = PBXBuildFile; fileRef = D47E2D3D1E7FCC4700B9E3B6 /* UINavigationController+TitleBar.h */; };
+		D47E2D401E7FCC4700B9E3B6 /* UINavigationController+TitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D47E2D3E1E7FCC4700B9E3B6 /* UINavigationController+TitleBar.m */; };
 		D4E615091E710524008D74C4 /* NetworkApply.h in Headers */ = {isa = PBXBuildFile; fileRef = D4E615071E710524008D74C4 /* NetworkApply.h */; };
 		D4E6150A1E710524008D74C4 /* NetworkApply.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E615081E710524008D74C4 /* NetworkApply.m */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,8 @@
 		D470C9E31E6EA4A600FB212E /* NSObject+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Block.m"; path = "Category/Foundation/NSObject+Block.m"; sourceTree = "<group>"; };
 		D470C9E41E6EA4A600FB212E /* NSObject+ParseDicToObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ParseDicToObj.h"; path = "Category/Foundation/NSObject+ParseDicToObj.h"; sourceTree = "<group>"; };
 		D470C9E51E6EA4A600FB212E /* NSObject+ParseDicToObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ParseDicToObj.m"; path = "Category/Foundation/NSObject+ParseDicToObj.m"; sourceTree = "<group>"; };
+		D47E2D3D1E7FCC4700B9E3B6 /* UINavigationController+TitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+TitleBar.h"; path = "Category/UIKit/UINavigationController+TitleBar.h"; sourceTree = "<group>"; };
+		D47E2D3E1E7FCC4700B9E3B6 /* UINavigationController+TitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+TitleBar.m"; path = "Category/UIKit/UINavigationController+TitleBar.m"; sourceTree = "<group>"; };
 		D4E615071E710524008D74C4 /* NetworkApply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkApply.h; path = Network/NetworkApply.h; sourceTree = "<group>"; };
 		D4E615081E710524008D74C4 /* NetworkApply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkApply.m; path = Network/NetworkApply.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +199,8 @@
 				D4656A4B1E72456C00628EC2 /* UINavigationController+Orientation.m */,
 				D4656A4C1E72456C00628EC2 /* UITabBarController+Orientation.h */,
 				D4656A4D1E72456C00628EC2 /* UITabBarController+Orientation.m */,
+				D47E2D3D1E7FCC4700B9E3B6 /* UINavigationController+TitleBar.h */,
+				D47E2D3E1E7FCC4700B9E3B6 /* UINavigationController+TitleBar.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 				D4605B6F1E1369DF006575E0 /* ZWUtilityKit.h in Headers */,
 				D4547AEC1E6FA93B0084AB41 /* NSURL+EncodeString.h in Headers */,
 				D4605B861E138E79006575E0 /* UIView+AddLine.h in Headers */,
+				D47E2D3F1E7FCC4700B9E3B6 /* UINavigationController+TitleBar.h in Headers */,
 				D4656A901E72A45600628EC2 /* ZWCycleBannerView.h in Headers */,
 				D4E615091E710524008D74C4 /* NetworkApply.h in Headers */,
 				D470C9EA1E6EA4A600FB212E /* NSObject+Block.h in Headers */,
@@ -341,6 +348,7 @@
 				D4656A791E7258D700628EC2 /* Reachability.m in Sources */,
 				D4656A911E72A45600628EC2 /* ZWCycleBannerView.m in Sources */,
 				D470C9E71E6EA4A600FB212E /* Dictionary+SafeValue.m in Sources */,
+				D47E2D401E7FCC4700B9E3B6 /* UINavigationController+TitleBar.m in Sources */,
 				D470C9E91E6EA4A600FB212E /* NSDictionary+NSData.m in Sources */,
 				D4656A8B1E72A45600628EC2 /* ZWInputButton.m in Sources */,
 				D4656A531E72456C00628EC2 /* UINavigationController+BarButtonItem.m in Sources */,
