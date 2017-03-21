@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '3.0.18'
+  s.version          = '3.0.19'
   s.summary          = '编译警告移除'
 
 # This description is used to generate tags and improve search results.
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
     s.subspec 'CategoryUI' do |cate_ui|
         cate_ui.ios.deployment_target = '6.0'
         cate_ui.source_files = 'ZWUtilityKit/Category/UIKit/*.{h,m}'
-        cate_ui.exclude_files = 'ZWUtilityKit/Category/UIKit/*+Orientation.{h,m}'
+#cate_ui.exclude_files = 'ZWUtilityKit/Category/UIKit/*+Orientation.{h,m}'
         cate_ui.dependency 'ZWUtilityKit/Foundation'
     end
 
