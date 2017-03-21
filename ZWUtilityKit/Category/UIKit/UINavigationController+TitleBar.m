@@ -15,7 +15,7 @@
     self.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationBar.translucent = YES;
     
-    for (UIView *subview in self.navigationController.navigationBar.subviews)
+    for (UIView *subview in self.navigationBar.subviews)
     {
         NSString *strClassName = NSStringFromClass(subview.class);
         NSRange range = [strClassName rangeOfString:@"BarBackground"];
@@ -29,7 +29,7 @@
 
 - (void)setupBackgrounImage:(UIImage *)image textColor:(UIColor *)color statusBar:(UIStatusBarStyle)barStyle
 {
-    for (UIView *subview in self.navigationController.navigationBar.subviews)
+    for (UIView *subview in self.navigationBar.subviews)
     {
         NSString *strClassName = NSStringFromClass(subview.class);
         NSRange range = [strClassName rangeOfString:@"BarBackground"];
