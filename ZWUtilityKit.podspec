@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '0.0.1'
-  s.summary          = '从简化版做起经常用到的一些公共代码.'
+  s.version          = '1.0.0'
+  s.summary          = '源码版本 从简化版做起经常用到的一些公共代码.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,12 +25,18 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Eadkennychan' => 'Eadkennychan@gmail.com' }
-  s.source           = { :git => 'https://github.com/EadkennyChan/ZWUtilityKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/EadkennyChan/ZWUtility-supercode.git', :tag => s.version.to_s }
   s.social_media_url = 'https://github.com/EadkennyChan'
   s.requires_arc = true
 
     s.ios.deployment_target = '6.0'
-    s.vendored_frameworks ='*.framework'
+    s.source_files = 'ZWUtilityKit/Network/*.{h,m}'
+    s.dependency 'Reachability', '~> 3.2'
+    s.dependency 'JSONKit-ZW', '~>2.0.4'
+    s.xcconfig = {
+        'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
+        #'OTHER_LDFLAGS' => '"$(inherited)" "-lxml2" "-objc"'
+    }
 
-    s.frameworks = 'SystemConfiguration','Security','CoreLocation','QuartzCore','MessageUI'
+    s.frameworks = 'SystemConfiguration','Security','CoreLocation','QuartzCore','CFNetwork','MessageUI'
 end
