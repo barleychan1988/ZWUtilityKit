@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = '从简化版做起经常用到的一些公共代码.'
 
 # This description is used to generate tags and improve search results.
@@ -25,28 +25,29 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Eadkennychan' => 'Eadkennychan@gmail.com' }
-  s.source           = { :git => 'https://github.com/EadkennyChan/ZWUtility-supercode.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/EadkennyChan/ZWUtilityKit.git', :tag => s.version.to_s }
   s.social_media_url = 'https://github.com/EadkennyChan'
   s.requires_arc = true
 
     s.ios.deployment_target = '6.0'
-    s.default_subspec = 'Foundation'
+    s.vendored_frameworks ='*.framework'
+#   s.default_subspec = 'ZWUtilityKit'
 
-    s.subspec 'Foundation' do |foundation|
-        foundation.vendored_frameworks ='*.framework'
-    end
+#    s.subspec 'ZWUtilityKit' do |foundation|
+#        foundation.vendored_frameworks ='*.framework'
+#    end
 
-    s.subspec 'Network' do |network|
-        network.ios.deployment_target = '6.0'
-        network.source_files = 'Network/*.{h,m}'
-        network.dependency 'Reachability', '~> 3.2'
-        network.dependency 'JSONKit-ZW', '~>2.0.4'
-        network.xcconfig = {
-            'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
-            #'OTHER_LDFLAGS' => '"$(inherited)" "-lxml2" "-objc"'
-        }
-        network.frameworks = 'CFNetwork'
-    end
+#    s.subspec 'Network' do |network|
+#        network.ios.deployment_target = '6.0'
+#        network.source_files = 'Network/*.{h,m}'
+#        network.dependency 'Reachability', '~> 3.2'
+#        network.dependency 'JSONKit-ZW', '~>2.0.4'
+#        network.xcconfig = {
+#            'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
+#            #'OTHER_LDFLAGS' => '"$(inherited)" "-lxml2" "-objc"'
+#        }
+#        network.frameworks = 'CFNetwork'
+#    end
 
     s.frameworks = 'SystemConfiguration','Security','CoreLocation','QuartzCore','CFNetwork','MessageUI'
 
