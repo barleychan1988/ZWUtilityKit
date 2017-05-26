@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '3.0.19'
-  s.summary          = '编译警告移除'
+  s.version          = '0.0.1'
+  s.summary          = '从简化版做起经常用到的一些公共代码.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,58 +18,42 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-经常用到的一些公共代码.为了方便使用进行的简单封装。
+经常用到的一些公共代码.为了方便使用进行的简单封装
                        DESC
 
   s.homepage         = 'https://github.com/EadkennyChan/ZWUtilityKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Eadkennychan' => 'Eadkennychan@gmail.com' }
-  s.source           = { :git => 'https://github.com/Eadkennychan/ZWUtilityKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/EadkennyChan/ZWUtility-supercode.git', :tag => s.version.to_s }
   s.social_media_url = 'https://github.com/EadkennyChan'
   s.requires_arc = true
 
-  s.ios.deployment_target = '6.0'
+    s.ios.deployment_target = '6.0'
     s.default_subspec = 'Foundation'
 
     s.subspec 'Foundation' do |foundation|
-        foundation.ios.deployment_target = '6.0'
-        foundation.source_files = 'ZWUtilityKit/{*,Category/Foundation/*}.{h,m}'
-        #foundation.exclude_files = 'SDWebImage/UIImage+WebP.{h,m}'
-    end
-
-    s.subspec 'CategoryUI' do |cate_ui|
-        cate_ui.ios.deployment_target = '6.0'
-        cate_ui.source_files = 'ZWUtilityKit/Category/UIKit/*.{h,m}'
-#cate_ui.exclude_files = 'ZWUtilityKit/Category/UIKit/*+Orientation.{h,m}'
-        cate_ui.dependency 'ZWUtilityKit/Foundation'
-    end
-
-    s.subspec 'CustomUI' do |costomui|
-        costomui.ios.deployment_target = '6.0'
-        costomui.source_files = 'ZWUtilityKit/CustomUI/*.{h,m}'
-        #costomui.exclude_files = 'SDWebImage/UIImage+WebP.{h,m}'
-        costomui.dependency 'ZWUtilityKit/Foundation'
-        costomui.dependency 'ZWUtilityKit/CategoryUI'
+        foundation.vendored_frameworks ='*.framework'
     end
 
     s.subspec 'Network' do |network|
-    network.ios.deployment_target = '6.0'
-    network.source_files = 'ZWUtilityKit/Network/*.{h,m}'
-    network.dependency 'Reachability'
-    #network.exclude_files = ''
-    network.xcconfig = {
-        'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
-        #'OTHER_LDFLAGS' => '"$(inherited)" "-lxml2" "-objc"'
-    }
-    network.frameworks = 'CFNetwork'
+        network.ios.deployment_target = '6.0'
+        network.source_files = 'Network/*.{h,m}'
+        network.dependency 'Reachability', '~> 3.2'
+        network.dependency 'JSONKit-ZW', '~>2.0.4'
+        network.xcconfig = {
+            'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
+            #'OTHER_LDFLAGS' => '"$(inherited)" "-lxml2" "-objc"'
+        }
+        network.frameworks = 'CFNetwork'
     end
 
-#s.frameworks = 'SystemConfiguration','Security','CoreLocation','QuartzCore','CFNetwork','MessageUI'
-  
+    s.frameworks = 'SystemConfiguration','Security','CoreLocation','QuartzCore','CFNetwork','MessageUI'
+
   # s.resource_bundles = {
   #   'ZWUtilityKit' => ['ZWUtilityKit/Assets/*.png']
   # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
