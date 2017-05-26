@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'ZWUtilityKit'
+  s.name             = 'ZWNetwork'
   s.version          = '0.0.1'
-  s.summary          = '从简化版做起经常用到的一些公共代码.'
+  s.summary          = '常用网络检测方法；appstore升级版本检测.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-经常用到的一些公共代码.为了方便使用进行的简单封装
+常用网络检测等方法
                        DESC
 
   s.homepage         = 'https://github.com/EadkennyChan/ZWUtilityKit'
@@ -31,6 +31,12 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '6.0'
     s.vendored_frameworks ='*.framework'
-
-    s.frameworks = 'SystemConfiguration','Security','CoreLocation','QuartzCore','MessageUI'
+    s.source_files = 'Network/*.{h,m}'
+    s.dependency 'Reachability', '~> 3.2'
+    s.dependency 'JSONKit-ZW', '~>2.0.4'
+    s.xcconfig = {
+        'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
+        #'OTHER_LDFLAGS' => '"$(inherited)" "-lxml2" "-objc"'
+    }
+    s.frameworks = 'SystemConfiguration','Security','CoreLocation','QuartzCore','CFNetwork','MessageUI'
 end
