@@ -17,9 +17,11 @@ NSInteger integerValueForKey(NSDictionary *_Nonnull dic, NSString *_Nonnull strK
 - (int)intValueForKey:(nonnull NSString *)strKey;
 - (BOOL)boolValueForKey:(nonnull NSString *)strKey;
 - (float)floatValueForKey:(nonnull NSString *)strKey;
+- (double)doubleValueForKey:(NSString *)strKey;
 - (nullable id)safeObjectForKey:(nonnull NSString *)strKey;
 
 - (void)setSafeObject:(nonnull id)value forKey:(nonnull id<NSCopying>)key;
+
 @end
 
 
@@ -30,6 +32,8 @@ NSInteger integerValueForKey(NSDictionary *_Nonnull dic, NSString *_Nonnull strK
 @end
 
 @interface NSObject (Dictionary2Obj)
+
 + (nonnull instancetype)objectWithData:(nonnull NSDictionary *)dicData;
 + (nullable NSArray *)objectsWithDatas:(nullable NSArray<NSDictionary *> *)arrayDatas;
+
 @end

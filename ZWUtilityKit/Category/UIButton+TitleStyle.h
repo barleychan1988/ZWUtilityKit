@@ -12,7 +12,8 @@
 
 typedef NS_ENUM(NSInteger, UIButtonTitleStyle)
 {
-    UIButtonTitleStyleRight = 0,
+    UIButtonTitleStyleUnset = 0,
+    UIButtonTitleStyleRight,
     UIButtonTitleStyleUnder,    //标题在下边，图片在上边
     UIButtonTitleStyleAbove,    //标题在上边，图片在下边
     UIButtonTitleStyleLeft     //标题在左边，图片在右边

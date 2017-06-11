@@ -7,6 +7,7 @@
 //
 
 #import "UIButton+TitleStyle.h"
+#import <objc/runtime.h>
 #import "UtilityUIKit.h"
 
 //@interface UIButton ()
@@ -106,72 +107,106 @@
     return btn;
 }
 
-- (void)setTitleStyle:(UIButtonTitleStyle)titleStyle indent:(CGFloat)fIndent
++ (void)load
 {
-    UIImage *image = [self imageForState:UIControlStateNormal];
-    if (image == nil)
-        image = [self imageForState:UIControlStateHighlighted];
-    if (image == nil)
-        image = self.imageView.image;
-    if (image == nil)
-        return;
-    NSString *strTitle = [self titleForState:UIControlStateNormal];
-    if (strTitle.length == 0)
-        strTitle = [self titleForState:UIControlStateSelected];
-    if (strTitle.length == 0)
-        strTitle = self.titleLabel.text;
-    if (strTitle.length == 0)
-        return;
+    method_exchangeImplementations(class_getInstanceMethod(self.class, @selector(layoutSubviews)),
+                                   class_getInstanceMethod(self.class, @selector(swizzled_layoutSubviews)));
+}
+
+- (void)swizzled_layoutSubviews
+{
+    [self swizzled_layoutSubviews];
     
-    CGSize szTitle = getSizeForLabel(strTitle, self.titleLabel.font, NSLineBreakByCharWrapping, CGSizeZero);
-    UIEdgeInsets insets = UIEdgeInsetsZero;
+    CGRect frame;
+    UIButtonTitleStyle titleStyle = ((NSNumber *)objc_getAssociatedObject(self, &strKeyTitleStyle)).intValue;
+    CGFloat fDiffWidth = ((NSNumber *)objc_getAssociatedObject(self, &strKeyDiffWidth)).floatValue;
     switch (titleStyle)
     {
         case UIButtonTitleStyleUnder://标题在下边，图片在上边
         {
-            self.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+            frame.size = self.imageView.frame.size;
+            frame.origin.x = (self.bounds.size.width - frame.size.width) / 2;
+            frame.origin.y = (self.bounds.size.height - frame.size.height - fDiffWidth - self.titleLabel.frame.size.height) / 2;
+            self.imageView.frame = frame;
             
-            insets.top = (self.frame.size.height - image.size.height - szTitle.height - fIndent) / 2;
-            insets.left = (self.frame.size.width - image.size.width) / 2;
-            [self setImageEdgeInsets:insets];
-            insets.top += (image.size.height + fIndent);
-            insets.left = (self.frame.size.width - szTitle.width) / 2 - image.size.width;
-            [self setTitleEdgeInsets:insets];
+            frame.origin.y += (frame.size.height + fDiffWidth);
+            frame.size = self.titleLabel.frame.size;
+            frame.origin.x = (self.bounds.size.width - frame.size.width) / 2;
+            self.titleLabel.frame = frame;
         }
-        break;
+            break;
+        case UIButtonTitleStyleAbove://标题在上边，图片在下边
+        {
+            frame.size = self.titleLabel.frame.size;
+            frame.origin.x = (self.bounds.size.width - frame.size.width) / 2;
+            frame.origin.y = (self.bounds.size.height - frame.size.height - fDiffWidth - self.imageView.frame.size.height) / 2;
+            self.titleLabel.frame = frame;
+            
+            frame.origin.y += (frame.size.height + fDiffWidth);
+            frame.size = self.imageView.frame.size;
+            frame.origin.x = (self.bounds.size.width - frame.size.width) / 2;
+            self.imageView.frame = frame;
+        }
+            break;
+        case UIButtonTitleStyleLeft://标题在左边，图片在右边
+        {
+            frame.size = self.titleLabel.frame.size;
+            frame.origin.y = (self.bounds.size.height - frame.size.height) / 2;
+            frame.origin.x = (self.bounds.size.width - frame.size.width - self.imageView.frame.size.width - fDiffWidth) / 2;
+            self.titleLabel.frame = frame;
+            
+            frame.origin.x += (frame.size.width + fDiffWidth);
+            frame.size = self.imageView.frame.size;
+            frame.origin.y = (self.bounds.size.height - frame.size.height) / 2;
+            self.imageView.frame = frame;
+        }
+            break;
+        case UIButtonTitleStyleRight://标题在右边，图片在左边
+        {
+            frame.size = self.imageView.frame.size;
+            frame.origin.y = self.imageView.frame.origin.y;
+            frame.origin.x = (self.bounds.size.width - frame.size.width - self.titleLabel.frame.size.width - fDiffWidth) / 2;
+            self.imageView.frame = frame;
+            
+            frame.origin.x += (fDiffWidth + frame.size.width);
+            frame.size = self.titleLabel.frame.size;
+            frame.origin.y = (self.bounds.size.height - frame.size.height) / 2;
+            self.titleLabel.frame = frame;
+        }
+            break;
+        default:
+        {
+        }
+            break;
+    }
+}
+
+NSString *const strKeyTitleStyle = @"kTitleStyle";
+NSString *const strKeyDiffWidth = @"kTitleImageDiffWidth";
+
+- (void)setTitleStyle:(UIButtonTitleStyle)titleStyle indent:(CGFloat)fIndent
+{
+    objc_setAssociatedObject(self, &strKeyTitleStyle, [NSNumber numberWithInt:titleStyle], OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &strKeyDiffWidth, [NSNumber numberWithFloat:fIndent], OBJC_ASSOCIATION_ASSIGN);
+    
+    switch (titleStyle)
+    {
+        case UIButtonTitleStyleUnder://标题在下边，图片在上边
         case UIButtonTitleStyleAbove://标题在上边，图片在下边
         {
             self.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
             self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            
-            CGFloat fDiff = (self.frame.size.height - image.size.height - szTitle.height ) / 3;
-            insets.top = self.frame.size.height - image.size.height - fDiff;
-            insets.left = (szTitle.width + image.size.width) / 2;
-            [self setImageEdgeInsets:insets];
-            insets.top = fDiff;
-            insets.left = -(szTitle.width + image.size.width) / 2;
-            [self setTitleEdgeInsets:insets];
         }
         break;
         case UIButtonTitleStyleLeft://标题在左边，图片在右边
+        case UIButtonTitleStyleRight://标题在右边，图片在左边
         {
             self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
             self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-            insets.left = (self.frame.size.width - image.size.width - szTitle.width) / 2 + szTitle.width + 5;
-            [self setImageEdgeInsets:insets];
-            insets.left = (self.frame.size.width - image.size.width - szTitle.width) / 2 - image.size.width;
-            [self setTitleEdgeInsets:insets];
         }
-        break;
+            break;
         default:
         {
-            self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-            insets.left = (self.frame.size.width - image.size.width - szTitle.width - fIndent) / 2;
-            [self setImageEdgeInsets:insets];
-            insets.left += fIndent;
-            [self setTitleEdgeInsets:insets];
         }
         break;
     }

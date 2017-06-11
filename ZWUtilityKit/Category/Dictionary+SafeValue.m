@@ -172,6 +172,32 @@ NSInteger integerValueForKey(NSDictionary *dic, NSString *strKey)
     return 0.0;
 }
 
+- (double)doubleValueForKey:(NSString *)strKey
+{
+    if (![self isKindOfClass:[NSDictionary class]] || ((NSDictionary *)self).count == 0)
+    {
+        return 0.0;
+    }
+    NSDictionary *_self = (NSDictionary *)self;
+    if ([_self count] > 0)
+    {
+        NSNumber *numValue = [_self objectForKey:strKey];
+        if ([numValue isKindOfClass:[NSNumber class]])
+        {
+            return numValue.doubleValue;
+        }
+        else if ([numValue isKindOfClass:[NSString class]])
+        {
+            return ((NSString *)numValue).doubleValue;
+        }
+        else
+        {
+        }
+        
+    }
+    return 0.0;
+}
+
 - (id)safeObjectForKey:(NSString *)strKey
 {
     if (![self isKindOfClass:[NSDictionary class]] || ((NSDictionary *)self).count == 0)
