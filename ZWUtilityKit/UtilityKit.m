@@ -43,6 +43,32 @@ NSString *stringForBool(BOOL bValue)
         return @"NO";
 }
 
+NSString *stringForDate(NSDate *date, NSString *strDateFormat)
+{
+    if (date == nil)
+        return @"";
+    if (strDateFormat.length == 0)
+        strDateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSDateFormatter *fmtDate = [[NSDateFormatter alloc] init];
+    fmtDate.dateFormat = strDateFormat;
+    return [fmtDate stringFromDate:date];
+}
+
+NSDate *dateFromString(NSString *strDate)
+{
+    if (strDate.length == 0)
+        return nil;
+    NSString *strFmt = @"yyyy-MM-dd HH:mm:ss";
+    NSString *strDateFormat;
+    if (strDate.length > strFmt.length)
+        strDateFormat = strFmt;
+    else
+        strDateFormat = [strFmt substringToIndex:strDate.length - 1];
+    NSDateFormatter *fmtDate = [[NSDateFormatter alloc] init];
+    fmtDate.dateFormat = strDateFormat;
+    return [fmtDate dateFromString:strDate];
+}
+
 UInt32 strVersionToIntVersion(NSString *strVersion)
 {
     NSArray *arrayComponentVersion = [strVersion componentsSeparatedByString:@"."];

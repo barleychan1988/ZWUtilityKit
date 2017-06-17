@@ -184,6 +184,10 @@ NSString *getSafeString(NSString *str);
 
 NSString *stringForBool(BOOL bValue);
 
+NSString *stringForDate(NSDate *date, NSString *strDateFormat);
+NSDate *dateFromString(NSString *strDate);
+
+
 /*
  *  @brief:将字符串版本号转换为整数版本号
  *

@@ -188,7 +188,7 @@ NSString *const strKeyDiffWidth = @"kTitleImageDiffWidth";
 {
     objc_setAssociatedObject(self, &strKeyTitleStyle, [NSNumber numberWithInt:titleStyle], OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(self, &strKeyDiffWidth, [NSNumber numberWithFloat:fIndent], OBJC_ASSOCIATION_ASSIGN);
-    
+    [self removeConstraints:self.constraints];
     switch (titleStyle)
     {
         case UIButtonTitleStyleUnder://标题在下边，图片在上边

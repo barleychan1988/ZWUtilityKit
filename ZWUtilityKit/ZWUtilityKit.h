@@ -17,6 +17,7 @@
 
 #import "NSString+DocumentPath.h"
 #import "UIButton+Action.h"
+#import "UIButton+TitleStyle.h"
 #import "UIView+AddLine.h"
 #import "Dictionary+SafeValue.h"
 #import "NSObject+Block.h"

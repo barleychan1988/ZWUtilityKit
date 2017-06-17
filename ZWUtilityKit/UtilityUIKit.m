@@ -39,6 +39,35 @@ CGSize getSizeForLabel(NSString *str,UIFont *font, NSLineBreakMode lineBreadMode
     return CGSizeZero;
 }
 
+CGSize getSizeForLabelText(NSString *str,UIFont *font, CGSize size)
+{
+    if (size.width == 0 && size.height == 0)
+    {
+        size = CGSizeMake(1000, 1000);
+    }
+    if (IOS7)
+    {
+        CGRect expectedFrame = [str boundingRectWithSize:size
+                                                 options:NSStringDrawingUsesLineFragmentOrigin
+                                              attributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          font, NSFontAttributeName,
+                                                          nil]
+                                                 context:nil];
+        expectedFrame.size.width = ceil(expectedFrame.size.width);
+        expectedFrame.size.height = ceil(expectedFrame.size.height);
+        return expectedFrame.size;
+    }
+    else
+    {
+#ifndef __IPHONE_7_0
+        return [str sizeWithFont:font
+               constrainedToSize:size
+                   lineBreakMode:lineBreadMode];
+#endif
+    }
+    return CGSizeZero;
+}
+
 #pragma mark - Resources
 
 NSBundle * bundleResource(NSString *strBundleName)

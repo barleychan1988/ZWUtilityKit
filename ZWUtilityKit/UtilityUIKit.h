@@ -26,6 +26,7 @@
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 CGSize getSizeForLabel(NSString *str,UIFont *font, NSLineBreakMode lineBreadMode, CGSize size) NS_AVAILABLE_IOS(7_0);
+CGSize getSizeForLabelText(NSString *str,UIFont *font, CGSize size);
 
 #pragma mark - Resources
 

@@ -7,19 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-UIKIT_EXTERN  NSString *_Nonnull const ZWSeperatorLineCellID;
-/*
- *  @brief： 分割线管理cell
- */
-@interface ZWSeperatorLineCell : UITableViewCell
-
-- (void)showTopSeparatorLine:(BOOL)bShow color:(nullable UIColor *)color;
-- (void)showTopSeparatorLine:(BOOL)bShow color:(nullable UIColor *)color indent:(CGFloat)fIndent;
-- (void)showBottomSeparatorLine:(BOOL)bShow color:(nullable UIColor *)color;
-- (void)showBottomSeparatorLine:(BOOL)bShow color:(nullable UIColor *)color indent:(CGFloat)fIndent;
-
-@end
+#import "ZWSeperatorLineCell.h"
 
 /*
  *  @brief：左边是否显示红色*以表明是否必填
@@ -49,6 +37,8 @@ typedef NS_ENUM(NSInteger, VerticalAlignment)
 UIKIT_EXTERN NSString *_Nonnull const ZWLabelTipCellID;
 
 @interface ZWLabelTipCell : ZWSeperatorLineCell
+
+@property (nonatomic, assign)UIEdgeInsets edgeInsetContent;//
 
 @property (nonatomic, retain, readonly, nullable)UILabel *labelTip;
 @property (nonatomic, assign)VerticalAlignment alignmentTipVertical;

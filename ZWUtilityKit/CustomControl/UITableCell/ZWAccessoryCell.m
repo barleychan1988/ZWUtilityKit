@@ -7,7 +7,6 @@
 //
 
 #import "ZWAccessoryCell.h"
-#import "Masonry.h"
 
 @interface ZWAccessoryCell ()
 {
@@ -16,6 +15,8 @@
 @end
 
 @implementation ZWAccessoryCell
+
+@synthesize accessoryView = m_imageViewAccessory;
 
 - (void)showAccessory:(BOOL)bShow image:(nullable UIImage *)image
 {

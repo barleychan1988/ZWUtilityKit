@@ -7,78 +7,7 @@
 //
 
 #import "ZWTableViewCell.h"
-#import "UIView+AddLine.h"
 #import "UtilityUIKit.h"
-
-@interface ZWSeperatorLineCell()
-{
-    __weak UIView *m_viewTopLine;
-    __weak UIView *m_viewBottomLine;
-}
-@end
-
-NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
-
-@implementation ZWSeperatorLineCell
-
-- (void)showTopSeparatorLine:(BOOL)bShow color:(UIColor *)color
-{
-    if (color == nil)
-        color = [self defaultSeperatorLineColor];
-    if (bShow)
-    {
-        if (m_viewTopLine.superview == nil)
-            m_viewTopLine = [self addTopUnitPixLine2:color];
-    }
-    else
-        [m_viewTopLine removeFromSuperview];
-}
-
-- (void)showTopSeparatorLine:(BOOL)bShow color:(UIColor *)color indent:(CGFloat)fIndent
-{
-    if (color == nil)
-        color = [self defaultSeperatorLineColor];
-    if (bShow)
-    {
-        if (m_viewTopLine.superview == nil)
-            m_viewTopLine = [self addTopUnitPixLine2:color indent:fIndent];
-    }
-    else
-        [m_viewTopLine removeFromSuperview];
-}
-
-- (void)showBottomSeparatorLine:(BOOL)bShow color:(UIColor *)color
-{
-    if (color == nil)
-        color = [self defaultSeperatorLineColor];
-    if (bShow)
-    {
-        if (m_viewBottomLine.superview == nil)
-            m_viewBottomLine = [self addBottomUnitPixLine2:color];
-    }
-    else
-        [m_viewBottomLine removeFromSuperview];
-}
-
-- (void)showBottomSeparatorLine:(BOOL)bShow color:(UIColor *)color indent:(CGFloat)fIndent
-{
-    if (color == nil)
-        color = [self defaultSeperatorLineColor];
-    if (bShow)
-    {
-        if (m_viewBottomLine.superview == nil)
-            m_viewBottomLine = [self addBottomUnitPixLine2:color indent:fIndent];
-    }
-    else
-        [m_viewBottomLine removeFromSuperview];
-}
-
-- (UIColor *)defaultSeperatorLineColor
-{
-    return [UIColor colorWithRed:(221)/255.0f green:(221)/255.0f blue:(221)/255.0f alpha:1];
-}
-
-@end
 
 #pragma mark - 
 
@@ -239,19 +168,33 @@ NSString *const ZWLabelTipCellID = @"ZWLabelTipCellID";
 
 - (void)initSubviews
 {
+    self.edgeInsetContent = UIEdgeInsetsMake(0, 15, 0, 15);
     UILabel *l = [[UILabel alloc] init];
     [self.contentView addSubview:l];
     _labelTip = l;
+}
+
+- (void)setEdgeInsetContent:(UIEdgeInsets)edgeContent
+{
+    _edgeInsetContent = edgeContent;
+    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.contentView removeConstraints:self.contentView.constraints];
+    
+    NSLayoutConstraint *layoutConst = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:edgeContent.left];
+    [self addConstraint:layoutConst];
+    layoutConst = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:-edgeContent.right];
+    [self addConstraint:layoutConst];
+    layoutConst = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:edgeContent.top];
+    [self addConstraint:layoutConst];
+    layoutConst = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:-edgeContent.bottom];
+    [self addConstraint:layoutConst];
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
-    CGRect frame = CGRectInset(self.bounds, 15, 0);
-    self.contentView.frame = frame;
-    
-    frame = self.contentView.bounds;
+    CGRect frame = self.contentView.bounds;
     if (_fWidthTip < 10)
     {
         CGFloat fWidth = getSizeForLabel(_labelTip.text, _labelTip.font, NSLineBreakByWordWrapping, CGSizeZero).width;

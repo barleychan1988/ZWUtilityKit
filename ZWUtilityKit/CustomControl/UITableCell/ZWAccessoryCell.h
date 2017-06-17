@@ -10,6 +10,8 @@
 
 @interface ZWAccessoryCell : ZWSeperatorLineCell
 
+@property (nonatomic, retain, readonly)UIView *accessoryView;
+
 - (void)showAccessory:(BOOL)bShow image:(nullable UIImage *)image;
 
 @end

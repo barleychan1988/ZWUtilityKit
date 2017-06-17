@@ -20,6 +20,34 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 
 @implementation ZWSeperatorLineCell
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    // Initialization code
+    [self initValues];
+}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self)
+        [self initValues];
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+        [self initValues];
+    return self;
+}
+
+- (void)initValues
+{
+    _contentInset = UIEdgeInsetsZero;
+}
+
 - (void)showTopSeparatorLine:(BOOL)bShow color:(UIColor *)color
 {
     if (color == nil)
@@ -75,15 +103,13 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    if (!UIEdgeInsetsEqualToEdgeInsets(_contentInset, UIEdgeInsetsZero))
-    {
-        CGRect frame = self.bounds;
-        frame.origin.x = _contentInset.left;
-        frame.origin.y = _contentInset.top;
-        frame.size.width -= (_contentInset.left + _contentInset.right);
-        frame.size.height -= (_contentInset.top + _contentInset.bottom);
-        self.contentView.frame = frame;
-    }
+    
+    CGRect frame = self.bounds;
+    frame.origin.x += _contentInset.left;
+    frame.origin.y += _contentInset.top;
+    frame.size.width -= (_contentInset.left + _contentInset.right);
+    frame.size.height -= (_contentInset.top + _contentInset.bottom);
+    self.contentView.frame = frame;
 }
 
 - (UIColor *)defaultSeperatorLineColor
