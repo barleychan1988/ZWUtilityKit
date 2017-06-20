@@ -136,13 +136,15 @@ static ZWLocationAuthor * g_LocalAuthor;
         }];
         [sheet addAction:cancelAction];
         UIAlertAction *actionSetting = [UIAlertAction actionWithTitle:@"设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            _bIsAlerting = NO;
             //定位服务设置界面
-            NSString *strSettingUrl;
-            if ([CLLocationManager locationServicesEnabled])
+            NSString *strSettingUrl = @"prefs:root=LOCATION_SERVICES";
+            BOOL bRet = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:strSettingUrl]];
+            if (!bRet)
+            {
                 strSettingUrl = UIApplicationOpenSettingsURLString;
-            else
-                strSettingUrl = @"prefs:root=LOCATION_SERVICES";
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:strSettingUrl]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:strSettingUrl]];
+            }
         }];
         [sheet addAction:actionSetting];
         dispatch_async(dispatch_get_main_queue(), ^{
