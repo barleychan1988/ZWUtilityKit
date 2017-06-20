@@ -38,8 +38,6 @@ UIKIT_EXTERN NSString *_Nonnull const ZWLabelTipCellID;
 
 @interface ZWLabelTipCell : ZWSeperatorLineCell
 
-@property (nonatomic, assign)UIEdgeInsets edgeInsetContent;//
-
 @property (nonatomic, retain, readonly, nullable)UILabel *labelTip;
 @property (nonatomic, assign)VerticalAlignment alignmentTipVertical;
 @property (nonatomic, assign)CGFloat fWidthTip;

@@ -168,26 +168,9 @@ NSString *const ZWLabelTipCellID = @"ZWLabelTipCellID";
 
 - (void)initSubviews
 {
-    self.edgeInsetContent = UIEdgeInsetsMake(0, 15, 0, 15);
     UILabel *l = [[UILabel alloc] init];
     [self.contentView addSubview:l];
     _labelTip = l;
-}
-
-- (void)setEdgeInsetContent:(UIEdgeInsets)edgeContent
-{
-    _edgeInsetContent = edgeContent;
-    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.contentView removeConstraints:self.contentView.constraints];
-    
-    NSLayoutConstraint *layoutConst = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:edgeContent.left];
-    [self addConstraint:layoutConst];
-    layoutConst = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:-edgeContent.right];
-    [self addConstraint:layoutConst];
-    layoutConst = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:edgeContent.top];
-    [self addConstraint:layoutConst];
-    layoutConst = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:-edgeContent.bottom];
-    [self addConstraint:layoutConst];
 }
 
 - (void)layoutSubviews

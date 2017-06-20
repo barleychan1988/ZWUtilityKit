@@ -100,6 +100,12 @@ NSString *const ZWIconLabelCellID = @"ZWIconLabelCellID";
     [self updateLayout];
 }
 
+- (void)showAccessory:(BOOL)bShow image:(UIImage *)image
+{
+    [super showAccessory:bShow image:image];
+    [self updateLayout];
+}
+
 - (void)updateLayout
 {
     UIImageView *imageViewAccessory = self.accessoryView;
@@ -268,8 +274,8 @@ NSString *const ZWIconLLCellID = @"ZWIconLLCellID";
             make.bottom.equalTo(self.contentView);
         };
     }
-    [labelText mas_remakeConstraints:blockText];
     [labelDetail mas_remakeConstraints:blockDetailText];
+    [labelText mas_remakeConstraints:blockText];
 }
 
 @end
@@ -295,7 +301,7 @@ NSString *const ZWIconLabelTFCellID = @"ZWIconLableTFCellID";
         make.right.equalTo(self.contentView);
         make.top.equalTo(self.contentView);
         make.bottom.equalTo(self.contentView);
-        make.left.equalTo(self.textLabel);
+        make.left.equalTo(self.textLabel.mas_right);
     }];
 }
 
@@ -307,6 +313,7 @@ NSString *const ZWIconLabelTFCellID = @"ZWIconLableTFCellID";
     
     UILabel *labelDetail = _detailTextField;
     UILabel *labelText = self.textLabel;
+    CGFloat fWidthText = getSizeForLabelText(labelText.text, labelText.font, CGSizeZero).width;
     
     BlockObject blockIcon;
     BlockObject blockText;
@@ -316,7 +323,8 @@ NSString *const ZWIconLabelTFCellID = @"ZWIconLableTFCellID";
     {
         blockDetailText = ^(MASConstraintMaker *make){
             make.left.equalTo(labelText.mas_right);
-            make.width.equalTo(labelText.mas_width);
+            if (fWidthText == 0)
+                make.width.equalTo(labelText.mas_width);
             make.right.equalTo(self.contentView).offset(-fWidthDiff);
             
             make.top.equalTo(self.contentView);
@@ -327,7 +335,8 @@ NSString *const ZWIconLabelTFCellID = @"ZWIconLableTFCellID";
     {
         blockDetailText = ^(MASConstraintMaker *make){
             make.left.equalTo(labelText.mas_right);
-            make.width.equalTo(labelText.mas_width);
+            if (fWidthText == 0)
+                make.width.equalTo(labelText.mas_width);
             make.right.equalTo(self.contentView);
             
             make.top.equalTo(self.contentView);
@@ -348,7 +357,10 @@ NSString *const ZWIconLabelTFCellID = @"ZWIconLableTFCellID";
         blockText = ^(MASConstraintMaker *make) {
             make.left.equalTo(imageViewIcon.mas_right).offset(fWidthDiff);
             make.right.equalTo(labelDetail.mas_left);
-            make.width.equalTo(labelDetail.mas_width);
+            if (fWidthText == 0)
+                make.width.equalTo(labelDetail.mas_width);
+            else
+                make.width.mas_equalTo(fWidthText);
             
             make.top.equalTo(self.contentView);
             make.bottom.equalTo(self.contentView);
@@ -359,14 +371,17 @@ NSString *const ZWIconLabelTFCellID = @"ZWIconLableTFCellID";
         blockText = ^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView);
             make.right.equalTo(labelDetail.mas_left);
-            make.width.equalTo(labelDetail.mas_width);
+            if (fWidthText == 0)
+                make.width.equalTo(labelDetail.mas_width);
+            else
+                make.width.mas_equalTo(fWidthText);
             
             make.top.equalTo(self.contentView);
             make.bottom.equalTo(self.contentView);
         };
     }
-    [labelText mas_remakeConstraints:blockText];
     [labelDetail mas_remakeConstraints:blockDetailText];
+    [labelText mas_remakeConstraints:blockText];
 }
 
 - (void)showAccessory:(BOOL)bShow image:(UIImage *)image

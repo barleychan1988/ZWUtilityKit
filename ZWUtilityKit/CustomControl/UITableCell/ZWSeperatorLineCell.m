@@ -45,7 +45,7 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 
 - (void)initValues
 {
-    _contentInset = UIEdgeInsetsZero;
+    _contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
 }
 
 - (void)showTopSeparatorLine:(BOOL)bShow color:(UIColor *)color
