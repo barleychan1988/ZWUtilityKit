@@ -25,3 +25,5 @@
 FOUNDATION_EXPORT void alertLocationAuthorization(BOOL bRepeat, BlockObject blockUpdateLocation);
 //用户位置是否可用
 BOOL isLocationEnable();
+//弹出设置定位窗
+void alertAutorizationDialog();

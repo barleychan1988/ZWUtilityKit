@@ -94,12 +94,26 @@ static ZWLocationAuthor * g_LocalAuthor;
     }
 }
 
+#pragma mark CLLocationManagerDelegate
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     m_locationCur = newLocation;
     if (_blockUpdateLocation)
     {
         _blockUpdateLocation(newLocation);
+    }
+    //do something else
+    if (!_bRepeat)
+        [ZWLocationAuthor releaseInstance];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    m_locationCur = locations.lastObject;
+    if (_blockUpdateLocation)
+    {
+        _blockUpdateLocation(m_locationCur);
     }
     //do something else
     if (!_bRepeat)
@@ -187,4 +201,11 @@ BOOL isLocationEnable()
         }
     }
     return bRet;
+}
+
+void alertAutorizationDialog()
+{
+    NSString *strAppName = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleNameKey];
+    NSString *strMsg = [NSString stringWithFormat:@"请到设置->隐私->定位服务中开启【%@】定位服务", strAppName];
+    [[ZWLocationAuthor getInstance] showAlertMsg:strMsg title:@"定位服务已关闭"];
 }
