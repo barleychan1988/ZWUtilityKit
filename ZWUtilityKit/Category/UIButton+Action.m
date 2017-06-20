@@ -22,12 +22,7 @@
 
 - (void)removeTarget:(id)target
 {
-    UIControlEvents controlEvents = [self allControlEvents];
-    NSArray *arrayActions = [self actionsForTarget:target forControlEvent:controlEvents];
-    for (NSString *strActionName in arrayActions)
-    {
-        [self removeTarget:target action:NSSelectorFromString(strActionName) forControlEvents:controlEvents];
-    }
+    [self removeTarget:target action:nil forControlEvents:UIControlEventAllEvents];
 }
 
 @end

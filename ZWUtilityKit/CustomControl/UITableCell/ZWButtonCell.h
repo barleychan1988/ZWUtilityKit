@@ -14,5 +14,6 @@ UIKIT_EXTERN NSString *const ZWButtonCellID;
 
 @property (nonatomic, retain, readonly)UIButton *btn;
 - (void)setButtonInset:(UIEdgeInsets)separatorInset;
+- (void)addTarget:(nullable id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents;
 
 @end

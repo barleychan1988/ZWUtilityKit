@@ -62,4 +62,10 @@ NSString *const ZWButtonCellID = @"ZWButtonCellID";
     }];
 }
 
+- (void)addTarget:(nullable id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents
+{
+    [_btn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
+    [_btn addTarget:target action:action forControlEvents:controlEvents];
+}
+
 @end
