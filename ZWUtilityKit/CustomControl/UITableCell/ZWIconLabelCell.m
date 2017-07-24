@@ -251,7 +251,9 @@ NSString *const ZWIconLLCellID = @"ZWIconLLCellID";
         blockText = ^(MASConstraintMaker *make) {
             make.left.equalTo(imageViewIcon.mas_right).offset(fWidthDiff);
             make.right.equalTo(labelDetail.mas_left);
-            if (fWidthText == 0)
+            if (self.fTextWidth > fWidthText)
+                make.width.mas_equalTo(self.fTextWidth);
+            else if (fWidthText == 0)
                 make.width.equalTo(labelDetail.mas_width);
             else
                 make.width.mas_equalTo(fWidthText);
@@ -265,7 +267,9 @@ NSString *const ZWIconLLCellID = @"ZWIconLLCellID";
         blockText = ^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView);
             make.right.equalTo(labelDetail.mas_left);
-            if (fWidthText == 0)
+            if (self.fTextWidth > fWidthText)
+                make.width.mas_equalTo(self.fTextWidth);
+            else if (fWidthText == 0)
                 make.width.equalTo(labelDetail.mas_width);
             else
                 make.width.mas_equalTo(fWidthText);
@@ -357,7 +361,9 @@ NSString *const ZWIconLabelTFCellID = @"ZWIconLableTFCellID";
         blockText = ^(MASConstraintMaker *make) {
             make.left.equalTo(imageViewIcon.mas_right).offset(fWidthDiff);
             make.right.equalTo(labelDetail.mas_left);
-            if (fWidthText == 0)
+            if (self.fTextWidth > fWidthText)
+                make.width.mas_equalTo(self.fTextWidth);
+            else if (fWidthText == 0)
                 make.width.equalTo(labelDetail.mas_width);
             else
                 make.width.mas_equalTo(fWidthText);
@@ -371,7 +377,9 @@ NSString *const ZWIconLabelTFCellID = @"ZWIconLableTFCellID";
         blockText = ^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView);
             make.right.equalTo(labelDetail.mas_left);
-            if (fWidthText == 0)
+            if (self.fTextWidth > fWidthText)
+                make.width.mas_equalTo(self.fTextWidth);
+            else if (fWidthText == 0)
                 make.width.equalTo(labelDetail.mas_width);
             else
                 make.width.mas_equalTo(fWidthText);

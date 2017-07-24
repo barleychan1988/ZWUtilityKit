@@ -18,6 +18,7 @@
 #import "NSString+DocumentPath.h"
 #import "UIButton+Action.h"
 #import "UIButton+TitleStyle.h"
+#import "UITextField+LeftPadding.h"
 #import "UIView+AddLine.h"
 #import "Dictionary+SafeValue.h"
 #import "NSObject+Block.h"
@@ -49,3 +50,4 @@ typedef void (^BlockBoolStrObject)(BOOL, NSString *, id);
 typedef void (^BlockVoid)();
 typedef void (^BlockBoolObject)(BOOL bFlage, id object);
 typedef void (^BlockObject)(id object);
+typedef void (^BlockObjectObject)(id object1, id object2);

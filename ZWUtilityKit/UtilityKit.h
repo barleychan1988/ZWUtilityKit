@@ -186,7 +186,7 @@ NSString *stringForBool(BOOL bValue);
 
 NSString *stringForDate(NSDate *date, NSString *strDateFormat);
 NSDate *dateFromString(NSString *strDate);
-
+NSDate *dateFromStringWithFormate(NSString *strDate, NSString *strDateFormat);
 
 /*
  *  @brief:将字符串版本号转换为整数版本号

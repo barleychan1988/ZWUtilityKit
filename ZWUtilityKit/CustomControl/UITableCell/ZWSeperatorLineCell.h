@@ -21,5 +21,7 @@ UIKIT_EXTERN  NSString *_Nonnull const ZWSeperatorLineCellID;
 - (void)showBottomSeparatorLine:(BOOL)bShow color:(nullable UIColor *)color indent:(CGFloat)fIndent;
 
 @property (nonatomic, assign)UIEdgeInsets contentInset;
+@property (nonatomic, assign)BOOL isSelectedBackgroundSameWithContent; //default is YES.
+//@property (nonatomic, retain, readonly)UIView *contentView;
 
 @end

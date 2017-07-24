@@ -82,3 +82,5 @@ NSString *getSerialNumberFromString(NSString *strSource, NSInteger nMinLenth, NS
  *  由数字、26个英文字母或下划线组成的字符串
  */
 BOOL isRegularAccount(NSString *str);
+
+BOOL isValidBankCardNo(NSString *cardNo);

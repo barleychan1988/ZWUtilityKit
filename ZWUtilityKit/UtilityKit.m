@@ -69,6 +69,17 @@ NSDate *dateFromString(NSString *strDate)
     return [fmtDate dateFromString:strDate];
 }
 
+NSDate *dateFromStringWithFormate(NSString *strDate, NSString *strDateFormat)
+{
+    if (strDate.length == 0)
+        return nil;
+    if (strDateFormat.length == 0)
+        return nil;
+    NSDateFormatter *fmtDate = [[NSDateFormatter alloc] init];
+    fmtDate.dateFormat = strDateFormat;
+    return [fmtDate dateFromString:strDate];
+}
+
 UInt32 strVersionToIntVersion(NSString *strVersion)
 {
     NSArray *arrayComponentVersion = [strVersion componentsSeparatedByString:@"."];

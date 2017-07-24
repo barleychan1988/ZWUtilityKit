@@ -18,6 +18,7 @@
 
 @end
 
+UIKIT_EXTERN  NSString *_Nonnull const kMsgLocationUpdate;
 /*
  *  @bief:使得系统弹出“准许访问位置”授权确认
  *      用这个方法，plist中需要NSLocationAlwaysUsageDescription 和 NSLocationWhenInUseUsageDescription

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '1.0.0'
+  s.version          = '2.0.0'
   s.summary          = '源码版本 从简化版做起经常用到的一些公共代码.'
 
 # This description is used to generate tags and improve search results.
@@ -25,14 +25,15 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Eadkennychan' => 'Eadkennychan@gmail.com' }
-  s.source           = { :git => 'https://github.com/EadkennyChan/ZWUtility-supercode.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/EadkennyChan/ZWUtilityKit.git', :tag => s.version.to_s }
   s.social_media_url = 'https://github.com/EadkennyChan'
   s.requires_arc = true
 
     s.ios.deployment_target = '6.0'
-    s.source_files = 'ZWUtilityKit/Network/*.{h,m}'
+    s.source_files = 'ZWUtilityKit/**/*.{h,m}'
     s.dependency 'Reachability', '~> 3.2'
     s.dependency 'JSONKit-ZW', '~>2.0.4'
+    s.dependency 'Masonry', '~>1.0.2'
     s.xcconfig = {
         'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
         #'OTHER_LDFLAGS' => '"$(inherited)" "-lxml2" "-objc"'

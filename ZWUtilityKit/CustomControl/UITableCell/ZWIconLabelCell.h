@@ -19,6 +19,7 @@ UIKIT_EXTERN  NSString *_Nonnull const ZWIconLabelCellID;
 @property (nonatomic, retain)UIImage *icon;
 @property (nonatomic, readonly, retain)UILabel *textLabel;
 @property (nonatomic, retain)NSString *text;
+@property (nonatomic, assign)CGFloat fTextWidth;
 @property (nonatomic, assign)CGFloat fWidthDiff; //图标和文字之间的间距
 
 @end

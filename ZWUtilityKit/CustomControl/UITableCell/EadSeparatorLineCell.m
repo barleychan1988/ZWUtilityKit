@@ -1,24 +1,25 @@
 //
-//  ZWSeperatorLineCell.m
-//  ZWUtilityKit
+//  EadSeparatorLineCell.m
+//  Pods
 //
-//  Created by EadkennyChan on 17/5/29.
-//  Copyright © 2017年 zwchen. All rights reserved.
+//  Created by zwchen on 2017/6/22.
+//
 //
 
-#import "ZWSeperatorLineCell.h"
+#import "EadSeparatorLineCell.h"
 #import "UIView+AddLine.h"
+#import "Masonry.h"
 
-@interface ZWSeperatorLineCell()
+@interface EadSeparatorLineCell()
 {
     __weak UIView *m_viewTopLine;
     __weak UIView *m_viewBottomLine;
 }
 @end
 
-NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
+NSString *const EadSeparatorLineCellID = @"EadSeparatorLineCellID";
 
-@implementation ZWSeperatorLineCell
+@implementation EadSeparatorLineCell
 
 - (void)awakeFromNib
 {
@@ -46,8 +47,34 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 - (void)initValues
 {
     _contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
-    _isSelectedBackgroundSameWithContent = YES;
 }
+
+#pragma mark - property
+
+@synthesize mainView = _mainView;
+
+- (UIView *)mainView
+{
+    if (_mainView == nil)
+    {
+        _mainView = [[UIView alloc] init];
+        [self.contentView addSubview:_mainView];
+        [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView).with.insets(_contentInset);
+        }];
+    }
+    return _mainView;
+}
+
+- (void)setContentInset:(UIEdgeInsets)contentInset
+{
+    _contentInset = contentInset;
+    [_mainView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.contentView).with.insets(contentInset);
+    }];
+}
+
+#pragma mark - method
 
 - (void)showTopSeparatorLine:(BOOL)bShow color:(UIColor *)color
 {
@@ -99,44 +126,6 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
     }
     else
         [m_viewBottomLine removeFromSuperview];
-}
-
-/*
-@synthesize contentView = _contentView;
-
-- (void)setContentInset:(UIEdgeInsets)contentInset
-{
-    _contentInset = contentInset;
-    self.contentView;
-}
-
-- (UIView *)contentView
-{
-    if (_contentView == nil)
-    {
-        _contentView = [[UIView alloc] init];
-        [[super contentView] addSubview:_contentView];
-    }
-    return _contentView;
-}
-*/
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-//    CGRect frame = super.contentView.bounds;
-    CGRect frame = self.bounds;
-    frame.origin.x += _contentInset.left;
-    frame.origin.y += _contentInset.top;
-    frame.size.width -= (_contentInset.left + _contentInset.right);
-    frame.size.height -= (_contentInset.top + _contentInset.bottom);
-//    _contentView.frame = frame;
-    self.contentView.frame = frame;
-    if (_isSelectedBackgroundSameWithContent)
-        self.selectedBackgroundView.frame = frame;
-    else
-        self.selectedBackgroundView.frame = self.bounds;
 }
 
 - (UIColor *)defaultSeperatorLineColor

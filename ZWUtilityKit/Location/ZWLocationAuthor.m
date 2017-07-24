@@ -20,6 +20,8 @@
 
 @implementation ZWLocationAuthor
 
+NSString *const kMsgLocationUpdate = @"kMsgLocationUpdate";
+
 static ZWLocationAuthor * g_LocalAuthor;
 
 + (ZWLocationAuthor *)getInstance
@@ -104,16 +106,25 @@ static ZWLocationAuthor * g_LocalAuthor;
         _blockUpdateLocation(newLocation);
     }
     //do something else
+    if (oldLocation == nil && newLocation)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kMsgLocationUpdate object:newLocation];
+    }
     if (!_bRepeat)
         [ZWLocationAuthor releaseInstance];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
+    CLLocation *old = m_locationCur;
     m_locationCur = locations.lastObject;
     if (_blockUpdateLocation)
     {
         _blockUpdateLocation(m_locationCur);
+    }
+    if (old == nil && m_locationCur != nil)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kMsgLocationUpdate object:m_locationCur];
     }
     //do something else
     if (!_bRepeat)
