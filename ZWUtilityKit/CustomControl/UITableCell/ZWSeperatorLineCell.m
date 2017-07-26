@@ -53,52 +53,44 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 {
     if (color == nil)
         color = [self defaultSeperatorLineColor];
+    [m_viewTopLine removeFromSuperview];
     if (bShow)
     {
-        if (m_viewTopLine.superview == nil)
-            m_viewTopLine = [self addTopUnitPixLine2:color];
+        m_viewTopLine = [self addTopUnitPixLine2:color];
     }
-    else
-        [m_viewTopLine removeFromSuperview];
 }
 
 - (void)showTopSeparatorLine:(BOOL)bShow color:(UIColor *)color indent:(CGFloat)fIndent
 {
     if (color == nil)
         color = [self defaultSeperatorLineColor];
+    [m_viewTopLine removeFromSuperview];
     if (bShow)
     {
-        if (m_viewTopLine.superview == nil)
-            m_viewTopLine = [self addTopUnitPixLine2:color indent:fIndent];
+        m_viewTopLine = [self addTopUnitPixLine2:color indent:fIndent];
     }
-    else
-        [m_viewTopLine removeFromSuperview];
 }
 
 - (void)showBottomSeparatorLine:(BOOL)bShow color:(UIColor *)color
 {
     if (color == nil)
         color = [self defaultSeperatorLineColor];
+    [m_viewBottomLine removeFromSuperview];
     if (bShow)
     {
-        if (m_viewBottomLine.superview == nil)
-            m_viewBottomLine = [self addBottomUnitPixLine2:color];
+        m_viewBottomLine = [self addBottomUnitPixLine2:color];
     }
-    else
-        [m_viewBottomLine removeFromSuperview];
 }
 
 - (void)showBottomSeparatorLine:(BOOL)bShow color:(UIColor *)color indent:(CGFloat)fIndent
 {
     if (color == nil)
         color = [self defaultSeperatorLineColor];
+    [m_viewBottomLine removeFromSuperview];
     if (bShow)
     {
-        if (m_viewBottomLine.superview == nil)
-            m_viewBottomLine = [self addBottomUnitPixLine2:color indent:fIndent];
+        m_viewBottomLine = [self addBottomUnitPixLine2:color indent:fIndent];
     }
-    else
-        [m_viewBottomLine removeFromSuperview];
 }
 
 /*
