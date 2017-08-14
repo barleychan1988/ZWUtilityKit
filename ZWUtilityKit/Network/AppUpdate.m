@@ -125,7 +125,7 @@
                 {
                     NSDictionary *dicResult = [arrayResult objectAtIndex:0];
                     strNewVersion = [dicResult objectForKey:@"version"];
-                    strAppUrl = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%@", APP_ID];
+                    strAppUrl = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%@", m_strAppID];
                 }
             }
             else
