@@ -17,6 +17,7 @@
     __strong id<updateDelegate> m_delegate;
     
     BOOL m_bStore;
+    NSString *m_strAppID;
 }
 @end
 
@@ -25,6 +26,7 @@
 -(void)checkUpdateAtStore:(NSString *)strAppID delegate:(id<updateDelegate>)delegate
 {
     m_bStore = YES;
+    m_strAppID = strAppID;
     m_delegate = delegate;
     
     NSDictionary *dicParam = [NSDictionary dictionaryWithObjectsAndKeys:strAppID, @"id", nil];
@@ -115,6 +117,7 @@
             UInt32 unCurVersion = [self strVersionToIntVersion:strCurVersion];
             NSString *strNewVersion = @"";
             NSString *strAppUrl = nil;
+            NSString *strMsg;
             if (m_bStore)
             {
                 NSArray *arrayResult = [dicRet objectForKey:@"results"];
@@ -122,16 +125,24 @@
                 {
                     NSDictionary *dicResult = [arrayResult objectAtIndex:0];
                     strNewVersion = [dicResult objectForKey:@"version"];
+                    strAppUrl = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%@", APP_ID];
                 }
             }
             else
             {
                 strNewVersion = [self parseWebsiteData:dicRet appUrl:&strAppUrl];
+                
+                NSArray *arrayResult = [dicRet objectForKey:@"PageData"];
+                NSDictionary *dicResult = [arrayResult objectAtIndex:0];
+                strMsg = [dicResult objectForKey:@"Remark"];
             }
             unNewVersion = [self strVersionToIntVersion:strNewVersion];
             if (unNewVersion > unCurVersion)
             {
-                [m_delegate updateAppToVersion:strNewVersion hasNewVersion:YES appUrl:strAppUrl];
+                if (strMsg.length > 0)
+                    [m_delegate updateAppToVersion:strNewVersion hasNewVersion:YES appUrl:strAppUrl message:strMsg];
+                else
+                    [m_delegate updateAppToVersion:strNewVersion hasNewVersion:YES appUrl:strAppUrl];
                 m_delegate = nil;
                 m_bStore = NO;
                 return;

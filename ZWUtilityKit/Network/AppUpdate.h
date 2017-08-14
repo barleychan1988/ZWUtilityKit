@@ -20,6 +20,7 @@
 
 @protocol updateDelegate <NSObject>
 
+@optional
 /*
  *  @brief:检测版本完成时,调用代理方法
  *  @param:
@@ -27,7 +28,8 @@
  *      bHasNewVersion：是否有新版本标志
  *      strAppUrl：App下载地址(企业版本升级时需要)
  */
--(void)updateAppToVersion:(NSString *)strLastestVersion hasNewVersion:(BOOL)bHasNewVersion appUrl:(NSString *)strAppUrl;
+- (void)updateAppToVersion:(NSString *)strLastestVersion hasNewVersion:(BOOL)bHasNewVersion appUrl:(NSString *)strAppUrl;
+- (void)updateAppToVersion:(NSString *)strLastestVersion hasNewVersion:(BOOL)bHasNewVersion appUrl:(NSString *)strAppUrl message:(NSString *)strMsg;
 
 @end
 
