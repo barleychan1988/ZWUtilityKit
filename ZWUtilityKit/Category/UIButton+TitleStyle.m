@@ -130,8 +130,9 @@
             self.imageView.frame = frame;
             
             frame.origin.y += (frame.size.height + fDiffWidth);
-            frame.size = self.titleLabel.frame.size;
-            frame.origin.x = (self.bounds.size.width - frame.size.width) / 2;
+            frame.size.height = self.titleLabel.frame.size.height;
+            frame.origin.x = self.bounds.origin.x;
+            frame.size.width = self.bounds.size.width;
             self.titleLabel.frame = frame;
         }
             break;
@@ -143,8 +144,9 @@
             self.titleLabel.frame = frame;
             
             frame.origin.y += (frame.size.height + fDiffWidth);
-            frame.size = self.imageView.frame.size;
-            frame.origin.x = (self.bounds.size.width - frame.size.width) / 2;
+            frame.size.height = self.titleLabel.frame.size.height;
+            frame.origin.x = self.bounds.origin.x;
+            frame.size.width = self.bounds.size.width;
             self.imageView.frame = frame;
         }
             break;
@@ -196,6 +198,7 @@ NSString *const strKeyDiffWidth = @"kTitleImageDiffWidth";
         {
             self.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
             self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+            self.titleLabel.textAlignment = NSTextAlignmentCenter;
         }
         break;
         case UIButtonTitleStyleLeft://标题在左边，图片在右边
