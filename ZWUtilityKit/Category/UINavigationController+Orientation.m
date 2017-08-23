@@ -7,6 +7,7 @@
 //
 
 #import "UINavigationController+Orientation.h"
+#import "ZWMacroDef.h"
 
 @implementation UINavigationController (Orientation)
 
