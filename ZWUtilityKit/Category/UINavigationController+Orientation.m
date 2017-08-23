@@ -26,3 +26,34 @@
 }
 
 @end
+
+@implementation UINavigationController (Background)
+
+- (void)setBackgroundImage:(UIImage *)image
+{
+    if (image == nil)
+        return;
+    UIImage *backgroundImage = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 20, 0)];
+    if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarPosition:barMetrics:)])
+    {
+        //if iOS 5.0 and later
+        //        [navController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+        [self.navigationBar setBackgroundImage:backgroundImage forBarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
+        if (IOS7)
+        {
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+        }
+    }
+    else
+    {
+        UIImageView *imageView = (UIImageView *)[self.navigationBar viewWithTag:10];
+        if (imageView == nil)
+        {
+            imageView = [[UIImageView alloc] initWithImage:backgroundImage];
+            [imageView setTag:10];
+            [self.navigationBar insertSubview:imageView atIndex:0];
+        }
+    }
+}
+
+@end

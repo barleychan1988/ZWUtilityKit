@@ -15,7 +15,6 @@
 		794BAF931A4D4974000ACD77 /* ZWLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 794BAF661A4D4974000ACD77 /* ZWLog.m */; };
 		794BAF991A4D4974000ACD77 /* UIViewController+Keybord.m in Sources */ = {isa = PBXBuildFile; fileRef = 794BAF741A4D4974000ACD77 /* UIViewController+Keybord.m */; };
 		794BAF9A1A4D4974000ACD77 /* UtilityUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 794BAF761A4D4974000ACD77 /* UtilityUIKit.m */; };
-		794BAF9C1A4D4974000ACD77 /* UINavigationController_Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 794BAF7D1A4D4974000ACD77 /* UINavigationController_Orientation.m */; };
 		794BAF9D1A4D4974000ACD77 /* TFIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 794BAF801A4D4974000ACD77 /* TFIndicatorView.m */; };
 		794BAF9E1A4D4974000ACD77 /* ZWIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 794BAF821A4D4974000ACD77 /* ZWIndicatorView.m */; };
 		794BAFAB1A4D4BBC000ACD77 /* UtilityKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 794BAF641A4D4974000ACD77 /* UtilityKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,7 +22,6 @@
 		794BAFB31A4D4BBC000ACD77 /* UtilityUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 794BAF751A4D4974000ACD77 /* UtilityUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794BAFB41A4D4BBC000ACD77 /* ZWLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 794BAF771A4D4974000ACD77 /* ZWLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794BAFB51A4D4BBC000ACD77 /* ZWUtilityKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 794BAF781A4D4974000ACD77 /* ZWUtilityKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		794BAFB71A4D4BBC000ACD77 /* UINavigationController_Orientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 794BAF7C1A4D4974000ACD77 /* UINavigationController_Orientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794BAFB81A4D4BBC000ACD77 /* TFIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 794BAF7F1A4D4974000ACD77 /* TFIndicatorView.h */; };
 		794BAFB91A4D4BBC000ACD77 /* ZWIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 794BAF811A4D4974000ACD77 /* ZWIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		79A46D7A1AA43AB800595026 /* UITableViewCell2.h in Headers */ = {isa = PBXBuildFile; fileRef = 79A46D781AA43AB800595026 /* UITableViewCell2.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -127,8 +125,6 @@
 		794BAF761A4D4974000ACD77 /* UtilityUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityUIKit.m; sourceTree = "<group>"; };
 		794BAF771A4D4974000ACD77 /* ZWLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWLog.h; sourceTree = "<group>"; };
 		794BAF781A4D4974000ACD77 /* ZWUtilityKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWUtilityKit.h; path = ZWUtilityKit/ZWUtilityKit.h; sourceTree = "<group>"; };
-		794BAF7C1A4D4974000ACD77 /* UINavigationController_Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINavigationController_Orientation.h; sourceTree = "<group>"; };
-		794BAF7D1A4D4974000ACD77 /* UINavigationController_Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINavigationController_Orientation.m; sourceTree = "<group>"; };
 		794BAF7F1A4D4974000ACD77 /* TFIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFIndicatorView.h; sourceTree = "<group>"; };
 		794BAF801A4D4974000ACD77 /* TFIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFIndicatorView.m; sourceTree = "<group>"; };
 		794BAF811A4D4974000ACD77 /* ZWIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWIndicatorView.h; sourceTree = "<group>"; };
@@ -295,8 +291,6 @@
 				C9B98F0B1AE11D14002DA92C /* UIView+Genie.m */,
 				D43D129C1CF57E5E0042514B /* Geometry+ZWExtension.h */,
 				D43D129D1CF57E5E0042514B /* Geometry+ZWExtension.m */,
-				794BAF7C1A4D4974000ACD77 /* UINavigationController_Orientation.h */,
-				794BAF7D1A4D4974000ACD77 /* UINavigationController_Orientation.m */,
 				794BAF7E1A4D4974000ACD77 /* ZWIndicator */,
 				794BAF481A4D4843000ACD77 /* Supporting Files */,
 			);
@@ -480,7 +474,6 @@
 				D4557B551D1BFA2D001EFEB9 /* Geometry+ZWExtension.h in Headers */,
 				794BAFB91A4D4BBC000ACD77 /* ZWIndicatorView.h in Headers */,
 				D46219011EDC760500D16E37 /* ZWButtonCell.h in Headers */,
-				794BAFB71A4D4BBC000ACD77 /* UINavigationController_Orientation.h in Headers */,
 				D466E1091D499DDD004D74BB /* ZWVertifyStringKit.h in Headers */,
 				791DECD71A5D38080014A7FD /* InputButton.h in Headers */,
 				D45A15141EC9C5F0000467A6 /* UIViewController+BarButtonItem.h in Headers */,
@@ -633,7 +626,6 @@
 				C91CCC3E1B677444006C0B42 /* UINavigationController+Animation.m in Sources */,
 				C9DAC1F31B6F1950001F2505 /* UIView+AddLine.m in Sources */,
 				794BAF991A4D4974000ACD77 /* UIViewController+Keybord.m in Sources */,
-				794BAF9C1A4D4974000ACD77 /* UINavigationController_Orientation.m in Sources */,
 				D46219061EDC760500D16E37 /* ZWTableViewCell.m in Sources */,
 				C9569F511B9EC8170076B25B /* UIButton+Action.m in Sources */,
 				D46219021EDC760500D16E37 /* ZWButtonCell.m in Sources */,

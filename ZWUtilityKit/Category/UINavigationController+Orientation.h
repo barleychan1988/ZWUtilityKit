@@ -17,3 +17,14 @@
 @interface UINavigationController (Orientation)
 
 @end
+
+@interface UINavigationController (Background)
+
+/*
+ * @brief: 设置导航栏的背景图片
+ * @prama: image:背景图片
+ *
+ */
+- (void)setBackgroundImage:(UIImage *)image;
+
+@end
