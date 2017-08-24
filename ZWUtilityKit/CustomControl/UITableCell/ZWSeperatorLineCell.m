@@ -8,6 +8,7 @@
 
 #import "ZWSeperatorLineCell.h"
 #import "UIView+AddLine.h"
+#import "Masonry.h"
 
 @interface ZWSeperatorLineCell()
 {
@@ -92,6 +93,144 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
         m_viewBottomLine = [self addBottomUnitPixLine2:color indent:fIndent];
     }
 }
+
+#pragma mark 支持高度设置
+
+- (void)showTopLineWithColor:(nullable UIColor *)color height:(CGFloat)fHeight
+{
+    __weak UIView *weakself = self;
+    [m_viewTopLine removeFromSuperview];
+    if (color == nil)
+        return;
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = color;
+    [self addSubview:m_viewTopLine = view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakself);
+        make.right.equalTo(weakself);
+        make.top.equalTo(weakself);
+        make.height.mas_equalTo(fHeight);
+    }];
+}
+- (void)showTopLineWithColor:(nullable UIColor *)color height:(CGFloat)fHeight indent:(CGFloat)fIndent
+{
+    __weak UIView *weakself = self;
+    [m_viewTopLine removeFromSuperview];
+    if (color == nil)
+        return;
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = color;
+    [self addSubview:m_viewTopLine = view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakself).offset(fIndent);
+        make.right.equalTo(weakself);
+        make.top.equalTo(weakself);
+        make.height.mas_equalTo(fHeight);
+    }];
+}
+- (void)showTopLineWithImage:(nonnull UIImage *)image height:(CGFloat)fHeight
+{
+    __weak UIView *weakself = self;
+    [m_viewTopLine removeFromSuperview];
+    if (image == nil)
+        return;
+    UIImageView *view = [[UIImageView alloc] initWithImage:image];
+    [self addSubview:m_viewTopLine = view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakself);
+        make.right.equalTo(weakself);
+        make.top.equalTo(weakself);
+        make.height.mas_equalTo(fHeight);
+    }];
+}
+- (void)showTopLineWithImage:(nonnull UIImage *)image height:(CGFloat)fHeight indent:(CGFloat)fIndent
+{
+    __weak UIView *weakself = self;
+    [m_viewTopLine removeFromSuperview];
+    if (image == nil)
+        return;
+    UIImageView *view = [[UIImageView alloc] initWithImage:image];
+    [self addSubview:m_viewTopLine = view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakself).offset(fIndent);
+        make.right.equalTo(weakself);
+        make.top.equalTo(weakself);
+        make.height.mas_equalTo(fHeight);
+    }];
+}
+- (void)hiddenTopLine
+{
+    [m_viewTopLine removeFromSuperview];
+    m_viewTopLine = nil;
+}
+- (void)showBottomLineWithColor:(nullable UIColor *)color height:(CGFloat)fHeight
+{
+    __weak UIView *weakself = self;
+    [m_viewBottomLine removeFromSuperview];
+    if (color == nil)
+        return;
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = color;
+    [self addSubview:m_viewBottomLine = view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakself);
+        make.right.equalTo(weakself);
+        make.bottom.equalTo(weakself);
+        make.height.mas_equalTo(fHeight);
+    }];
+}
+- (void)showBottomLineWithColor:(nullable UIColor *)color height:(CGFloat)fHeight indent:(CGFloat)fIndent
+{
+    __weak UIView *weakself = self;
+    [m_viewBottomLine removeFromSuperview];
+    if (color == nil)
+        return;
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = color;
+    [self addSubview:m_viewBottomLine = view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakself).offset(fIndent);
+        make.right.equalTo(weakself);
+        make.bottom.equalTo(weakself);
+        make.height.mas_equalTo(fHeight);
+    }];
+}
+- (void)showBottomLineWithImage:(nonnull UIImage *)image height:(CGFloat)fHeight
+{
+    __weak UIView *weakself = self;
+    [m_viewBottomLine removeFromSuperview];
+    if (image == nil)
+        return;
+    UIImageView *view = [[UIImageView alloc] initWithImage:image];
+    [self addSubview:m_viewBottomLine = view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakself);
+        make.right.equalTo(weakself);
+        make.bottom.equalTo(weakself);
+        make.height.mas_equalTo(fHeight);
+    }];
+}
+- (void)showBottomLineWithImage:(nonnull UIImage *)image height:(CGFloat)fHeight indent:(CGFloat)fIndent
+{
+    __weak UIView *weakself = self;
+    [m_viewBottomLine removeFromSuperview];
+    if (image == nil)
+        return;
+    UIImageView *view = [[UIImageView alloc] initWithImage:image];
+    [self addSubview:m_viewBottomLine = view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakself).offset(fIndent);
+        make.right.equalTo(weakself);
+        make.bottom.equalTo(weakself);
+        make.height.mas_equalTo(fHeight);
+    }];
+}
+- (void)hiddenBottomLine
+{
+    [m_viewBottomLine removeFromSuperview];
+    m_viewBottomLine = nil;
+}
+
 
 /*
 @synthesize contentView = _contentView;

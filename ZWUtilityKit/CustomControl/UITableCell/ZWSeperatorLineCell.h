@@ -20,6 +20,24 @@ UIKIT_EXTERN  NSString *_Nonnull const ZWSeperatorLineCellID;
 - (void)showBottomSeparatorLine:(BOOL)bShow color:(nullable UIColor *)color;
 - (void)showBottomSeparatorLine:(BOOL)bShow color:(nullable UIColor *)color indent:(CGFloat)fIndent;
 
+/*
+ *  @brief：显示顶部分割线
+ *  @param：
+ *      color ： 分割线颜色
+ *      fHeight : 高度
+ *      fIndent : 缩进
+ */
+- (void)showTopLineWithColor:(nullable UIColor *)color height:(CGFloat)fHeight;
+- (void)showTopLineWithColor:(nullable UIColor *)color height:(CGFloat)fHeight indent:(CGFloat)fIndent;
+- (void)showTopLineWithImage:(nonnull UIImage *)image height:(CGFloat)fHeight;
+- (void)showTopLineWithImage:(nonnull UIImage *)image height:(CGFloat)fHeight indent:(CGFloat)fIndent;
+- (void)hiddenTopLine;
+- (void)showBottomLineWithColor:(nullable UIColor *)color height:(CGFloat)fHeight;
+- (void)showBottomLineWithColor:(nullable UIColor *)color height:(CGFloat)fHeight indent:(CGFloat)fIndent;
+- (void)showBottomLineWithImage:(nonnull UIImage *)image height:(CGFloat)fHeight;
+- (void)showBottomLineWithImage:(nonnull UIImage *)image height:(CGFloat)fHeight indent:(CGFloat)fIndent;
+- (void)hiddenBottomLine;
+
 @property (nonatomic, assign)UIEdgeInsets contentInset;
 @property (nonatomic, assign)BOOL isSelectedBackgroundSameWithContent; //default is YES.
 //@property (nonatomic, retain, readonly)UIView *contentView;

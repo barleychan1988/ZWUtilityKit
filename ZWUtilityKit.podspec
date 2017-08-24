@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '2.0.7'
+  s.version          = '2.0.8'
   s.summary          = '源码版本 从简化版做起经常用到的一些公共代码.'
 
 # This description is used to generate tags and improve search results.
@@ -31,9 +31,9 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '6.0'
     s.source_files = 'ZWUtilityKit/**/*.{h,m}'
-    s.dependency 'Reachability', '~> 3.2'
-    s.dependency 'JSONKit-ZW', '~>2.0.4'
-    s.dependency 'Masonry', '~>1.0.2'
+    s.dependency 'Reachability'
+    s.dependency 'JSONKit-ZW'
+    s.dependency 'Masonry'
     s.xcconfig = {
         'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
         #'OTHER_LDFLAGS' => '"$(inherited)" "-lxml2" "-objc"'
