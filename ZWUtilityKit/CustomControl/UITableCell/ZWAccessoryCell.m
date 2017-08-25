@@ -25,6 +25,31 @@
     _fWidthRight = 15.0;
 }
 
+- (void)updateContentViewLayout
+{
+    UIEdgeInsets contentInset = self.contentInset;
+    __weak ZWSeperatorLineCell *weakobject = self;
+    __weak UIView *viewAccessory = m_imageViewAccessory;
+    if (m_imageViewAccessory.superview)
+    {
+        [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakobject).offset(contentInset.left);
+            make.right.equalTo(viewAccessory.mas_left).offset(-contentInset.right);
+            make.top.equalTo(weakobject).offset(contentInset.top);
+            make.bottom.equalTo(weakobject).offset(-contentInset.bottom);
+        }];
+    }
+    else
+    {
+        [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakobject).offset(contentInset.left);
+            make.right.equalTo(weakobject).offset(-contentInset.right);
+            make.top.equalTo(weakobject).offset(contentInset.top);
+            make.bottom.equalTo(weakobject).offset(-contentInset.bottom);
+        }];
+    }
+}
+
 - (void)showAccessory:(BOOL)bShow image:(nullable UIImage *)image
 {
     [m_imageViewAccessory removeFromSuperview];
@@ -37,6 +62,7 @@
         make.centerY.equalTo(self);
         make.size.mas_equalTo(image.size);
     }];
+    [self updateContentViewLayout];
 }
 
 - (void)showCustomAccessory:(UIImageView *)view withSize:(CGSize)size
@@ -55,12 +81,14 @@
         make.centerY.equalTo(self);
         make.size.mas_equalTo(size);
     }];
+    [self updateContentViewLayout];
 }
 
 - (void)hiddenAccessory
 {
     [m_imageViewAccessory removeFromSuperview];
     m_imageViewAccessory = nil;
+    [self updateContentViewLayout];
 }
 
 - (void)setFWidthRight:(CGFloat)fWidthRight
@@ -70,4 +98,11 @@
         make.right.equalTo(self).offset(-fWidthRight);
     }];
 }
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+}
+
 @end

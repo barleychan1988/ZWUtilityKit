@@ -48,7 +48,35 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 {
     _contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
     _isSelectedBackgroundSameWithContent = YES;
+    
+    __weak ZWSeperatorLineCell *weakobject = self;
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakobject).offset(15);
+        make.right.equalTo(weakobject).offset(-15);
+        make.top.equalTo(weakobject);
+        make.bottom.equalTo(weakobject);
+    }];
 }
+
+- (void)setContentInset:(UIEdgeInsets)contentInset
+{
+    _contentInset = contentInset;
+    [self updateContentViewLayout];
+}
+
+- (void)updateContentViewLayout
+{
+    UIEdgeInsets contentInset = self.contentInset;
+    __weak ZWSeperatorLineCell *weakobject = self;
+    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakobject).offset(contentInset.left);
+        make.right.equalTo(weakobject).offset(-contentInset.right);
+        make.top.equalTo(weakobject).offset(contentInset.top);
+        make.bottom.equalTo(weakobject).offset(-contentInset.bottom);
+    }];
+}
+
+#pragma mark -
 
 - (void)showTopSeparatorLine:(BOOL)bShow color:(UIColor *)color
 {
@@ -231,41 +259,14 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
     m_viewBottomLine = nil;
 }
 
-
-/*
-@synthesize contentView = _contentView;
-
-- (void)setContentInset:(UIEdgeInsets)contentInset
-{
-    _contentInset = contentInset;
-    self.contentView;
-}
-
-- (UIView *)contentView
-{
-    if (_contentView == nil)
-    {
-        _contentView = [[UIView alloc] init];
-        [[super contentView] addSubview:_contentView];
-    }
-    return _contentView;
-}
-*/
+#pragma mark - 
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
-//    CGRect frame = super.contentView.bounds;
-    CGRect frame = self.bounds;
-    frame.origin.x += _contentInset.left;
-    frame.origin.y += _contentInset.top;
-    frame.size.width -= (_contentInset.left + _contentInset.right);
-    frame.size.height -= (_contentInset.top + _contentInset.bottom);
-//    _contentView.frame = frame;
-    self.contentView.frame = frame;
     if (_isSelectedBackgroundSameWithContent)
-        self.selectedBackgroundView.frame = frame;
+        self.selectedBackgroundView.frame = self.contentView.frame;
     else
         self.selectedBackgroundView.frame = self.bounds;
 }
