@@ -7,7 +7,8 @@
 //
 
 #import "AppUpdate.h"
-#import "JSONKit.h"
+#import "Dictionary+SafeValue.h"
+#import "ZWMacroDef.h"
 //#import "ZWLog.h"
 #import <UIKit/UIApplication.h>
 
@@ -52,9 +53,9 @@
     strTempUrl = [strTempUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *nsUrl = [NSURL URLWithString:strTempUrl];
     
-    WeakObject(self);
+    __weak AppUpdate *weakObject = self;
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:nsUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {[weakObject handleResult:completionHandler error:error responseObject:data];}];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:nsUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {[weakObject handleResult:nil error:error responseObject:data];}];
     [dataTask resume];
     _taskCurrent = dataTask;
 }
@@ -84,9 +85,9 @@
     strTempUrl = [strTempUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *nsUrl = [NSURL URLWithString:strTempUrl];
     
-    WeakObject(self);
+    __weak AppUpdate *weakObject = self;
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:nsUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {[weakObject handleResult:completionHandler error:error responseObject:data];}];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:nsUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {[weakObject handleResult:nil error:error responseObject:data];}];
     [dataTask resume];
     _taskCurrent = dataTask;
 }
@@ -95,12 +96,12 @@
 {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     _taskCurrent = nil;
+    NSString *strCurVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     BlockVoid handler = ^{
         if (error)
         {
             if ([m_delegate respondsToSelector:@selector(updateAppToVersion:hasNewVersion:appUrl:)])
             {
-                NSString *strCurVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
                 [m_delegate updateAppToVersion:strCurVersion hasNewVersion:NO appUrl:nil];
             }
             m_delegate = nil;

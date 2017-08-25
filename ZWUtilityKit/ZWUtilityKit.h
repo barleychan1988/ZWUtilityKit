@@ -45,9 +45,3 @@ FOUNDATION_EXPORT double ZWUtilityKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char ZWUtilityKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ZWUtilityKit/PublicHeader.h>
-
-typedef void (^BlockBoolStrObject)(BOOL, NSString *, id);
-typedef void (^BlockVoid)();
-typedef void (^BlockBoolObject)(BOOL bFlage, id object);
-typedef void (^BlockObject)(id object);
-typedef void (^BlockObjectObject)(id object1, id object2);
