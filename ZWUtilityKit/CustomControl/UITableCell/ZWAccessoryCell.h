@@ -11,7 +11,7 @@
 @interface ZWAccessoryCell : ZWSeperatorLineCell
 
 @property (nonatomic, retain, readonly)UIView *accessoryView;
-@property (nonatomic, assign)CGFloat fWidthRight; //右边距离边界宽度
+@property (nonatomic, assign)CGFloat fWidthRight; //右边距离边界宽度 default is 15.
 
 - (void)showAccessory:(BOOL)bShow image:(nullable UIImage *)image;
 

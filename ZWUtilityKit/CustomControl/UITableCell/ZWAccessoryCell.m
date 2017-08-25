@@ -19,6 +19,12 @@
 
 @synthesize accessoryView = m_imageViewAccessory;
 
+- (void)initValues
+{
+    [super initValues];
+    _fWidthRight = 15.0;
+}
+
 - (void)showAccessory:(BOOL)bShow image:(nullable UIImage *)image
 {
     [m_imageViewAccessory removeFromSuperview];
