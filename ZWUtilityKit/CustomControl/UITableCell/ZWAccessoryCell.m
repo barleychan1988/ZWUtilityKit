@@ -7,6 +7,7 @@
 //
 
 #import "ZWAccessoryCell.h"
+#import "Masonry.h"
 
 @interface ZWAccessoryCell ()
 {
@@ -20,43 +21,47 @@
 
 - (void)showAccessory:(BOOL)bShow image:(nullable UIImage *)image
 {
-    UIImageView *imgV = m_imageViewAccessory;
-    if (bShow && image)
-    {
-        if (imgV.superview == nil)
-        {
-            imgV = [[UIImageView alloc] initWithImage:image];
-            [self addSubview:m_imageViewAccessory = imgV];
-        }
-        else
-        {
-            imgV.image = image;
-        }
-    }
-    else
-    {
-        [imgV removeFromSuperview];
-        m_imageViewAccessory = nil;
-    }
-    [self setNeedsLayout];
+    [m_imageViewAccessory removeFromSuperview];
+    if (image == nil)
+        return;
+    UIImageView *imgV = [[UIImageView alloc] initWithImage:image];
+    [self addSubview:m_imageViewAccessory = imgV];
+    [imgV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self).offset(-_fWidthRight);
+        make.centerY.equalTo(self);
+        make.size.mas_equalTo(image.size);
+    }];
 }
 
-- (void)layoutSubviews
+- (void)showCustomAccessory:(UIImageView *)view withSize:(CGSize)size
 {
-    [super layoutSubviews];
-    
-    if (m_imageViewAccessory)
+    [m_imageViewAccessory removeFromSuperview];
+    if (view == nil || CGSizeEqualToSize(size, CGSizeZero))
     {
-        CGRect frame;
-        frame.size = m_imageViewAccessory.image.size;
-        frame.origin.x = self.bounds.size.width - self.contentInset.right - frame.size.width;
-        frame.origin.y = (self.bounds.size.height - frame.size.height) / 2;
-        m_imageViewAccessory.frame = frame;
-        
-        frame = self.contentView.frame;
-        frame.size.width = m_imageViewAccessory.frame.origin.x - frame.origin.x;
-        self.contentView.frame = frame;
+        return;
     }
+    CGRect frame = CGRectZero;
+    frame.size = size;
+    view.frame = frame;
+    [self addSubview:m_imageViewAccessory = view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self).offset(-_fWidthRight);
+        make.centerY.equalTo(self);
+        make.size.mas_equalTo(size);
+    }];
 }
 
+- (void)hiddenAccessory
+{
+    [m_imageViewAccessory removeFromSuperview];
+    m_imageViewAccessory = nil;
+}
+
+- (void)setFWidthRight:(CGFloat)fWidthRight
+{
+    _fWidthRight = fWidthRight;
+    [m_imageViewAccessory mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self).offset(-fWidthRight);
+    }];
+}
 @end

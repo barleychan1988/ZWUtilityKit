@@ -107,6 +107,14 @@
 		D466E10E1D49ABC4004D74BB /* ZWMacroDef.h in Headers */ = {isa = PBXBuildFile; fileRef = D466E1051D499898004D74BB /* ZWMacroDef.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D46B55EA1E0A158300B444B8 /* UIViewController+Alert.h in Headers */ = {isa = PBXBuildFile; fileRef = D46B55E81E0A158300B444B8 /* UIViewController+Alert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D46B55EB1E0A158300B444B8 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = D46B55E91E0A158300B444B8 /* UIViewController+Alert.m */; };
+		D47404EC1F5014B70046C7C4 /* ZWAccessoryCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D47404EA1F5014B70046C7C4 /* ZWAccessoryCell.h */; };
+		D47404ED1F5014B70046C7C4 /* ZWAccessoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D47404EB1F5014B70046C7C4 /* ZWAccessoryCell.m */; };
+		D47404F01F5014CF0046C7C4 /* EadSeparatorLineCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D47404EE1F5014CF0046C7C4 /* EadSeparatorLineCell.h */; };
+		D47404F11F5014CF0046C7C4 /* EadSeparatorLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D47404EF1F5014CF0046C7C4 /* EadSeparatorLineCell.m */; };
+		D47404F41F5014E40046C7C4 /* ZWCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D47404F21F5014E40046C7C4 /* ZWCollectionCell.h */; };
+		D47404F51F5014E40046C7C4 /* ZWCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D47404F31F5014E40046C7C4 /* ZWCollectionCell.m */; };
+		D47404F81F5014F30046C7C4 /* ZWIconTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D47404F61F5014F30046C7C4 /* ZWIconTextFieldCell.h */; };
+		D47404F91F5014F30046C7C4 /* ZWIconTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D47404F71F5014F30046C7C4 /* ZWIconTextFieldCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -213,6 +221,14 @@
 		D466E1081D499DDD004D74BB /* ZWVertifyStringKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWVertifyStringKit.m; sourceTree = "<group>"; };
 		D46B55E81E0A158300B444B8 /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Alert.h"; path = "Category/UIViewController+Alert.h"; sourceTree = "<group>"; };
 		D46B55E91E0A158300B444B8 /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Alert.m"; path = "Category/UIViewController+Alert.m"; sourceTree = "<group>"; };
+		D47404EA1F5014B70046C7C4 /* ZWAccessoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWAccessoryCell.h; path = UITableCell/ZWAccessoryCell.h; sourceTree = "<group>"; };
+		D47404EB1F5014B70046C7C4 /* ZWAccessoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWAccessoryCell.m; path = UITableCell/ZWAccessoryCell.m; sourceTree = "<group>"; };
+		D47404EE1F5014CF0046C7C4 /* EadSeparatorLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EadSeparatorLineCell.h; path = UITableCell/EadSeparatorLineCell.h; sourceTree = "<group>"; };
+		D47404EF1F5014CF0046C7C4 /* EadSeparatorLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EadSeparatorLineCell.m; path = UITableCell/EadSeparatorLineCell.m; sourceTree = "<group>"; };
+		D47404F21F5014E40046C7C4 /* ZWCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWCollectionCell.h; path = UITableCell/ZWCollectionCell.h; sourceTree = "<group>"; };
+		D47404F31F5014E40046C7C4 /* ZWCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWCollectionCell.m; path = UITableCell/ZWCollectionCell.m; sourceTree = "<group>"; };
+		D47404F61F5014F30046C7C4 /* ZWIconTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWIconTextFieldCell.h; path = UITableCell/ZWIconTextFieldCell.h; sourceTree = "<group>"; };
+		D47404F71F5014F30046C7C4 /* ZWIconTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWIconTextFieldCell.m; path = UITableCell/ZWIconTextFieldCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,16 +451,24 @@
 		D46218FA1EDC75EE00D16E37 /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				D47404EE1F5014CF0046C7C4 /* EadSeparatorLineCell.h */,
+				D47404EF1F5014CF0046C7C4 /* EadSeparatorLineCell.m */,
 				D46218FB1EDC760500D16E37 /* ZWButtonCell.h */,
 				D46218FC1EDC760500D16E37 /* ZWButtonCell.m */,
 				D46218FD1EDC760500D16E37 /* ZWNoneCell.h */,
 				D46218FE1EDC760500D16E37 /* ZWNoneCell.m */,
+				D47404EA1F5014B70046C7C4 /* ZWAccessoryCell.h */,
+				D47404EB1F5014B70046C7C4 /* ZWAccessoryCell.m */,
 				D46218FF1EDC760500D16E37 /* ZWTableViewCell.h */,
 				D46219001EDC760500D16E37 /* ZWTableViewCell.m */,
 				D46219071EDC763100D16E37 /* ZWSeperatorLineCell.h */,
 				D46219081EDC763100D16E37 /* ZWSeperatorLineCell.m */,
 				D45B76E31EDD04D800686D18 /* ZWIconLabelCell.h */,
 				D45B76E41EDD04D800686D18 /* ZWIconLabelCell.m */,
+				D47404F61F5014F30046C7C4 /* ZWIconTextFieldCell.h */,
+				D47404F71F5014F30046C7C4 /* ZWIconTextFieldCell.m */,
+				D47404F21F5014E40046C7C4 /* ZWCollectionCell.h */,
+				D47404F31F5014E40046C7C4 /* ZWCollectionCell.m */,
 			);
 			name = UITableViewCell;
 			sourceTree = "<group>";
@@ -469,6 +493,7 @@
 				794BAFB51A4D4BBC000ACD77 /* ZWUtilityKit.h in Headers */,
 				D45A15101EC9C375000467A6 /* ImageBrowserVC.h in Headers */,
 				794BAFAB1A4D4BBC000ACD77 /* UtilityKit.h in Headers */,
+				D47404F41F5014E40046C7C4 /* ZWCollectionCell.h in Headers */,
 				794BAFB31A4D4BBC000ACD77 /* UtilityUIKit.h in Headers */,
 				794BAFB41A4D4BBC000ACD77 /* ZWLog.h in Headers */,
 				D4557B551D1BFA2D001EFEB9 /* Geometry+ZWExtension.h in Headers */,
@@ -495,6 +520,7 @@
 				C9DBA1571B2FE34400777094 /* ZWEditView.h in Headers */,
 				C91CCC3D1B677444006C0B42 /* UINavigationController+Animation.h in Headers */,
 				C93F06561BA68DE2000216B3 /* ZWAlertView.h in Headers */,
+				D47404F01F5014CF0046C7C4 /* EadSeparatorLineCell.h in Headers */,
 				C9F279AA1BA17A1D00AFC0BD /* UIView+Keyboard.h in Headers */,
 				7936C7EA1A7CB283000F4BEA /* UITabBarController+Orientation.h in Headers */,
 				79E6BC2F1A7C7D0E00D66550 /* UINavigationController+Orientation.h in Headers */,
@@ -506,10 +532,12 @@
 				D466CB7B1D22169400CDE3DB /* NSObject+ParseDicToObj.h in Headers */,
 				D44C5CC31D7038C600927E2A /* NSURL+EncodeString.h in Headers */,
 				C9F279AE1BA19A6A00AFC0BD /* ZWStartEvaluateIntView.h in Headers */,
+				D47404F81F5014F30046C7C4 /* ZWIconTextFieldCell.h in Headers */,
 				C9ACE4561EC8868600434501 /* WMCustomDatePicker.h in Headers */,
 				C9ACE4581EC8868600434501 /* WMDatepicker_DateModel.h in Headers */,
 				C9569F501B9EC8170076B25B /* UIButton+Action.h in Headers */,
 				C9DAC1F21B6F1950001F2505 /* UIView+AddLine.h in Headers */,
+				D47404EC1F5014B70046C7C4 /* ZWAccessoryCell.h in Headers */,
 				C9A987781AF8B5A4004E93FE /* ZWStartEvaluateView.h in Headers */,
 				C9F47E8B1B874C85000C563B /* ZWNetImageView.h in Headers */,
 				D45B76E51EDD04D800686D18 /* ZWIconLabelCell.h in Headers */,
@@ -606,6 +634,7 @@
 			files = (
 				D46219041EDC760500D16E37 /* ZWNoneCell.m in Sources */,
 				C9B98F0D1AE11D14002DA92C /* UIView+Genie.m in Sources */,
+				D47404F51F5014E40046C7C4 /* ZWCollectionCell.m in Sources */,
 				79A46D7B1AA43AB800595026 /* UITableViewCell2.m in Sources */,
 				C9F47E8C1B874C85000C563B /* ZWNetImageView.m in Sources */,
 				C9ACE4571EC8868600434501 /* WMCustomDatePicker.m in Sources */,
@@ -622,6 +651,7 @@
 				794BAF931A4D4974000ACD77 /* ZWLog.m in Sources */,
 				794BAF9D1A4D4974000ACD77 /* TFIndicatorView.m in Sources */,
 				79D79EB71A7B6C8B00ED97CD /* UINavigationController+BarButtonItem.m in Sources */,
+				D47404ED1F5014B70046C7C4 /* ZWAccessoryCell.m in Sources */,
 				C9377C0F1BAC225B00693B48 /* ZWUIImageView.m in Sources */,
 				C91CCC3E1B677444006C0B42 /* UINavigationController+Animation.m in Sources */,
 				C9DAC1F31B6F1950001F2505 /* UIView+AddLine.m in Sources */,
@@ -633,6 +663,7 @@
 				794BAF9A1A4D4974000ACD77 /* UtilityUIKit.m in Sources */,
 				D466CB7C1D22169400CDE3DB /* NSObject+ParseDicToObj.m in Sources */,
 				D44C5CC41D7038C600927E2A /* NSURL+EncodeString.m in Sources */,
+				D47404F91F5014F30046C7C4 /* ZWIconTextFieldCell.m in Sources */,
 				D45B76E61EDD04D800686D18 /* ZWIconLabelCell.m in Sources */,
 				D462190A1EDC763100D16E37 /* ZWSeperatorLineCell.m in Sources */,
 				79D9460E1A7A2AF800926B9B /* Dictionary+SafeValue.m in Sources */,
@@ -641,6 +672,7 @@
 				C9F279AF1BA19A6A00AFC0BD /* ZWStartEvaluateIntView.m in Sources */,
 				79E6BC301A7C7D0E00D66550 /* UINavigationController+Orientation.m in Sources */,
 				D45A15111EC9C375000467A6 /* ImageBrowserVC.m in Sources */,
+				D47404F11F5014CF0046C7C4 /* EadSeparatorLineCell.m in Sources */,
 				7936C7EB1A7CB283000F4BEA /* UITabBarController+Orientation.m in Sources */,
 				D43D125E1CF5752A0042514B /* ZWLocationAuthor.m in Sources */,
 				D45A15151EC9C5F0000467A6 /* UIViewController+BarButtonItem.m in Sources */,
