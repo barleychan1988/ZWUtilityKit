@@ -13,12 +13,12 @@
 
 @interface AppUpdate()
 {
-    NSMutableData *m_mtdataUpdate;
-    __strong id<updateDelegate> m_delegate;
+    __weak id<updateDelegate> m_delegate;
     
     BOOL m_bStore;
     NSString *m_strAppID;
 }
+@property (nonatomic, retain)NSURLSessionDataTask *taskCurrent;
 @end
 
 @implementation AppUpdate
@@ -35,7 +35,7 @@
     NSArray *arrayKey = [dicParam allKeys];
     for (int i=0; i<[arrayKey count]; i++)
     {
-        if (i==0)
+        if (i == 0)
         {
             [mtStrUrl appendString:@"?"];
         }
@@ -47,12 +47,16 @@
         [mtStrUrl appendString:@"="];
         [mtStrUrl appendString:[dicParam objectForKey:[arrayKey objectAtIndex:i]]];
     }
-    NSString *strTempUrl=[[NSString alloc]initWithString:mtStrUrl];
+    NSString *strTempUrl = [[NSString alloc] initWithString:mtStrUrl];
     
     strTempUrl = [strTempUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *nsUrl = [NSURL URLWithString:strTempUrl];
-    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:nsUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:33];
-    (void)[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    WeakObject(self);
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:nsUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {[weakObject handleResult:completionHandler error:error responseObject:data];}];
+    [dataTask resume];
+    _taskCurrent = dataTask;
 }
 
 -(void)checkUpdateAtWebsite:(NSString *)strUrl param:(NSDictionary *)dicParam delegate:(id<updateDelegate>)delegate
@@ -79,95 +83,88 @@
     
     strTempUrl = [strTempUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *nsUrl = [NSURL URLWithString:strTempUrl];
-    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:nsUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:33];
-    (void)[[NSURLConnection alloc] initWithRequest:request delegate:self];    
+    
+    WeakObject(self);
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:nsUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {[weakObject handleResult:completionHandler error:error responseObject:data];}];
+    [dataTask resume];
+    _taskCurrent = dataTask;
 }
 
-#pragma mark - NSURLConnectionDelegate
-
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    if (m_mtdataUpdate == nil)
-    {
-        m_mtdataUpdate = [[NSMutableData alloc] init];
-    }
-    [m_mtdataUpdate appendData:data];
-}
-
--(void)connectionDidFinishLoading:(NSURLConnection *)connection
+- (void)handleResult:(BlockBoolStrObject)completionHandler error:(NSError *)error responseObject:(NSData *)responseObject
 {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    
-    JSONDecoder *jdCoder = [[JSONDecoder alloc] init];
-    NSDictionary *dicRet = nil;
-    
-    NSString *strCurVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-    if (m_mtdataUpdate == nil)
-    {
-        //time out
-//        DebugLog(@"连接超时");
-    }
-    else
-    {
-        dicRet = [jdCoder objectWithData:m_mtdataUpdate];
-        if ([dicRet count] > 0)
+    _taskCurrent = nil;
+    BlockVoid handler = ^{
+        if (error)
         {
-            //版本号一般为“1.2.6”   转换为 10000-990000 100-9900 0-99
-            UInt32 unNewVersion = 0;
-            UInt32 unCurVersion = [self strVersionToIntVersion:strCurVersion];
-            NSString *strNewVersion = @"";
-            NSString *strAppUrl = nil;
-            NSString *strMsg;
-            if (m_bStore)
+            if ([m_delegate respondsToSelector:@selector(updateAppToVersion:hasNewVersion:appUrl:)])
             {
-                NSArray *arrayResult = [dicRet objectForKey:@"results"];
-                if ([arrayResult count] >= 1)
-                {
-                    NSDictionary *dicResult = [arrayResult objectAtIndex:0];
-                    strNewVersion = [dicResult objectForKey:@"version"];
-                    strAppUrl = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%@", m_strAppID];
-                }
+                NSString *strCurVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+                [m_delegate updateAppToVersion:strCurVersion hasNewVersion:NO appUrl:nil];
+            }
+            m_delegate = nil;
+            m_bStore = NO;
+        }
+        else
+        {
+            if (responseObject == nil || responseObject.length == 0)
+            {
             }
             else
             {
-                strNewVersion = [self parseWebsiteData:dicRet appUrl:&strAppUrl];
-                
-                NSArray *arrayResult = [dicRet objectForKey:@"PageData"];
-                NSDictionary *dicResult = [arrayResult objectAtIndex:0];
-                strMsg = [dicResult objectForKey:@"Remark"];
+                NSDictionary *dicRet = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+                if ([dicRet count] > 0)
+                {
+                    //版本号一般为“1.2.6”   转换为 10000-990000 100-9900 0-99
+                    UInt32 unNewVersion = 0;
+                    UInt32 unCurVersion = [self strVersionToIntVersion:strCurVersion];
+                    NSString *strNewVersion = @"";
+                    NSString *strAppUrl = nil;
+                    NSString *strMsg;
+                    if (m_bStore)
+                    {
+                        NSArray *arrayResult = [dicRet safeObjectForKey:@"results"];
+                        if ([arrayResult isKindOfClass:[NSArray class]] && [arrayResult count] >= 1)
+                        {
+                            NSDictionary *dicResult = [arrayResult objectAtIndex:0];
+                            strNewVersion = [dicResult stringValueForKey:@"version"];
+                            strAppUrl = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%@", m_strAppID];
+                        }
+                    }
+                    else
+                    {
+                        strNewVersion = [self parseWebsiteData:dicRet appUrl:&strAppUrl];
+                        
+                        NSArray *arrayResult = [dicRet safeObjectForKey:@"PageData"];
+                        if ([arrayResult isKindOfClass:[NSArray class]] && [arrayResult count] >= 0)
+                        {
+                            NSDictionary *dicResult = [arrayResult objectAtIndex:0];
+                            strMsg = [dicResult stringValueForKey:@"Remark"];
+                        }
+                    }
+                    unNewVersion = [self strVersionToIntVersion:strNewVersion];
+                    if (unNewVersion > unCurVersion)
+                    {
+                        if (strMsg.length > 0)
+                            [m_delegate updateAppToVersion:strNewVersion hasNewVersion:YES appUrl:strAppUrl message:strMsg];
+                        else
+                            [m_delegate updateAppToVersion:strNewVersion hasNewVersion:YES appUrl:strAppUrl];
+                        m_delegate = nil;
+                        m_bStore = NO;
+                        return;
+                    }
+                }
             }
-            unNewVersion = [self strVersionToIntVersion:strNewVersion];
-            if (unNewVersion > unCurVersion)
+            if ([m_delegate respondsToSelector:@selector(updateAppToVersion:hasNewVersion:appUrl:)])
             {
-                if (strMsg.length > 0)
-                    [m_delegate updateAppToVersion:strNewVersion hasNewVersion:YES appUrl:strAppUrl message:strMsg];
-                else
-                    [m_delegate updateAppToVersion:strNewVersion hasNewVersion:YES appUrl:strAppUrl];
-                m_delegate = nil;
-                m_bStore = NO;
-                return;
+                [m_delegate updateAppToVersion:strCurVersion hasNewVersion:NO appUrl:nil];
             }
+            m_delegate = nil;
+            m_bStore = NO;
         }
-    }
-    if ([m_delegate respondsToSelector:@selector(updateAppToVersion:hasNewVersion:appUrl:)])
-    {
-        [m_delegate updateAppToVersion:strCurVersion hasNewVersion:NO appUrl:nil];
-    }
-    m_delegate = nil;
-    m_bStore = NO;
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    if ([m_delegate respondsToSelector:@selector(updateAppToVersion:hasNewVersion:appUrl:)])
-    {
-        NSString *strCurVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-        [m_delegate updateAppToVersion:strCurVersion hasNewVersion:NO appUrl:nil];
-    }
-    m_delegate = nil;
-    m_bStore = NO;
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-//    [[ZWLog logInstance] writeLogWithParams:@"update app request error=", error, nil];
+    };
+    dispatch_async(dispatch_get_main_queue(), handler);
 }
 
 #pragma mark - 解析返回数据
@@ -186,14 +183,14 @@
         NSDictionary *dicVersionData = [dataArray objectAtIndex:0];
         if ([dicVersionData isKindOfClass:[NSDictionary class]] && [dicVersionData count] > 0)
         {
-            strRet = [dicVersionData objectForKey:@"PhoneVersion"];
+            strRet = [dicVersionData stringValueForKey:@"PhoneVersion"];
             if (![strRet isKindOfClass:[NSString class]])
             {
                 strRet = @"";
             }
             else
             {
-                *pstrAppUrl = [dicVersionData objectForKey:@"IosFileUrl"];
+                *pstrAppUrl = [dicVersionData stringValueForKey:@"IosFileUrl"];
             }
         }
     }
