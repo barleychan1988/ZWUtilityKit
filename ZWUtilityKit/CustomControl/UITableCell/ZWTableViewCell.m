@@ -207,6 +207,7 @@ NSString *const ZWLabelTipCellID = @"ZWLabelTipCellID";
 
 - (void)showAccessory:(BOOL)bShow image:(NSString *)strImage
 {
+    [_imageViewAccessory removeFromSuperview];
     if (bShow)
     {
         if (_imageViewAccessory.superview == nil)
@@ -223,10 +224,23 @@ NSString *const ZWLabelTipCellID = @"ZWLabelTipCellID";
         frame.origin.y = (self.contentView.bounds.size.height - frame.size.height) / 2;
         _imageViewAccessory.frame = frame;
     }
-    else
+}
+
+- (void)showAccessory:(BOOL)bShow customView:(UIView *)view
+{
+    [_imageViewAccessory removeFromSuperview];
+    if (bShow)
     {
-        [_imageViewAccessory removeFromSuperview];
-        _imageViewAccessory = nil;
+        if (_imageViewAccessory.superview == nil)
+        {
+            view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
+            _imageViewAccessory = view;
+            [self.contentView addSubview:view];
+        }
+        CGRect frame = view.frame;
+        frame.origin.x = self.contentView.bounds.size.width - frame.size.width;
+        frame.origin.y = (self.contentView.bounds.size.height - frame.size.height) / 2;
+        _imageViewAccessory.frame = frame;
     }
 }
 
