@@ -188,8 +188,8 @@ NSString *const strKeyDiffWidth = @"kTitleImageDiffWidth";
 
 - (void)setTitleStyle:(UIButtonTitleStyle)titleStyle indent:(CGFloat)fIndent
 {
-    objc_setAssociatedObject(self, &strKeyTitleStyle, [NSNumber numberWithInt:titleStyle], OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, &strKeyDiffWidth, [NSNumber numberWithFloat:fIndent], OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &strKeyTitleStyle, [NSNumber numberWithInt:titleStyle], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &strKeyDiffWidth, [NSNumber numberWithFloat:fIndent], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self removeConstraints:self.constraints];
     switch (titleStyle)
     {
