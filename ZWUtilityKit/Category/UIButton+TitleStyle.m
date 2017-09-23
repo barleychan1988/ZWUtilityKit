@@ -133,6 +133,10 @@
             frame.size.height = self.titleLabel.frame.size.height;
             frame.origin.x = self.bounds.origin.x;
             frame.size.width = self.bounds.size.width;
+            if (frame.size.width == 0)
+            {
+                frame.size.width = getSizeForLabelText(self.titleLabel.text, self.titleLabel.font, CGSizeZero).width;
+            }
             self.titleLabel.frame = frame;
         }
             break;
@@ -147,6 +151,10 @@
             frame.size.height = self.titleLabel.frame.size.height;
             frame.origin.x = self.bounds.origin.x;
             frame.size.width = self.bounds.size.width;
+            if (frame.size.width == 0)
+            {
+                frame.size.width = getSizeForLabelText(self.titleLabel.text, self.titleLabel.font, CGSizeZero).width;
+            }
             self.imageView.frame = frame;
         }
             break;
