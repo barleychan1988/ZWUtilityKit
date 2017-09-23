@@ -124,25 +124,39 @@
     {
         case UIButtonTitleStyleUnder://标题在下边，图片在上边
         {
+            CGRect frameTitleLabel = self.titleLabel.frame;
+            if (frameTitleLabel.size.height == 0)
+            {
+                frameTitleLabel.size.height = getSizeForLabelText(self.titleLabel.text, self.titleLabel.font, CGSizeZero).height;
+            }
+            if (frameTitleLabel.size.width == 0)
+            {
+                frameTitleLabel.size.width = getSizeForLabelText(self.titleLabel.text, self.titleLabel.font, CGSizeZero).width;
+            }
             frame.size = self.imageView.frame.size;
             frame.origin.x = (self.bounds.size.width - frame.size.width) / 2;
-            frame.origin.y = (self.bounds.size.height - frame.size.height - fDiffWidth - self.titleLabel.frame.size.height) / 2;
+            frame.origin.y = (self.bounds.size.height - frame.size.height - fDiffWidth - frameTitleLabel.size.height) / 2;
             self.imageView.frame = frame;
             
             frame.origin.y += (frame.size.height + fDiffWidth);
-            frame.size.height = self.titleLabel.frame.size.height;
+            frame.size.height = frameTitleLabel.size.height;
             frame.origin.x = self.bounds.origin.x;
             frame.size.width = self.bounds.size.width;
-            if (frame.size.width == 0)
-            {
-                frame.size.width = getSizeForLabelText(self.titleLabel.text, self.titleLabel.font, CGSizeZero).width;
-            }
             self.titleLabel.frame = frame;
         }
             break;
         case UIButtonTitleStyleAbove://标题在上边，图片在下边
         {
-            frame.size = self.titleLabel.frame.size;
+            CGRect frameTitleLabel = self.titleLabel.frame;
+            if (frameTitleLabel.size.height == 0)
+            {
+                frameTitleLabel.size.height = getSizeForLabelText(self.titleLabel.text, self.titleLabel.font, CGSizeZero).height;
+            }
+            if (frameTitleLabel.size.width == 0)
+            {
+                frameTitleLabel.size.width = getSizeForLabelText(self.titleLabel.text, self.titleLabel.font, CGSizeZero).width;
+            }
+            frame.size = frameTitleLabel.size;
             frame.origin.x = (self.bounds.size.width - frame.size.width) / 2;
             frame.origin.y = (self.bounds.size.height - frame.size.height - fDiffWidth - self.imageView.frame.size.height) / 2;
             self.titleLabel.frame = frame;
@@ -151,10 +165,6 @@
             frame.size.height = self.titleLabel.frame.size.height;
             frame.origin.x = self.bounds.origin.x;
             frame.size.width = self.bounds.size.width;
-            if (frame.size.width == 0)
-            {
-                frame.size.width = getSizeForLabelText(self.titleLabel.text, self.titleLabel.font, CGSizeZero).width;
-            }
             self.imageView.frame = frame;
         }
             break;
