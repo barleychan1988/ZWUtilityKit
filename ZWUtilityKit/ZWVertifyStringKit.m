@@ -142,7 +142,7 @@ BOOL isLegalTelephoneNumber(NSString *str)
     {
         return NO;
     }
-    NSString *regex = @"^((13[0-9])|(14[5|7])|(15[^4,\\D])|(17[0-9])|(18[0-9]))\\d{8}$";
+    NSString *regex = @"^((13[0-9])|(14[4-8])|(15[^4,\\D])|(166)|(17[0-9])|(18[0-9])|(19[8-9]))\\d{8}$";
     return execRegEx(regex, str);
 }
 
