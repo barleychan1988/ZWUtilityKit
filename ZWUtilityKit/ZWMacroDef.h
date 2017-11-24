@@ -31,6 +31,7 @@ _Pragma("clang diagnostic pop") \
 #define IOS8 (SystemVersion>=8.0 ? YES : NO)
 #define IOS9 (SystemVersion>=9.0 ? YES : NO)
 #define IOS10 (SystemVersion>=10.0 ? YES : NO)
+#define IOS11 (SystemVersion>=11.0 ? YES : NO)
 
 #define iPhone4 (getDeviceTypeSize() == DEVICE_SIZE_iPhone_4)
 #define iPhone5 (getDeviceTypeSize() == DEVICE_SIZE_iPhone_5)

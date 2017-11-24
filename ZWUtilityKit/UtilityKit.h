@@ -127,10 +127,11 @@ typedef enum tagEnumDeviceTypeSize
     //iPhone
     DEVICE_SIZE_iPhone = 0,
     DEVICE_SIZE_iPhone_3GS,
-    DEVICE_SIZE_iPhone_4,
-    DEVICE_SIZE_iPhone_5,
-    DEVICE_SIZE_iPhone_6,
-    DEVICE_SIZE_iPhone_6_Plus,
+    DEVICE_SIZE_iPhone_4,           //3.5
+    DEVICE_SIZE_iPhone_5,           //4.0
+    DEVICE_SIZE_iPhone_6,           //4.7
+    DEVICE_SIZE_iPhone_6_Plus,      //5.5 inch
+    DEVICE_SIZE_iPhone_X,           //5.8
     //iPod
     DEVICE_SIZE_iPod_Touch,
     DEVICE_SIZE_iPod_Touch_2,

@@ -495,7 +495,11 @@ EnDEVICETYPE_SIZE getDeviceTypeSize()
     if ([UIScreen instancesRespondToSelector:@selector(currentMode)])
     {
         CGSize sz = [[UIScreen mainScreen] currentMode].size;
-        if (CGSizeEqualToSize(CGSizeMake(640, 960), sz))
+        if (CGSizeEqualToSize(CGSizeMake(320, 480), sz))
+        {
+            ret = DEVICE_SIZE_iPhone_3GS;
+        }
+        else if (CGSizeEqualToSize(CGSizeMake(640, 960), sz))
         {
             ret = DEVICE_SIZE_iPhone_4;
         }
@@ -511,9 +515,9 @@ EnDEVICETYPE_SIZE getDeviceTypeSize()
         {
             ret = DEVICE_SIZE_iPhone_6_Plus;
         }
-        else if (CGSizeEqualToSize(CGSizeMake(320, 480), sz))
+        else if (CGSizeEqualToSize(CGSizeMake(1125, 2436), sz))
         {
-            ret = DEVICE_SIZE_iPhone_3GS;
+            ret = DEVICE_SIZE_iPhone_X;
         }
     }
     return ret;

@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '2.1.7'
-  s.summary          = '修复UIButton设置标题在上或在下时标题显示不出来问题.'
+  s.version          = '2.1.8'
+  s.summary          = '添加iOS11的判断和iPhoneX机型.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-经常用到的一些公共代码.为了方便使用进行的简单封装
+经常用到的一些公共代码.为了方便使用进行的简单封装;经常用到的一些公共代码.为了方便使用进行的简单封装
                        DESC
 
   s.homepage         = 'https://github.com/EadkennyChan/ZWUtilityKit'
