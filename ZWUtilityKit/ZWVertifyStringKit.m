@@ -136,6 +136,10 @@ IDENTIFIER_Sexuality getSexuality(NSString *strIdentifier)
  */
 BOOL isLegalTelephoneNumber(NSString *str)
 {
+    if (!isPureDigital(str))
+    {
+        return NO;
+    }
     str = [str stringByReplacingOccurrencesOfString:@"[^0-9]" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [str length])];
     
     if ([str length] == 0)
