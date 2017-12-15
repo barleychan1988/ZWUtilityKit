@@ -159,6 +159,13 @@ NSString *getAppDisplayName()
     return strAppName;
 }
 
+NSString *getDocumentDirectory()
+{
+    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+}
+
 void removeAllSubviews(UIView *viewParent)
 {
     for (UIView *subview in viewParent.subviews)

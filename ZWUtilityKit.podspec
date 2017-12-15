@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '2.2.2'
-  s.summary          = '修改弹窗显示app名称.'
+  s.version          = '2.2.3'
+  s.summary          = '添加获取document路径.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

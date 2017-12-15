@@ -62,6 +62,7 @@ UIView * nibInBundle(NSString *strNibName, NSString *strBundleName, NSString *st
 //获取应用程序的window
 UIWindow *getApplicationWindow();
 NSString *getAppDisplayName();//获取应用名称
+NSString *getDocumentDirectory();
 
 //移除viewParent上所有subview
 void removeAllSubviews(UIView *viewParent);
