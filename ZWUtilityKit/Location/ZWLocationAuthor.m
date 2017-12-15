@@ -78,7 +78,8 @@ static ZWLocationAuthor * g_LocalAuthor;
                 break;
             case kCLAuthorizationStatusDenied:
             {
-                NSString *strAppName = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleNameKey];
+                NSBundle *mainBundle = [NSBundle mainBundle];
+                NSString *strAppName = [mainBundle objectForInfoDictionaryKey:@"CFBundleDisplayName"];
                 NSString *strMsg = [NSString stringWithFormat:@"请到设置->隐私->定位服务中开启【%@】定位服务", strAppName];
                 [self showAlertMsg:strMsg title:@"定位服务已关闭"];
             }
