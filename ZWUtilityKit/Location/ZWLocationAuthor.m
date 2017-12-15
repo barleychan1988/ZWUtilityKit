@@ -9,6 +9,7 @@
 #import "ZWLocationAuthor.h"
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
+#import "UtilityUIKit.h"
 
 @interface ZWLocationAuthor ()<CLLocationManagerDelegate, UIAlertViewDelegate>
 {
