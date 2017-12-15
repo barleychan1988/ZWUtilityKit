@@ -152,6 +152,13 @@ UIWindow *getApplicationWindow()
     return nil;
 }
 
+NSString *getAppDisplayName()
+{
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *strAppName = [mainBundle objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    return strAppName;
+}
+
 void removeAllSubviews(UIView *viewParent)
 {
     for (UIView *subview in viewParent.subviews)

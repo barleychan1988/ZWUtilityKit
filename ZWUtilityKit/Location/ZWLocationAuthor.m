@@ -78,8 +78,7 @@ static ZWLocationAuthor * g_LocalAuthor;
                 break;
             case kCLAuthorizationStatusDenied:
             {
-                NSBundle *mainBundle = [NSBundle mainBundle];
-                NSString *strAppName = [mainBundle objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+                NSString *strAppName = getAppDisplayName();
                 NSString *strMsg = [NSString stringWithFormat:@"请到设置->隐私->定位服务中开启【%@】定位服务", strAppName];
                 [self showAlertMsg:strMsg title:@"定位服务已关闭"];
             }
@@ -91,7 +90,7 @@ static ZWLocationAuthor * g_LocalAuthor;
     }
     else
     {
-        NSString *strAppName = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleNameKey];
+        NSString *strAppName = getAppDisplayName();
         NSString *strMsg = [NSString stringWithFormat:@"请到设置->隐私->定位服务中开启【%@】定位服务", strAppName];
         [self showAlertMsg:strMsg title:@"定位服务已关闭"];
     }
@@ -219,7 +218,7 @@ BOOL isLocationEnable()
 
 void alertAutorizationDialog()
 {
-    NSString *strAppName = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleNameKey];
+    NSString *strAppName = getAppDisplayName();
     NSString *strMsg = [NSString stringWithFormat:@"请到设置->隐私->定位服务中开启【%@】定位服务", strAppName];
     [[ZWLocationAuthor getInstance] showAlertMsg:strMsg title:@"定位服务已关闭"];
 }
