@@ -61,6 +61,7 @@ UIView * nibInBundle(NSString *strNibName, NSString *strBundleName, NSString *st
 
 //获取应用程序的window
 UIWindow *getApplicationWindow();
+UINavigationController *getCurrentTopNavController();
 NSString *getAppDisplayName();//获取应用名称
 NSString *getDocumentDirectory();
 

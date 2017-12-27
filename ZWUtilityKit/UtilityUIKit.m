@@ -152,6 +152,26 @@ UIWindow *getApplicationWindow()
     return nil;
 }
 
+UINavigationController *getCurrentTopNavController()
+{
+    UIViewController *vcRoot = getApplicationWindow().rootViewController;
+    if ([vcRoot isKindOfClass:[UITabBarController class]])
+    {
+        UITabBarController *tabBarVC = (UITabBarController *)vcRoot;
+        vcRoot = tabBarVC.selectedViewController;
+    }
+    UINavigationController *nav;
+    if ([vcRoot isKindOfClass:[UINavigationController class]])
+    {
+        nav = (UINavigationController *)vcRoot;
+    }
+    else
+    {
+        nav = vcRoot.navigationController;
+    }
+    return nav;
+}
+
 NSString *getAppDisplayName()
 {
     NSBundle *mainBundle = [NSBundle mainBundle];
