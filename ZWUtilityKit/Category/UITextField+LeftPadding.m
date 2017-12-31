@@ -7,6 +7,7 @@
 //
 
 #import "UITextField+LeftPadding.h"
+#import "Masonry.h"
 
 @implementation UITextField (LeftPadding)
 
@@ -20,15 +21,28 @@
 }
 
 - (void)setLeftIcon:(UIImage *)image padding:(CGFloat)leftWidth
-{    
-    UIImageView *imageViewIcon = [[UIImageView alloc] initWithImage:image];
-    imageViewIcon.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-    imageViewIcon.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    UIView *viewLockIcon = [[UIView alloc] initWithFrame:CGRectMake(0, 0, image.size.width + leftWidth * 2, self.bounds.size.height)];
-    viewLockIcon.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    self.leftView = viewLockIcon;
+{
+    CGRect frame = CGRectZero;
+    frame.size.height = self.bounds.size.height;
+    frame.size.width = image.size.width + leftWidth * 2;
+    UIView *viewLeft = [[UIView alloc] initWithFrame:frame];
+    viewLeft.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    self.leftView = viewLeft;
     self.leftViewMode = UITextFieldViewModeAlways;
-    [viewLockIcon addSubview:imageViewIcon];
+    
+    UIImageView *imageViewIcon = [[UIImageView alloc] initWithImage:image];
+    [viewLeft addSubview:imageViewIcon];
+    [imageViewIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(viewLeft);
+        make.size.mas_equalTo(image.size);
+    }];
+}
+
+- (void)setPlaceholder:(NSString *)strPlaceholder withColor:(UIColor *)color
+{
+    NSDictionary *dicPlaceHolderAttr = @{NSForegroundColorAttributeName:color};
+    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:strPlaceholder attributes:dicPlaceHolderAttr];
+    self.attributedPlaceholder = attrStr;
 }
 
 @end
