@@ -11,5 +11,6 @@
 @interface UITextField (LeftPadding)
 
 - (void)setLeftPadding:(CGFloat)leftWidth;
+- (void)setLeftIcon:(UIImage *)image padding:(CGFloat)leftWidth;
 
 @end
