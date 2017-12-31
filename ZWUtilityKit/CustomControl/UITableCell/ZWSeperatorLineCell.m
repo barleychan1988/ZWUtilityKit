@@ -76,6 +76,18 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
     }];
 }
 
+#pragma mark - property
+
+- (UIView *)topSeparatorLine
+{
+    return m_viewTopLine;
+}
+
+- (UIView *)bottomSeparatorLine
+{
+    return m_viewBottomLine;
+}
+
 #pragma mark -
 
 - (void)showTopSeparatorLine:(BOOL)bShow color:(UIColor *)color

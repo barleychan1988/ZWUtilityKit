@@ -22,9 +22,14 @@
 
 - (void)setLeftIcon:(UIImage *)image padding:(CGFloat)leftWidth
 {
+    [self setLeftIcon:image paddingLeft:leftWidth paddingRight:leftWidth];
+}
+
+- (void)setLeftIcon:(nonnull UIImage *)image paddingLeft:(CGFloat)leftWidth paddingRight:(CGFloat)rightWidth
+{
     CGRect frame = CGRectZero;
     frame.size.height = self.bounds.size.height;
-    frame.size.width = image.size.width + leftWidth * 2;
+    frame.size.width = image.size.width + leftWidth + rightWidth;
     UIView *viewLeft = [[UIView alloc] initWithFrame:frame];
     viewLeft.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.leftView = viewLeft;

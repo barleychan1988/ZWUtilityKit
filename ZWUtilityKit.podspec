@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '2.2.6'
+  s.version          = '2.2.7'
   s.summary          = '添加UITextField设置Placeholder颜色方法.'
 
 # This description is used to generate tags and improve search results.
