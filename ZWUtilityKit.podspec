@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '2.3.0'
+  s.version          = '2.3.1'
   s.summary          = 'block宏添加.'
 
 # This description is used to generate tags and improve search results.
