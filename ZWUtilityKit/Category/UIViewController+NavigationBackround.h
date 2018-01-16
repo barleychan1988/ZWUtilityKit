@@ -9,7 +9,7 @@
 
 @interface UIViewController (NavigationBackround)
 
-- (void)setBackgroundColor:(nullable UIColor *)color;
-- (void)setBackgroundImage:(nullable UIImage *)image;
+- (void)setNavBarBackgroundColor:(nullable UIColor *)color;
+- (void)setNavBarBackgroundImage:(nullable UIImage *)image;
 
 @end

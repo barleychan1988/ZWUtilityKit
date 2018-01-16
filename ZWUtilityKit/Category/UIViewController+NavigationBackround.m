@@ -9,11 +9,11 @@
 
 @implementation UIViewController (NavigationBackround)
 
-- (void)setBackgroundColor:(UIColor *)color NS_AVAILABLE_IOS(7_0)
+- (void)setNavBarBackgroundColor:(UIColor *)color NS_AVAILABLE_IOS(7_0)
 {
     if (color == nil || color == [UIColor clearColor])
     {
-        [self setBackgroundImage:nil];
+        [self setNavBarBackgroundImage:nil];
     }
     else
     {
@@ -25,11 +25,11 @@
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
-        [self setBackgroundImage:image];
+        [self setNavBarBackgroundImage:image];
     }
 }
 
-- (void)setBackgroundImage:(UIImage *)image NS_AVAILABLE_IOS(7_0)
+- (void)setNavBarBackgroundImage:(UIImage *)image NS_AVAILABLE_IOS(7_0)
 {
     if (image == nil)
     {
