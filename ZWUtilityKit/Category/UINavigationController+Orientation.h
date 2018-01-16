@@ -15,7 +15,6 @@
  */
 
 @interface UINavigationController (Orientation)
-
 @end
 
 @interface UINavigationController (Background)
@@ -25,6 +24,6 @@
  * @prama: image:背景图片
  *
  */
-- (void)setBackgroundImage:(UIImage *)image;
+- (void)setBackgroundImage:(nonnull UIImage *)image;
 
 @end

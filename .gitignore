@@ -1,10 +1,12 @@
 
-ZWUtilityKit.xcodeproj/xcuserdata/eadkenny.xcuserdatad/xcschemes/ZWUtilityKit.xcscheme
 
 *.xcscmblueprint
 
 *.xcuserstate
 
-*.plist
-
-ZWUtilityKit.xcodeproj/xcuserdata/jgw.xcuserdatad/xcschemes/ZWUtilityKit.xcscheme
+*/Podfile.lock
+*/*.DS_Store
+*/Pods/*
+*/*.xcworkspace
+*/xcuserdata/**/*.*
+TestUtilityKit/TestUtilityKit.xcodeproj/xcuserdata/eadkenny.xcuserdatad/xcschemes/xcschememanagement.plist

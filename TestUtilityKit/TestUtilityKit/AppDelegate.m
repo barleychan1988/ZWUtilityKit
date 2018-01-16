@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "TestNavVC.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,7 +17,20 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    // Override point for customization after application launch.
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    self.window.rootViewController = tabVC;
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    [tabVC addChildViewController:nav];
+    UINavigationController *navTestNav = [[UINavigationController alloc] initWithRootViewController:[TestNavVC new]];
+    navTestNav.title = @"导航栏测试";
+    [tabVC addChildViewController:navTestNav];
     // Override point for customization after application launch.
     return YES;
 }

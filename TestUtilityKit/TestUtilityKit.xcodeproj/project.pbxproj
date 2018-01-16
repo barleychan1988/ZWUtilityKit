@@ -12,6 +12,7 @@
 		91212DAC1FF89706008910AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91212DAB1FF89706008910AE /* Assets.xcassets */; };
 		91212DB21FF89706008910AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91212DB11FF89706008910AE /* main.m */; };
 		AF0E05BE606520771CF0DD5B /* libPods-TestUtilityKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B08B741CF5823539B40D5C /* libPods-TestUtilityKit.a */; };
+		D46E9F84200E0A0200EE7F4A /* TestNavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D46E9F83200E0A0200EE7F4A /* TestNavVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		91212DB01FF89706008910AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91212DB11FF89706008910AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF02A98287BCBF0602C57B71 /* Pods-TestUtilityKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestUtilityKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestUtilityKit/Pods-TestUtilityKit.debug.xcconfig"; sourceTree = "<group>"; };
+		D46E9F82200E0A0200EE7F4A /* TestNavVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNavVC.h; sourceTree = "<group>"; };
+		D46E9F83200E0A0200EE7F4A /* TestNavVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNavVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				91212DAB1FF89706008910AE /* Assets.xcassets */,
 				91212DB01FF89706008910AE /* Info.plist */,
 				91212DB11FF89706008910AE /* main.m */,
+				D46E9F82200E0A0200EE7F4A /* TestNavVC.h */,
+				D46E9F83200E0A0200EE7F4A /* TestNavVC.m */,
 			);
 			path = TestUtilityKit;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46E9F84200E0A0200EE7F4A /* TestNavVC.m in Sources */,
 				91212DA71FF89706008910AE /* ViewController.m in Sources */,
 				91212DB21FF89706008910AE /* main.m in Sources */,
 				91212DA41FF89706008910AE /* AppDelegate.m in Sources */,
@@ -330,6 +336,7 @@
 			baseConfigurationReference = AF02A98287BCBF0602C57B71 /* Pods-TestUtilityKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 869P39T2QE;
 				INFOPLIST_FILE = TestUtilityKit/Info.plist;
@@ -347,6 +354,7 @@
 			baseConfigurationReference = 5F6A4866C205D490C0518A0C /* Pods-TestUtilityKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 869P39T2QE;
 				INFOPLIST_FILE = TestUtilityKit/Info.plist;

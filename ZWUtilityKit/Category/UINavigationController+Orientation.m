@@ -29,19 +29,17 @@
 
 @implementation UINavigationController (Background)
 
-- (void)setBackgroundImage:(UIImage *)image
+- (void)setBackgroundImage:(UIImage *)image NS_AVAILABLE_IOS(7_0)
 {
     if (image == nil)
         return;
     UIImage *backgroundImage = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 20, 0)];
     if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarPosition:barMetrics:)])
     {
-        //if iOS 5.0 and later
-        //        [navController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
         [self.navigationBar setBackgroundImage:backgroundImage forBarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
         if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)])
         {
-            self.edgesForExtendedLayout ^= UIRectEdgeNone;
+            self.edgesForExtendedLayout ^= UIRectEdgeTop;
         }
     }
     else
@@ -55,5 +53,4 @@
         }
     }
 }
-
 @end
