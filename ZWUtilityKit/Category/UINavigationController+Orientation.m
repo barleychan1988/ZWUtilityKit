@@ -7,7 +7,6 @@
 //
 
 #import "UINavigationController+Orientation.h"
-#import "ZWMacroDef.h"
 
 @implementation UINavigationController (Orientation)
 
@@ -40,9 +39,9 @@
         //if iOS 5.0 and later
         //        [navController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
         [self.navigationBar setBackgroundImage:backgroundImage forBarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
-        if (IOS7)
+        if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)])
         {
-            self.edgesForExtendedLayout = UIRectEdgeNone;
+            self.edgesForExtendedLayout ^= UIRectEdgeNone;
         }
     }
     else
