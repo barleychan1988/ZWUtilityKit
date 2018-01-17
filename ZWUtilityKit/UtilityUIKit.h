@@ -18,16 +18,19 @@
 #import <Foundation/NSObjCRuntime.h>
 #import "ZWMacroDef.h"
 
-#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define RGBSAMECOLOR(color) [UIColor colorWithRed:(color)/255.0f green:(color)/255.0f blue:(color)/255.0f alpha:1]
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+#define HexRGBCOLOR(s) [UIColor colorWithRed:(((s & 0xFF0000) >> 16))/255.0 green:(((s &0xFF00) >>8))/255.0 blue:((s &0xFF))/255.0 alpha:1.0]
 
 #define TabBar_HEIGHT 49
+#define HEIGHT_PickerView 230
 
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
-CGSize getSizeForLabel(NSString *str,UIFont *font, NSLineBreakMode lineBreadMode, CGSize size) NS_AVAILABLE_IOS(7_0);
+CGSize getSizeForLabel(NSString *str,UIFont *font, NSLineBreakMode lineBreadMode, CGSize size);
 CGSize getSizeForLabelText(NSString *str,UIFont *font, CGSize size);
+CGSize getSizeForText(NSString *str,UIFont *font);
 
 #pragma mark - Resources
 

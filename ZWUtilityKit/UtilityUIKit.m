@@ -16,7 +16,7 @@ CGSize getSizeForLabel(NSString *str,UIFont *font, NSLineBreakMode lineBreadMode
     {
         size = CGSizeMake(1000, 1000);
     }
-    if (IOS7)
+    if (@available(iOS 7.0, *))
     {
         CGRect expectedFrame = [str boundingRectWithSize:size
                                                  options:NSStringDrawingUsesLineFragmentOrigin
@@ -30,42 +30,19 @@ CGSize getSizeForLabel(NSString *str,UIFont *font, NSLineBreakMode lineBreadMode
     }
     else
     {
-#ifndef __IPHONE_7_0
-        return [str sizeWithFont:font
-               constrainedToSize:size
-                   lineBreakMode:lineBreadMode];
-#endif
+        return [str sizeWithFont:font constrainedToSize:size lineBreakMode:lineBreadMode];
     }
     return CGSizeZero;
 }
 
 CGSize getSizeForLabelText(NSString *str,UIFont *font, CGSize size)
 {
-    if (size.width == 0 && size.height == 0)
-    {
-        size = CGSizeMake(1000, 1000);
-    }
-    if (IOS7)
-    {
-        CGRect expectedFrame = [str boundingRectWithSize:size
-                                                 options:NSStringDrawingUsesLineFragmentOrigin
-                                              attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                          font, NSFontAttributeName,
-                                                          nil]
-                                                 context:nil];
-        expectedFrame.size.width = ceil(expectedFrame.size.width);
-        expectedFrame.size.height = ceil(expectedFrame.size.height);
-        return expectedFrame.size;
-    }
-    else
-    {
-#ifndef __IPHONE_7_0
-        return [str sizeWithFont:font
-               constrainedToSize:size
-                   lineBreakMode:lineBreadMode];
-#endif
-    }
-    return CGSizeZero;
+    return getSizeForLabel(str, font, NSLineBreakByWordWrapping, size);
+}
+
+CGSize getSizeForText(NSString *str,UIFont *font)
+{
+    return getSizeForLabel(str, font, NSLineBreakByWordWrapping, CGSizeMake(10000, 10000));
 }
 
 #pragma mark - Resources
