@@ -527,15 +527,13 @@ EnDEVICETYPE_SIZE getDeviceTypeSize()
 
 void alertNotificationAuthorization()
 {
-    if (SystemVersion > 8.0)
+    if (@available(iOS 8.0, *))
     {
-#ifdef __IPHONE_8_0
         Class a = NSClassFromString(@"UIUserNotificationSettings");
         [[UIApplication sharedApplication] registerUserNotificationSettings:[a
                                                                              settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge)
                                                                              categories:nil]];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
-#endif
     }
     else//需要证书对于开通通知才可测试弹出确认框
     {

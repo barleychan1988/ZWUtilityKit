@@ -37,6 +37,7 @@ _Pragma("clang diagnostic pop") \
 #define iPhone5 (getDeviceTypeSize() == DEVICE_SIZE_iPhone_5)
 #define iPhone6 (getDeviceTypeSize() == DEVICE_SIZE_iPhone_6)
 #define iPhone6Plus (getDeviceTypeSize() == DEVICE_SIZE_iPhone_6_Plus)
+#define iPhoneX (getDeviceTypeSize() == DEVICE_SIZE_iPhone_X)
 
 #define WeakObject(obj) __weak typeof(obj) weakObject = obj
 #define StrongObject(obj) __strong typeof(obj) strongObject = weakObject
@@ -52,5 +53,6 @@ typedef void (^BlockBoolObject)(BOOL bFlage, id object);
 typedef void (^BlockObject)(id object);
 typedef void (^BlockInteger)(long nValue);
 typedef void (^BlockObjectObject)(id object1, id object2);
+typedef id _Nullable (^BLOCKObject_Void)();
 
 #endif /* macroDef_h */
