@@ -15,7 +15,11 @@
     if (IOS11)
     {
         UIBarButtonItem *item = [self defaultLeftBackItem];
-        self.topViewController.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:item, nil];
+        self.topViewController.navigationItem.leftBarButtonItems = @[item];
+    }
+    else if (IOS10)
+    {
+        [self setLeftBarButtonItem:[self defaultLeftBackItem] offset:-20];
     }
     else
     {
@@ -73,7 +77,7 @@
                                        target:nil action:nil];
     negativeSpacer.width = offset;
     self.topViewController.navigationItem.rightBarButtonItems = [NSArray
-                                               arrayWithObjects:negativeSpacer, item, nil];
+                                                                 arrayWithObjects:negativeSpacer, item, nil];
 }
 
 - (void)setRightButtonWithAnimation:(UIBarButtonItem *)item
@@ -106,7 +110,7 @@
     negativeSpacer.width = offset;
     
     UIBarButtonItem *flexibleSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                       target:nil action:nil];
+                                                                                    target:nil action:nil];
     
     NSMutableArray *mtArray = [NSMutableArray arrayWithObject:negativeSpacer];
     [mtArray addObjectsFromArray:arrayItems];
@@ -147,7 +151,11 @@
     [backButton addTarget:target action:btnAction forControlEvents:UIControlEventTouchUpInside];
     backButton.tag = 101;
     [bgView addSubview:backButton];
-    
+    if (IOS11)
+    {
+        backButton.contentEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 0);
+        backButton.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 0);
+    }
     __autoreleasing UIBarButtonItem* someBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:bgView];
     return someBarButtonItem;
 }
@@ -201,3 +209,4 @@
 }
 
 @end
+
