@@ -10,9 +10,17 @@
 
 @implementation UINavigationController (BarButtonItem)
 
-- (void)setDefaultBackBarButtonItem
+- (void)setDefaultBackBarButtonItem NS_AVAILABLE_IOS(7_0)
 {
-    [self setLeftBarButtonItem:[self defaultLeftBackItem] offset:Nav_Left_BarItem_Offset];
+    if (IOS11)
+    {
+        UIBarButtonItem *item = [self defaultLeftBackItem];
+        self.topViewController.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:item, nil];
+    }
+    else
+    {
+        [self setLeftBarButtonItem:[self defaultLeftBackItem] offset:Nav_Left_BarItem_Offset];
+    }
     self.interactivePopGestureRecognizer.delegate = self;
 }
 

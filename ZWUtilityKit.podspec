@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '2.3.2'
-  s.summary          = 'block宏添加.'
+  s.version          = '2.3.3'
+  s.summary          = '导航啦返回按钮适配iOS11.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
