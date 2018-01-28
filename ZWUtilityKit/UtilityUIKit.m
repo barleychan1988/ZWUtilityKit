@@ -282,7 +282,7 @@ void playBeep(NSString *strFileName)
 
 #pragma mark - Alert
 
-void showAlertMsg(UIViewController<UIAlertViewDelegate> *vc, NSString *strMsg, NSString *strTitle, NSString *strBtnTitleOk, NSString *strBtnTitleCancel, BlockVoid handleOk, BlockVoid handleCancel)
+void showAlertMsg(UIViewController<UIAlertViewDelegate> *vc, NSString *strMsg, NSString *strTitle, NSString *strBtnTitleOk, NSString *strBtnTitleCancel, BlockObject handleOk, BlockObject handleCancel)
 {
     if (IOS8)
     {

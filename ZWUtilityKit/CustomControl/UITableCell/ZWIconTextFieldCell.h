@@ -12,8 +12,8 @@ UIKIT_EXTERN  NSString *_Nonnull const ZWIconTextFieldCellID;
 
 @interface ZWIconTextFieldCell : ZWAccessoryCell
 
-@property (nonatomic, retain)UIImage *icon;
-@property (nonatomic, readonly, retain)UITextField *textField;
+@property (nonatomic, retain, nullable)UIImage *icon;
+@property (nonatomic, readonly, retain, nonnull)UITextField *textField;
 @property (nonatomic, assign)CGFloat fWidthDiff; //图标和文字之间的间距
 
 @end

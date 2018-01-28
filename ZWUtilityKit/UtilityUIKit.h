@@ -64,16 +64,16 @@ UIImage * imageNamed(NSString *strImgName, NSString *strBundleName, NSString *st
 UIView * nibInBundle(NSString *strNibName, NSString *strBundleName, NSString *strSubPath, id owner);
 
 //获取应用程序的window
-UIWindow *getApplicationWindow();
-UINavigationController *getCurrentTopNavController();
-NSString *getAppDisplayName();//获取应用名称
-NSString *getDocumentDirectory();
+UIWindow *getApplicationWindow(void);
+UINavigationController *getCurrentTopNavController(void);
+NSString *getAppDisplayName(void);//获取应用名称
+NSString *getDocumentDirectory(void);
 
 //移除viewParent上所有subview
 void removeAllSubviews(UIView *viewParent);
 
 //取消第一响应者
-void cancelFirstRespond();
+void cancelFirstRespond(void);
 /*
  *  @brief：查找view子窗口及嵌套子窗口中的第一响应者
  *  @ret：第一响应者，若无则返回nil
@@ -88,4 +88,4 @@ void playBeep(NSString *strFileName);
 
 #pragma mark - alert
 
-void showAlertMsg(id<UIAlertViewDelegate> vc, NSString *strMsg, NSString *strTitle, NSString *strBtnTitle1, NSString *strBtnTitle2, BlockVoid handleDefault, BlockVoid handleCancel);
+void showAlertMsg(id<UIAlertViewDelegate> vc, NSString *strMsg, NSString *strTitle, NSString *strBtnTitle1, NSString *strBtnTitle2, BlockObject handleDefault, BlockObject handleCancel);

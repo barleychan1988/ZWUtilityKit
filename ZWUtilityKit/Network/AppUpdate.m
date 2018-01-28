@@ -138,7 +138,7 @@
                         strNewVersion = [self parseWebsiteData:dicRet appUrl:&strAppUrl];
                         
                         NSArray *arrayResult = [dicRet safeObjectForKey:@"PageData"];
-                        if ([arrayResult isKindOfClass:[NSArray class]] && [arrayResult count] >= 0)
+                        if ([arrayResult isKindOfClass:[NSArray class]] && [arrayResult count] > 0)
                         {
                             NSDictionary *dicResult = [arrayResult objectAtIndex:0];
                             strMsg = [dicResult stringValueForKey:@"Remark"];

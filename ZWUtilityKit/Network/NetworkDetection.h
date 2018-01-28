@@ -12,6 +12,6 @@
 /*
  *  @brief: 判断网络是否可用
  */
-FOUNDATION_EXPORT BOOL isNetworkAvailabel();
+FOUNDATION_EXPORT BOOL isNetworkAvailabel(void);
 BOOL addNetworkMonitor(id observer, SEL aSelector);
 void removeNetworkMonitor(id observer);

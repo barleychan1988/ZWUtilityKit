@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-UIKIT_EXTERN NSString *const ZWButtonCellID;
+UIKIT_EXTERN NSString * _Nullable const ZWButtonCellID;
 
 @interface ZWButtonCell : UITableViewCell
 
-@property (nonatomic, retain, readonly)UIButton *btn;
+@property (nonatomic, retain, readonly, nonnull)UIButton *btn;
 - (void)setButtonInset:(UIEdgeInsets)separatorInset;
-- (void)addTarget:(nullable id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents;
+- (void)addTarget:(nullable id)target action:(SEL _Nullable )action forControlEvents:(UIControlEvents)controlEvents;
 
 @end

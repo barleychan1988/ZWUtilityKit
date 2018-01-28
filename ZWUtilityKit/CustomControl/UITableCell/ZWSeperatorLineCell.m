@@ -26,13 +26,17 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
     [super awakeFromNib];
     // Initialization code
     [self initValues];
+    [self initSubviews];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
+    {
         [self initValues];
+        [self initSubviews];
+    }
     return self;
 }
 
@@ -40,7 +44,10 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 {
     self = [super initWithFrame:frame];
     if (self)
+    {
         [self initValues];
+        [self initSubviews];
+    }
     return self;
 }
 
@@ -57,6 +64,9 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
         make.bottom.equalTo(weakobject);
     }];
 }
+
+- (void)initSubviews
+{}
 
 - (void)setContentInset:(UIEdgeInsets)contentInset
 {

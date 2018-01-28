@@ -19,6 +19,6 @@ UIKIT_EXTERN  NSString *_Nonnull const EadSeparatorLineCellID;
 - (void)showBottomSeparatorLine:(BOOL)bShow color:(nullable UIColor *)color indent:(CGFloat)fIndent;
 
 @property (nonatomic, assign)UIEdgeInsets contentInset;//默认(0,15,0,15)
-@property (nonatomic, retain, readonly)UIView *mainView;
+@property (nonatomic, retain, readonly, nonnull)UIView * mainView;
 
 @end

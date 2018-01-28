@@ -15,6 +15,7 @@ UIKIT_EXTERN  NSString *_Nonnull const ZWSeperatorLineCellID;
 @interface ZWSeperatorLineCell : UITableViewCell
 
 - (void)initValues;
+- (void)initSubviews;
 
 //如果颜色未nil，则默认(221,221,221)
 - (void)showTopSeparatorLine:(BOOL)bShow color:(nullable UIColor *)color;

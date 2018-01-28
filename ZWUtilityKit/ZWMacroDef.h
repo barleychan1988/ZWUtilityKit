@@ -47,12 +47,12 @@ _Pragma("clang diagnostic pop") \
  */
 #define appDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
-typedef void (^BlockBoolStrObject)(BOOL, NSString *, id);
-typedef void (^BlockVoid)();
-typedef void (^BlockBoolObject)(BOOL bFlage, id object);
-typedef void (^BlockObject)(id object);
+typedef void (^BlockBoolStrObject)(BOOL, NSString *_Nullable, id _Nullable );
+typedef void (^BlockVoid)(void);
+typedef void (^BlockBoolObject)(BOOL bFlage, id _Nullable object);
+typedef void (^BlockObject)(id _Nullable object);
 typedef void (^BlockInteger)(long nValue);
-typedef void (^BlockObjectObject)(id object1, id object2);
-typedef id _Nullable (^BLOCKObject_Void)();
+typedef void (^BlockObjectObject)(id _Nullable object1, id _Nullable object2);
+typedef id _Nullable (^BLOCKObject_Void)(void);
 
 #endif /* macroDef_h */

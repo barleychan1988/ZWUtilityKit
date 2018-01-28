@@ -12,6 +12,6 @@ UIKIT_EXTERN NSString *_Nonnull const ZWCollectionCellID;
 
 @interface ZWCollectionCell : ZWSeperatorLineCell
 
-@property (nonatomic, readonly, retain)UICollectionView *collectionView;
+@property (nonatomic, readonly, retain, nonnull)UICollectionView *collectionView;
 
 @end

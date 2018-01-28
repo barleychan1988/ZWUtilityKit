@@ -53,7 +53,7 @@ typedef enum tagEnumDeviceType
     DEVICE_UNKNOWN
 }EnDEVICETYPE;
 
-EnDEVICETYPE getDeviceType();
+EnDEVICETYPE getDeviceType(void);
 /*
  *  @brief: 获取设备详细型号
  */
@@ -117,7 +117,7 @@ typedef enum tagEnumDeviceTypeDetail
     DEVICE_DETAIL_UNKNOWN
 }EnDEVICETYPE_DETAIL;
 
-EnDEVICETYPE_DETAIL getDeviceTypeDetail();
+EnDEVICETYPE_DETAIL getDeviceTypeDetail(void);
 
 /*
  *  @brief: 获取设备类型，按屏幕大小分类
@@ -167,16 +167,16 @@ typedef enum tagEnumDeviceTypeSize
     DEVICE_SIZE_SIMULATOR,
     DEVICE_SIZE_UNKNOWN
 }EnDEVICETYPE_SIZE;
-EnDEVICETYPE_SIZE getDeviceTypeSize();
+EnDEVICETYPE_SIZE getDeviceTypeSize(void);
 
 /*
  *  @brief: 设备类型描述
  */
-NSString * stringForDevice();
+NSString * stringForDevice(void);
 /*
  *  @brief: 获取内存剩余容量，单位MB
  */
-long long getFreeSpaceInKB();
+long long getFreeSpaceInKB(void);
 
 /*
  *  @brief:返回非Null字符串, 如果str是NSNull则返回@“”
@@ -206,7 +206,7 @@ UInt32 strVersionToIntVersion(NSString *strVersion);
 /*
  *  @bief:添加推送通知,使得系统弹出“发送推送通知”确认框
  */
-FOUNDATION_EXPORT void alertNotificationAuthorization();
+FOUNDATION_EXPORT void alertNotificationAuthorization(void);
 
 /*
  *  @brief:打开APP Store并显示APP

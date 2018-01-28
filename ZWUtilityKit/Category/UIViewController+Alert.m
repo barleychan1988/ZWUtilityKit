@@ -10,7 +10,7 @@
 
 @implementation UIViewController (ZWExt)
 
-- (id)showAlert:(id<UIAlertViewDelegate>)delegate message:(NSString *)strMsg title:(NSString *)strTitle okButton:(NSString *)strTitleOk okAction:(BlockVoid)handleOk cancelButton:(NSString *)strTitleCancel cancelAction:(BlockVoid)handleCancel
+- (id)showAlert:(id<UIAlertViewDelegate>)delegate message:(NSString *)strMsg title:(NSString *)strTitle okButton:(NSString *)strTitleOk okAction:(BlockObject)handleOk cancelButton:(NSString *)strTitleCancel cancelAction:(BlockObject)handleCancel
 {
     if (IOS8)
     {
@@ -39,7 +39,7 @@
     }
 }
 
-- (id)showAlert:(id<UIAlertViewDelegate>)delegate attributeMsg:(NSAttributedString *)attrStrMsg attributeTitle:(NSAttributedString *)attrStrTitle okButton:(NSString *)strTitleOk okAction:(BlockVoid)handleOk cancelButton:(NSString *)strTitleCancel cancelAction:(BlockVoid)handleCancel
+- (id)showAlert:(id<UIAlertViewDelegate>)delegate attributeMsg:(NSAttributedString *)attrStrMsg attributeTitle:(NSAttributedString *)attrStrTitle okButton:(NSString *)strTitleOk okAction:(BlockObject)handleOk cancelButton:(NSString *)strTitleCancel cancelAction:(BlockObject)handleCancel
 {
     if (IOS8)
     {
@@ -76,7 +76,7 @@
     }
 }
 
-- (id)showAlert:(id<UIAlertViewDelegate>)delegate attributeMsg:(NSAttributedString *)attrStrMsg attributeTitle:(NSAttributedString *)attrStrTitle attributeOkButton:(NSAttributedString *)attrStrTitleOk okAction:(BlockVoid)handleOk attributeCancelButton:(NSAttributedString *)attrStrTitleCancel cancelAction:(BlockVoid)handleCancel
+- (id)showAlert:(id<UIAlertViewDelegate>)delegate attributeMsg:(NSAttributedString *)attrStrMsg attributeTitle:(NSAttributedString *)attrStrTitle attributeOkButton:(NSAttributedString *)attrStrTitleOk okAction:(BlockObject)handleOk attributeCancelButton:(NSAttributedString *)attrStrTitleCancel cancelAction:(BlockObject)handleCancel
 {
     if (IOS8)
     {

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-workPath=${0%/*}/TestUtilityKit
+workPath=${0%/*}/TestUtilityKit/
 
 cd $workPath
 pod install

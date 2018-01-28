@@ -114,4 +114,4 @@ void checkUpdateAtWebsite(NSString *strUrl, NSDictionary *dicParam, id<updateDel
 
 #pragma mark - hot update
 
-void checkHotupdate();
+void checkHotupdate(void);
