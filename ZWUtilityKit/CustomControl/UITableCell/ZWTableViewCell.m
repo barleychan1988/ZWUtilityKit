@@ -143,29 +143,6 @@ NSString *const ZWLabelTipCellID = @"ZWLabelTipCellID";
 
 @implementation ZWLabelTipCell
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    // Initialization code
-    [self initSubviews];
-}
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self)
-        [self initSubviews];
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self)
-        [self initSubviews];
-    return self;
-}
-
 - (void)initSubviews
 {
     UILabel *l = [[UILabel alloc] init];
