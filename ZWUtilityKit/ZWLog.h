@@ -82,6 +82,8 @@
     #define ZWDebugWriteLogParams(...) /**/
 #endif
 
++ (NSString *)logText;
+
 @end
 //NSLog(@"%@", NSStringFromSelector(_cmd));
 

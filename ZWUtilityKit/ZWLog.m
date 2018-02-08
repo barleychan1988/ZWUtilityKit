@@ -370,6 +370,15 @@ static ZWLog *zwLog = nil;
     [self writeLogWithParams:@"------------ Application ", strAppName, @" launched ------------\n", @"launch options = ", launchOptions, nil];
 }
 
++ (NSString *)logText
+{
+    ZWLog *log = [ZWLog logInstance];
+    NSString *strPath = log->m_strLogFilePath;
+    strPath = [strPath stringByAppendingFormat:@"/%@.log", stringForDate([NSDate date], @"YYYY-MM-dd")];
+    NSString *str = [NSString stringWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
+    return str;
+}
+
 @end
 //
 //#pragma mark - bug mail report
