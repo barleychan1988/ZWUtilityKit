@@ -137,9 +137,8 @@ static ZWLocationAuthor * g_LocalAuthor;
     if (_bIsAlerting) return;
     _bIsAlerting = YES;
     __block UIViewController *vcBlock = [[[UIApplication sharedApplication] delegate] window].rootViewController;
-    if (IOS8)
+    if (@available(iOS 8.0, *))
     {
-#ifdef __IPHONE_8_0
         UIAlertController *sheet = [UIAlertController alertControllerWithTitle:strTitle message:strMsg preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -150,19 +149,12 @@ static ZWLocationAuthor * g_LocalAuthor;
         UIAlertAction *actionSetting = [UIAlertAction actionWithTitle:@"设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             _bIsAlerting = NO;
             //定位服务设置界面
-            NSString *strSettingUrl = @"prefs:root=LOCATION_SERVICES";
-            BOOL bRet = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:strSettingUrl]];
-            if (!bRet)
-            {
-                strSettingUrl = UIApplicationOpenSettingsURLString;
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:strSettingUrl]];
-            }
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
         }];
         [sheet addAction:actionSetting];
         dispatch_async(dispatch_get_main_queue(), ^{
             [vcBlock presentViewController:sheet animated:YES completion:nil];
         });
-#endif
     }
     else
     {
