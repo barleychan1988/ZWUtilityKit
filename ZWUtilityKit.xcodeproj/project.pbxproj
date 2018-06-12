@@ -60,8 +60,6 @@
 		C9B98ECF1AE0B0A5002DA92C /* UIImage+StrethImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B98ECB1AE0B0A5002DA92C /* UIImage+StrethImage.m */; };
 		C9B98F081AE1025F002DA92C /* UIButton+TitleStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = C9B98F061AE1025F002DA92C /* UIButton+TitleStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9B98F091AE1025F002DA92C /* UIButton+TitleStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B98F071AE1025F002DA92C /* UIButton+TitleStyle.m */; };
-		C9B98F0C1AE11D14002DA92C /* UIView+Genie.h in Headers */ = {isa = PBXBuildFile; fileRef = C9B98F0A1AE11D14002DA92C /* UIView+Genie.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C9B98F0D1AE11D14002DA92C /* UIView+Genie.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B98F0B1AE11D14002DA92C /* UIView+Genie.m */; };
 		C9B9AC8A1B186A8F0078EE50 /* NSDictionary+NSData.h in Headers */ = {isa = PBXBuildFile; fileRef = C9B9AC881B186A8F0078EE50 /* NSDictionary+NSData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9B9AC8B1B186A8F0078EE50 /* NSDictionary+NSData.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B9AC891B186A8F0078EE50 /* NSDictionary+NSData.m */; };
 		C9DAC1F21B6F1950001F2505 /* UIView+AddLine.h in Headers */ = {isa = PBXBuildFile; fileRef = C9DAC1F01B6F1950001F2505 /* UIView+AddLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -173,8 +171,6 @@
 		C9B98ECB1AE0B0A5002DA92C /* UIImage+StrethImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+StrethImage.m"; path = "Category/UIImage+StrethImage.m"; sourceTree = "<group>"; };
 		C9B98F061AE1025F002DA92C /* UIButton+TitleStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+TitleStyle.h"; path = "Category/UIButton+TitleStyle.h"; sourceTree = "<group>"; };
 		C9B98F071AE1025F002DA92C /* UIButton+TitleStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+TitleStyle.m"; path = "Category/UIButton+TitleStyle.m"; sourceTree = "<group>"; };
-		C9B98F0A1AE11D14002DA92C /* UIView+Genie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Genie.h"; sourceTree = "<group>"; };
-		C9B98F0B1AE11D14002DA92C /* UIView+Genie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Genie.m"; sourceTree = "<group>"; };
 		C9B9AC881B186A8F0078EE50 /* NSDictionary+NSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+NSData.h"; path = "Category/NSDictionary+NSData.h"; sourceTree = "<group>"; };
 		C9B9AC891B186A8F0078EE50 /* NSDictionary+NSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+NSData.m"; path = "Category/NSDictionary+NSData.m"; sourceTree = "<group>"; };
 		C9DAC1F01B6F1950001F2505 /* UIView+AddLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+AddLine.h"; path = "Category/UIView+AddLine.h"; sourceTree = "<group>"; };
@@ -303,8 +299,6 @@
 				79D9460A1A7A2A3F00926B9B /* Category */,
 				791DECD91A5D38160014A7FD /* CommControl */,
 				79D64BC01AB2C0C80094DEAF /* CustomControl */,
-				C9B98F0A1AE11D14002DA92C /* UIView+Genie.h */,
-				C9B98F0B1AE11D14002DA92C /* UIView+Genie.m */,
 				D43D129C1CF57E5E0042514B /* Geometry+ZWExtension.h */,
 				D43D129D1CF57E5E0042514B /* Geometry+ZWExtension.m */,
 				794BAF7E1A4D4974000ACD77 /* ZWIndicator */,
@@ -516,7 +510,6 @@
 				C9E6137D1AE4A7E800252843 /* UITransluentToolbar.h in Headers */,
 				C9377C0E1BAC225B00693B48 /* ZWUIImageView.h in Headers */,
 				C9B9AC8A1B186A8F0078EE50 /* NSDictionary+NSData.h in Headers */,
-				C9B98F0C1AE11D14002DA92C /* UIView+Genie.h in Headers */,
 				C9DBA1571B2FE34400777094 /* ZWEditView.h in Headers */,
 				C91CCC3D1B677444006C0B42 /* UINavigationController+Animation.h in Headers */,
 				C93F06561BA68DE2000216B3 /* ZWAlertView.h in Headers */,
@@ -633,7 +626,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D46219041EDC760500D16E37 /* ZWNoneCell.m in Sources */,
-				C9B98F0D1AE11D14002DA92C /* UIView+Genie.m in Sources */,
 				D47404F51F5014E40046C7C4 /* ZWCollectionCell.m in Sources */,
 				79A46D7B1AA43AB800595026 /* UITableViewCell2.m in Sources */,
 				C9F47E8C1B874C85000C563B /* ZWNetImageView.m in Sources */,

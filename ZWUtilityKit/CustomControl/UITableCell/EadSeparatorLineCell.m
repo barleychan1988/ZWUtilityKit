@@ -60,7 +60,7 @@ NSString *const EadSeparatorLineCellID = @"EadSeparatorLineCellID";
         _mainView = [[UIView alloc] init];
         [self.contentView addSubview:_mainView];
         [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView).with.insets(_contentInset);
+            make.edges.equalTo(self.contentView).with.insets(self.contentInset);
         }];
     }
     return _mainView;

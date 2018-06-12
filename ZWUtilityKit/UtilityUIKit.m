@@ -30,7 +30,6 @@ CGSize getSizeForLabel(NSString *str,UIFont *font, NSLineBreakMode lineBreadMode
     }
     else
     {
-        return [str sizeWithFont:font constrainedToSize:size lineBreakMode:lineBreadMode];
     }
     return CGSizeZero;
 }

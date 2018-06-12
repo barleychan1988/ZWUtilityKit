@@ -58,7 +58,7 @@
     UIImageView *imgV = [[UIImageView alloc] initWithImage:image];
     [self addSubview:m_imageViewAccessory = imgV];
     [imgV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-_fWidthRight);
+        make.right.equalTo(self).offset(-self.fWidthRight);
         make.centerY.equalTo(self);
         make.size.mas_equalTo(image.size);
     }];
@@ -77,7 +77,7 @@
     view.frame = frame;
     [self addSubview:m_imageViewAccessory = view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-_fWidthRight);
+        make.right.equalTo(self).offset(-self.fWidthRight);
         make.centerY.equalTo(self);
         make.size.mas_equalTo(size);
     }];

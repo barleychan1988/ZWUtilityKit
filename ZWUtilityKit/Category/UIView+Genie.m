@@ -115,7 +115,7 @@ static const int BCTrapezoidWinding[4][4] = {
 
 #pragma mark - publics
 
-- (void)genieInTransitionWithDuration:(NSTimeInterval)duration destinationRect:(CGRect)destRect destinationEdge:(BCRectEdge)destEdge completion:(void (^)())completion {
+- (void)genieInTransitionWithDuration:(NSTimeInterval)duration destinationRect:(CGRect)destRect destinationEdge:(BCRectEdge)destEdge completion:(void (^)(void))completion {
     
     [self genieTransitionWithDuration:duration
                                  edge:destEdge
@@ -124,7 +124,7 @@ static const int BCTrapezoidWinding[4][4] = {
                            completion:completion];
 }
 
-- (void)genieOutTransitionWithDuration:(NSTimeInterval)duration startRect:(CGRect)startRect startEdge:(BCRectEdge)startEdge completion:(void (^)())completion {
+- (void)genieOutTransitionWithDuration:(NSTimeInterval)duration startRect:(CGRect)startRect startEdge:(BCRectEdge)startEdge completion:(void (^)(void))completion {
     [self genieTransitionWithDuration:duration
                                  edge:startEdge
                       destinationRect:startRect
@@ -139,7 +139,7 @@ static const int BCTrapezoidWinding[4][4] = {
                            edge:(BCRectEdge) edge
                      destinationRect:(CGRect)destRect
                              reverse:(BOOL)reverse
-                          completion:(void (^)())completion
+                          completion:(void (^)(void))completion
 {
     assert(!CGRectIsNull(destRect));
     

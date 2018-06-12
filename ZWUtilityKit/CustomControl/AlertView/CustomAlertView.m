@@ -71,7 +71,7 @@
     m_labelMessage.text = _strMessage;
     
     CGRect frame = m_labelMessage.frame;
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+    if (@available(iOS 7.0, *))
     {
         CGRect expectedFrame = [_strMessage boundingRectWithSize:CGSizeMake(m_labelMessage.frame.size.width, 1000)
                                                      options:NSStringDrawingUsesLineFragmentOrigin

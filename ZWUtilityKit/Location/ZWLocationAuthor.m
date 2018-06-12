@@ -142,12 +142,12 @@ static ZWLocationAuthor * g_LocalAuthor;
         UIAlertController *sheet = [UIAlertController alertControllerWithTitle:strTitle message:strMsg preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            _bIsAlerting = NO;
+            self->_bIsAlerting = NO;
             [ZWLocationAuthor releaseInstance];
         }];
         [sheet addAction:cancelAction];
         UIAlertAction *actionSetting = [UIAlertAction actionWithTitle:@"设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            _bIsAlerting = NO;
+            self->_bIsAlerting = NO;
             //定位服务设置界面
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
         }];

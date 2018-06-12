@@ -90,7 +90,7 @@
     else
     {
         dispatch_async(dispatch_get_main_queue(), ^{
-            _activityView.strTipTitle = @"下载失败，请检查图片地址是否正确";
+            self->_activityView.strTipTitle = @"下载失败，请检查图片地址是否正确";
         });
     }
 }

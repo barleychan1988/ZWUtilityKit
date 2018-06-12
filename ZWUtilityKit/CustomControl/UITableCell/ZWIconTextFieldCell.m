@@ -52,7 +52,7 @@ NSString *const ZWIconTextFieldCellID = @"ZWIconTextFieldCellID";
     [imgV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView);
         make.centerY.equalTo(self.contentView);
-        make.size.mas_equalTo(_icon.size);
+        make.size.mas_equalTo(self.icon.size);
     }];
     
     UITextField *l = [[UITextField alloc] initWithFrame:self.bounds];
@@ -89,7 +89,7 @@ NSString *const ZWIconTextFieldCellID = @"ZWIconTextFieldCellID";
 
 - (void)updateLayout
 {
-    UIImageView *imageViewAccessory = self.accessoryView;
+    UIImageView *imageViewAccessory = (UIImageView *)self.accessoryView;
     UIImageView *imageViewIcon = _imageViewIcon;
     
     BlockObject blockIcon;
@@ -97,7 +97,7 @@ NSString *const ZWIconTextFieldCellID = @"ZWIconTextFieldCellID";
     if (_icon)
     {
         blockIcon = ^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(_icon.size);
+            make.size.mas_equalTo(self.icon.size);
             
             make.left.equalTo(self.contentView);
             make.centerY.equalTo(self.contentView);
@@ -107,8 +107,8 @@ NSString *const ZWIconTextFieldCellID = @"ZWIconTextFieldCellID";
         if (imageViewAccessory.superview)
         {
             blockText = ^(MASConstraintMaker *make) {
-                make.left.equalTo(imageViewIcon.mas_right).offset(_fWidthDiff);
-                make.right.equalTo(self.contentView).offset(-_fWidthDiff);
+                make.left.equalTo(imageViewIcon.mas_right).offset(self.fWidthDiff);
+                make.right.equalTo(self.contentView).offset(-self.fWidthDiff);
                 
                 make.top.equalTo(self.contentView);
                 make.bottom.equalTo(self.contentView);
@@ -117,7 +117,7 @@ NSString *const ZWIconTextFieldCellID = @"ZWIconTextFieldCellID";
         else
         {
             blockText = ^(MASConstraintMaker *make) {
-                make.left.equalTo(imageViewIcon.mas_right).offset(_fWidthDiff);
+                make.left.equalTo(imageViewIcon.mas_right).offset(self.fWidthDiff);
                 make.right.equalTo(self.contentView);
                 
                 make.top.equalTo(self.contentView);
@@ -131,7 +131,7 @@ NSString *const ZWIconTextFieldCellID = @"ZWIconTextFieldCellID";
         {
             blockText = ^(MASConstraintMaker *make) {
                 make.left.equalTo(self.contentView);
-                make.right.equalTo(self.contentView).offset(-_fWidthDiff);
+                make.right.equalTo(self.contentView).offset(-self.fWidthDiff);
                 
                 make.top.equalTo(self.contentView);
                 make.bottom.equalTo(self.contentView);

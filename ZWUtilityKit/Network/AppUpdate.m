@@ -24,7 +24,7 @@
 
 @implementation AppUpdate
 
--(void)checkUpdateAtStore:(NSString *)strAppID delegate:(id<updateDelegate>)delegate
+-(void)checkUpdateAtStore:(NSString *)strAppID delegate:(id<updateDelegate>)delegate NS_AVAILABLE_IOS(7_0);
 {
     m_bStore = YES;
     m_strAppID = strAppID;
@@ -60,7 +60,7 @@
     _taskCurrent = dataTask;
 }
 
--(void)checkUpdateAtWebsite:(NSString *)strUrl param:(NSDictionary *)dicParam delegate:(id<updateDelegate>)delegate
+-(void)checkUpdateAtWebsite:(NSString *)strUrl param:(NSDictionary *)dicParam delegate:(id<updateDelegate>)delegate NS_AVAILABLE_IOS(7_0);
 {
     m_delegate = delegate;
     
@@ -100,12 +100,12 @@
     BlockVoid handler = ^{
         if (error)
         {
-            if ([m_delegate respondsToSelector:@selector(updateAppToVersion:hasNewVersion:appUrl:)])
+            if ([self->m_delegate respondsToSelector:@selector(updateAppToVersion:hasNewVersion:appUrl:)])
             {
-                [m_delegate updateAppToVersion:strCurVersion hasNewVersion:NO appUrl:nil];
+                [self->m_delegate updateAppToVersion:strCurVersion hasNewVersion:NO appUrl:nil];
             }
-            m_delegate = nil;
-            m_bStore = NO;
+            self->m_delegate = nil;
+            self->m_bStore = NO;
         }
         else
         {
@@ -123,14 +123,14 @@
                     NSString *strNewVersion = @"";
                     NSString *strAppUrl = nil;
                     NSString *strMsg;
-                    if (m_bStore)
+                    if (self->m_bStore)
                     {
                         NSArray *arrayResult = [dicRet safeObjectForKey:@"results"];
                         if ([arrayResult isKindOfClass:[NSArray class]] && [arrayResult count] >= 1)
                         {
                             NSDictionary *dicResult = [arrayResult objectAtIndex:0];
                             strNewVersion = [dicResult stringValueForKey:@"version"];
-                            strAppUrl = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%@", m_strAppID];
+                            strAppUrl = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%@", self->m_strAppID];
                         }
                     }
                     else
@@ -148,21 +148,21 @@
                     if (unNewVersion > unCurVersion)
                     {
                         if (strMsg.length > 0)
-                            [m_delegate updateAppToVersion:strNewVersion hasNewVersion:YES appUrl:strAppUrl message:strMsg];
+                            [self->m_delegate updateAppToVersion:strNewVersion hasNewVersion:YES appUrl:strAppUrl message:strMsg];
                         else
-                            [m_delegate updateAppToVersion:strNewVersion hasNewVersion:YES appUrl:strAppUrl];
-                        m_delegate = nil;
-                        m_bStore = NO;
+                            [self->m_delegate updateAppToVersion:strNewVersion hasNewVersion:YES appUrl:strAppUrl];
+                        self->m_delegate = nil;
+                        self->m_bStore = NO;
                         return;
                     }
                 }
             }
-            if ([m_delegate respondsToSelector:@selector(updateAppToVersion:hasNewVersion:appUrl:)])
+            if ([self->m_delegate respondsToSelector:@selector(updateAppToVersion:hasNewVersion:appUrl:)])
             {
-                [m_delegate updateAppToVersion:strCurVersion hasNewVersion:NO appUrl:nil];
+                [self->m_delegate updateAppToVersion:strCurVersion hasNewVersion:NO appUrl:nil];
             }
-            m_delegate = nil;
-            m_bStore = NO;
+            self->m_delegate = nil;
+            self->m_bStore = NO;
         }
     };
     dispatch_async(dispatch_get_main_queue(), handler);
