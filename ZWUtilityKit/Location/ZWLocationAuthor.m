@@ -156,27 +156,6 @@ static ZWLocationAuthor * g_LocalAuthor;
             [vcBlock presentViewController:sheet animated:YES completion:nil];
         });
     }
-    else
-    {
-        UIAlertView *sheet = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"设置", nil];        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [sheet show];
-        });
-    }
-}
-
-#pragma mark - UIAlertViewDelegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1)
-    {
-        //定位服务设置界面
-        NSString *strSettingUrl = @"prefs:root=LOCATION_SERVICES";
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:strSettingUrl]];
-    }
-    _bIsAlerting = NO;
-    [ZWLocationAuthor releaseInstance];
 }
 
 @end
