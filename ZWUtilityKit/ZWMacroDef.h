@@ -54,5 +54,6 @@ typedef void (^BlockObject)(id _Nullable object);
 typedef void (^BlockInteger)(long nValue);
 typedef void (^BlockObjectObject)(id _Nullable object1, id _Nullable object2);
 typedef id _Nullable (^BLOCKObject_Void)(void);
+typedef BOOL (^BLOCKBOOL_Void)(void);
 
 #endif /* macroDef_h */

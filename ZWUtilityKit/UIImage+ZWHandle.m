@@ -165,7 +165,10 @@ void ProviderReleaseData (void *info, const void *data, size_t size)
     imgV.frame = frame;
     
     UIGraphicsBeginImageContextWithOptions(imgV.bounds.size, NO, 1);
-    [imgV drawViewHierarchyInRect:imgV.bounds afterScreenUpdates:YES];
+    if (@available(iOS 7.0, *))
+    {
+        [imgV drawViewHierarchyInRect:imgV.bounds afterScreenUpdates:YES];
+    }
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -183,7 +186,8 @@ void ProviderReleaseData (void *info, const void *data, size_t size)
     imgV.frame = frame;
     
     UIGraphicsBeginImageContextWithOptions(imgV.bounds.size, NO, 1);
-    [imgV drawViewHierarchyInRect:imgV.bounds afterScreenUpdates:YES];
+    if (@available(iOS 7.0, *))
+        [imgV drawViewHierarchyInRect:imgV.bounds afterScreenUpdates:YES];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -203,7 +207,8 @@ void ProviderReleaseData (void *info, const void *data, size_t size)
     imgV.layer.cornerRadius = frame.size.width / 2;
     
     UIGraphicsBeginImageContextWithOptions(imgV.bounds.size, NO, 1);
-    [imgV drawViewHierarchyInRect:imgV.bounds afterScreenUpdates:YES];
+    if (@available(iOS 7.0, *))
+        [imgV drawViewHierarchyInRect:imgV.bounds afterScreenUpdates:YES];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -223,7 +228,8 @@ void ProviderReleaseData (void *info, const void *data, size_t size)
     imgV.layer.cornerRadius = frame.size.width / 2;
     
     UIGraphicsBeginImageContextWithOptions(imgV.bounds.size, NO, 1);
-    [imgV drawViewHierarchyInRect:imgV.bounds afterScreenUpdates:YES];
+    if (@available(iOS 7.0, *))
+        [imgV drawViewHierarchyInRect:imgV.bounds afterScreenUpdates:YES];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -249,7 +255,8 @@ void ProviderReleaseData (void *info, const void *data, size_t size)
     imgV.frame = frame;
     
     UIGraphicsBeginImageContextWithOptions(imgV.bounds.size, NO, 1);
-    [imgV drawViewHierarchyInRect:imgV.bounds afterScreenUpdates:YES];
+    if (@available(iOS 7.0, *))
+        [imgV drawViewHierarchyInRect:imgV.bounds afterScreenUpdates:YES];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -269,7 +276,8 @@ void ProviderReleaseData (void *info, const void *data, size_t size)
     imgV.frame = CGRectMake(-frame.origin.x, -frame.origin.y, self.size.width, self.size.height);
     
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 1);
-    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+    if (@available(iOS 7.0, *))
+        [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     

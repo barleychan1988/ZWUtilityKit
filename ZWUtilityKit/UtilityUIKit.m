@@ -283,9 +283,8 @@ void playBeep(NSString *strFileName)
 
 void showAlertMsg(UIViewController<UIAlertViewDelegate> *vc, NSString *strMsg, NSString *strTitle, NSString *strBtnTitleOk, NSString *strBtnTitleCancel, BlockObject handleOk, BlockObject handleCancel)
 {
-    if (IOS8)
+    if (@available(iOS 8.0, *))
     {
-#ifdef __IPHONE_8_0
         UIAlertController *sheet = [UIAlertController alertControllerWithTitle:strTitle message:strMsg preferredStyle:UIAlertControllerStyleAlert];
         if (strBtnTitleCancel.length > 0)
         {
@@ -308,7 +307,6 @@ void showAlertMsg(UIViewController<UIAlertViewDelegate> *vc, NSString *strMsg, N
             dispatch_async(dispatch_get_main_queue(), ^{
                 [vc presentViewController:sheet animated:YES completion:nil];
             });
-#endif
     }
     else
     {

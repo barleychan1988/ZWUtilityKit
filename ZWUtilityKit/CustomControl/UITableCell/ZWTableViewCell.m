@@ -211,7 +211,7 @@ NSString *const ZWLabelTipCellID = @"ZWLabelTipCellID";
         if (_imageViewAccessory.superview == nil)
         {
             view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
-            _imageViewAccessory = view;
+            _imageViewAccessory = (UIImageView *)view;
             [self.contentView addSubview:view];
         }
         CGRect frame = view.frame;

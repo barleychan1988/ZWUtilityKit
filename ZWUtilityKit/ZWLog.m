@@ -275,11 +275,9 @@ static ZWLog *zwLog = nil;
     
     UIApplication *app = [UIApplication sharedApplication];
     BOOL bEnableRemoteNotification;
-    if (SystemVersion >= 8.0)
+    if (@available(iOS 8.0, *))
     {
-#ifdef __IPHONE_8_0
         bEnableRemoteNotification = [app isRegisteredForRemoteNotifications];
-#endif
     }
     else
     {

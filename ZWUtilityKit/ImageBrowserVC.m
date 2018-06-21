@@ -21,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)])
+    if (@available(iOS 7.0, *))
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
     CGRect frame = [[UIScreen mainScreen] bounds];
@@ -132,9 +132,8 @@
 - (void)btnClickRemoveCurrentImage
 {
     NSString *strTitle = @"要删除这张照片吗？";
-    if (IOS8)
+    if (@available(iOS 8.0, *))
     {
-#ifdef __IPHONE_8_1
         UIAlertController *sheet = [UIAlertController alertControllerWithTitle:strTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
@@ -144,7 +143,6 @@
         [sheet addAction:cancelAction];
         [sheet addAction:deleteAction];
         [self presentViewController:sheet animated:YES completion:nil];
-#endif
     }
     else
     {

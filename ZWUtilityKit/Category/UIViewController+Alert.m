@@ -12,9 +12,8 @@
 
 - (id)showAlert:(id<UIAlertViewDelegate>)delegate message:(NSString *)strMsg title:(NSString *)strTitle okButton:(NSString *)strTitleOk okAction:(BlockObject)handleOk cancelButton:(NSString *)strTitleCancel cancelAction:(BlockObject)handleCancel
 {
-    if (IOS8)
+    if (@available(iOS 8.0, *))
     {
-#ifdef __IPHONE_8_0
         UIAlertController *sheet = [UIAlertController alertControllerWithTitle:strTitle message:strMsg preferredStyle:UIAlertControllerStyleAlert];
         if (strTitleCancel.length > 0)
         {
@@ -29,7 +28,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{[self presentViewController:sheet animated:YES completion:nil];});
         return sheet;
-#endif
     }
     else
     {
@@ -41,9 +39,8 @@
 
 - (id)showAlert:(id<UIAlertViewDelegate>)delegate attributeMsg:(NSAttributedString *)attrStrMsg attributeTitle:(NSAttributedString *)attrStrTitle okButton:(NSString *)strTitleOk okAction:(BlockObject)handleOk cancelButton:(NSString *)strTitleCancel cancelAction:(BlockObject)handleCancel
 {
-    if (IOS8)
+    if (@available(iOS 8.0, *))
     {
-#ifdef __IPHONE_8_0
         UIAlertController *sheet = [UIAlertController alertControllerWithTitle:attrStrTitle.string message:attrStrMsg.string preferredStyle:UIAlertControllerStyleAlert];
 //        NSMutableAttributedString *alertControllerStr = [[NSMutableAttributedString alloc] initWithString:strTitle];
 //        [alertControllerStr addAttribute:NSForegroundColorAttributeName value:RGBCOLOR(50, 50, 50) range:NSMakeRange(0, strTitle.length)];
@@ -66,7 +63,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{[self presentViewController:sheet animated:YES completion:nil];});
         return sheet;
-#endif
     }
     else
     {
@@ -78,9 +74,8 @@
 
 - (id)showAlert:(id<UIAlertViewDelegate>)delegate attributeMsg:(NSAttributedString *)attrStrMsg attributeTitle:(NSAttributedString *)attrStrTitle attributeOkButton:(NSAttributedString *)attrStrTitleOk okAction:(BlockObject)handleOk attributeCancelButton:(NSAttributedString *)attrStrTitleCancel cancelAction:(BlockObject)handleCancel
 {
-    if (IOS8)
+    if (@available(iOS 8.0, *))
     {
-#ifdef __IPHONE_8_0
         UIAlertController *sheet = [UIAlertController alertControllerWithTitle:attrStrTitle.string message:attrStrMsg.string preferredStyle:UIAlertControllerStyleAlert];
         [sheet setValue:attrStrTitle forKey:@"attributedTitle"];
         [sheet setValue:attrStrMsg forKey:@"attributedMessage"];
@@ -109,7 +104,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{[self presentViewController:sheet animated:YES completion:nil];});
         return sheet;
-#endif
     }
     else
     {

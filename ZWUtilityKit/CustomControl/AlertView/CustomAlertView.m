@@ -324,7 +324,8 @@ _Pragma("clang diagnostic push")
     {
         message = [m_labelMessage.attributedText string];
     }
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+    if (@available(iOS 7.0, *))
     {
         CGRect expectedFrame = [message boundingRectWithSize:CGSizeMake(1000, 1000)
                                                      options:NSStringDrawingUsesLineFragmentOrigin

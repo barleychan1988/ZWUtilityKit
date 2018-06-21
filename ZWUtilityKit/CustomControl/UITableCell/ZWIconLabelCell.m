@@ -288,11 +288,11 @@ NSString *const ZWIconLabelTFCellID = @"ZWIconLableTFCellID";
 
 - (void)updateLayout
 {
-    UIImageView *imageViewAccessory = self.accessoryView;
+    UIImageView *imageViewAccessory = (UIImageView *)self.accessoryView;
     UIImageView *imageViewIcon = self.imageViewIcon;
     CGFloat fWidthDiff = self.fWidthDiff;
     
-    UILabel *labelDetail = _detailTextField;
+    UILabel *labelDetail = (UILabel *)_detailTextField;
     UILabel *labelText = self.textLabel;
     CGFloat fWidthText = getSizeForLabelText(labelText.text, labelText.font, CGSizeZero).width;
     

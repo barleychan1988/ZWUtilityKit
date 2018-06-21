@@ -16,8 +16,11 @@
 @end
 
 @implementation ZWAccessoryCell
-
-@synthesize accessoryView = m_imageViewAccessory;
+    
+- (UIView *)accessoryView
+{
+    return m_imageViewAccessory;
+}
 
 - (void)initValues
 {
