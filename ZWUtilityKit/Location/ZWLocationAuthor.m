@@ -99,22 +99,6 @@ static ZWLocationAuthor * g_LocalAuthor;
 
 #pragma mark CLLocationManagerDelegate
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    m_locationCur = newLocation;
-    if (_blockUpdateLocation)
-    {
-        _blockUpdateLocation(newLocation);
-    }
-    //do something else
-    if (oldLocation == nil && newLocation)
-    {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kMsgLocationUpdate object:newLocation];
-    }
-    if (!_bRepeat)
-        [ZWLocationAuthor releaseInstance];
-}
-
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
     CLLocation *old = m_locationCur;
