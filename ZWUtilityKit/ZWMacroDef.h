@@ -49,11 +49,12 @@ _Pragma("clang diagnostic pop") \
 
 typedef void (^BlockBoolStrObject)(BOOL, NSString *_Nullable, id _Nullable );
 typedef void (^BlockVoid)(void);
-typedef void (^BlockBoolObject)(BOOL bFlage, id _Nullable object);
+typedef void (^BlockBoolObject)(BOOL bFlag, id _Nullable object);
 typedef void (^BlockObject)(id _Nullable object);
 typedef void (^BlockInteger)(long nValue);
 typedef void (^BlockObjectObject)(id _Nullable object1, id _Nullable object2);
 typedef id _Nullable (^BLOCKObject_Void)(void);
 typedef BOOL (^BLOCKBOOL_Void)(void);
+typedef BOOL (^BLOCKBOOL_Object)(id _Nullable);
 
 #endif /* macroDef_h */

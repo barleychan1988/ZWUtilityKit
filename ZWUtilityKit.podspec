@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZWUtilityKit'
-  s.version          = '2.3.12'
+  s.version          = '2.3.13'
   s.summary          = '导航啦返回按钮适配iOS11.'
 
 # This description is used to generate tags and improve search results.
