@@ -240,7 +240,16 @@ NSInteger integerValueForKey(NSDictionary *dic, NSString *strKey)
 
 + (instancetype)objectWithData:(NSDictionary *)dicData
 {
-    return [[[self class] alloc] initWithDictionary:dicData];
+    if ([[self class] respondsToSelector:NSSelectorFromString(@"initWithDictionary:")])
+    {
+        return [[[self class] alloc] initWithDictionary:dicData];
+    }
+    else
+    {
+        NSObject *value = [[[self class] alloc] init];
+        [value setValuesForKeysWithDictionary:dicData];
+        return value;
+    }
 }
 
 + (NSArray *)objectsWithDatas:(NSArray<NSDictionary *> *)arrayDatas
@@ -250,7 +259,7 @@ NSInteger integerValueForKey(NSDictionary *dic, NSString *strKey)
     NSMutableArray *mtArray = [NSMutableArray arrayWithCapacity:[arrayDatas count]];
     for (NSDictionary *dic in arrayDatas)
     {
-        [mtArray addObject:[[[self class] alloc] initWithDictionary:dic]];
+        [mtArray addObject:[self objectWithData:dic]];
     }
     return mtArray;
 }
