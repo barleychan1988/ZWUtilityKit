@@ -174,6 +174,11 @@ typedef NS_ENUM(NSInteger, GridLineType)
 
 @implementation UIView(AddLine)
 
+- (UIColor *)defaultLineColor
+{
+    return [UIColor colorWithRed:221/255.0 green:221/255.0 blue:221/255.0 alpha:1.0];
+}
+
 - (UIView *)addTopLineWithWidth:(CGFloat)width color:(UIColor *)color
 {
     UIView *viewTopLine = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.frame.size.width, width)];
@@ -385,6 +390,44 @@ typedef NS_ENUM(NSInteger, GridLineType)
     UIView *vLine = [[UIView alloc] initWithFrame:rect];
     vLine.backgroundColor = color;
     [self addSubview:vLine];
+    return vLine;
+}
+
+- (UIView *)addHorizontalLineWithColor:(UIColor *)color constraints:(void(^)(MASConstraintMaker *make))block
+{
+    UIView *vLine = [[UIView alloc] init];
+    if (color)
+    {
+        vLine.backgroundColor = color;
+    }
+    else
+    {
+        vLine.backgroundColor = [self defaultLineColor];
+    }
+    [self addSubview:vLine];
+    [vLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        block(make);
+        make.height.mas_equalTo(SINGLE_LINE_WIDTH);
+    }];
+    return vLine;
+}
+
+- (UIView *)addVerticalineWithColor:(UIColor *)color constraints:(void(^)(MASConstraintMaker *make))block
+{
+    UIView *vLine = [[UIView alloc] init];
+    if (color)
+    {
+        vLine.backgroundColor = color;
+    }
+    else
+    {
+        vLine.backgroundColor = [self defaultLineColor];
+    }
+    [self addSubview:vLine];
+    [vLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        block(make);
+        make.width.mas_equalTo(SINGLE_LINE_WIDTH);
+    }];
     return vLine;
 }
 

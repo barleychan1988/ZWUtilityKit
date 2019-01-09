@@ -14,6 +14,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "Masonry.h"
 
 #define SINGLE_LINE_WIDTH           (1 / [UIScreen mainScreen].scale)
 
@@ -86,5 +87,9 @@
  *  @ret: 线条View
  */
 - (UIView *)addLineWithRect:(CGRect)rect color:(UIColor *)color;
+
+- (UIView *)addHorizontalLineWithColor:(nullable UIColor *)color constraints:(void(^)(MASConstraintMaker *make))block;
+
+- (UIView *)addVerticalineWithColor:(nullable UIColor *)color constraints:(void(^)(MASConstraintMaker *make))block;
 
 @end
