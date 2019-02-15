@@ -30,7 +30,7 @@ CGSize CGSizeInsert(CGSize sz, CGFloat dx, CGFloat dy)
     return sz;
 }
 
-inline CGSize CGGetMaxInnerUniformScaleSize(CGSize sz, CGSize szOuter)
+CGSize CGGetMaxInnerUniformScaleSize(CGSize sz, CGSize szOuter)
 {
     CGSize szRet;
     szRet.width = szOuter.width;
@@ -43,7 +43,7 @@ inline CGSize CGGetMaxInnerUniformScaleSize(CGSize sz, CGSize szOuter)
     return szRet;
 }
 
-inline CGSize CGGetMinOuterUniformScaleSize(CGSize sz, CGSize szOuter)
+CGSize CGGetMinOuterUniformScaleSize(CGSize sz, CGSize szOuter)
 {
     CGSize szRet;
     szRet.width = szOuter.width;
