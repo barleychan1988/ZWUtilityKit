@@ -30,6 +30,32 @@ CGSize CGSizeInsert(CGSize sz, CGFloat dx, CGFloat dy)
     return sz;
 }
 
+inline CGSize CGGetMaxInnerUniformScaleSize(CGSize sz, CGSize szOuter)
+{
+    CGSize szRet;
+    szRet.width = szOuter.width;
+    szRet.height = szRet.width * sz.height / sz.width;
+    if (szOuter.height < szRet.height)
+    {
+        szRet.height = szOuter.height;
+        szRet.width = szRet.height * sz.width / sz.height;
+    }
+    return szRet;
+}
+
+inline CGSize CGGetMinOuterUniformScaleSize(CGSize sz, CGSize szOuter)
+{
+    CGSize szRet;
+    szRet.width = szOuter.width;
+    szRet.height = szRet.width * sz.height / sz.width;
+    if (szOuter.height > szRet.height)
+    {
+        szRet.height = szOuter.height;
+        szRet.width = szRet.height * sz.width / sz.height;
+    }
+    return szRet;
+}
+
 #pragma mark - CGRect
 
 CGPoint CGRectGetCenter(CGRect rect)

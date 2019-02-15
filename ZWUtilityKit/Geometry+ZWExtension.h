@@ -19,6 +19,24 @@ double CGPointGetDistance(CGPoint point1, CGPoint point2);
 
 inline CGSize CGSizeInsert(CGSize sz, CGFloat dx, CGFloat dy);
 
+/**
+ 获取指定矩形区内，按照指定宽高比例的缩放的最大内接矩形大小
+
+ @param sz 指定宽高比
+ @param szOuter 指定矩形区
+ @return 缩放后的最大内接区域大小
+ */
+inline CGSize CGGetMaxInnerUniformScaleSize(CGSize sz, CGSize szOuter);
+
+/**
+ 获取指定矩形区内，按照指定宽高比例的缩放的最小外接矩形大小
+ 
+ @param sz 指定宽高比
+ @param szOuter 指定矩形区
+ @return 缩放后的最小外接区域大小
+ */
+inline CGSize CGGetMinOuterUniformScaleSize(CGSize sz, CGSize szOuter);
+
 #pragma mark - CGRect
 /*
  *  @brief：获取CGRect的中心点
