@@ -6,6 +6,7 @@
 //
 
 #import "EadContentCell.h"
+#import "Masonry.h"
 
 NSString *const EadContentCellID = @"EadContentCellID";
 @interface EadContentCell ()
