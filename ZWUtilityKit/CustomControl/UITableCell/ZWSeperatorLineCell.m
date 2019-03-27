@@ -71,19 +71,7 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 - (void)setContentInset:(UIEdgeInsets)contentInset
 {
     _contentInset = contentInset;
-    [self updateContentViewLayout];
-}
-
-- (void)updateContentViewLayout
-{
-    UIEdgeInsets contentInset = self.contentInset;
-    __weak ZWSeperatorLineCell *weakobject = self;
-    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakobject).offset(contentInset.left);
-        make.right.equalTo(weakobject).offset(-contentInset.right);
-        make.top.equalTo(weakobject).offset(contentInset.top);
-        make.bottom.equalTo(weakobject).offset(-contentInset.bottom);
-    }];
+    [self layoutIfNeeded];
 }
 
 #pragma mark - property
@@ -287,8 +275,15 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 {
     [super layoutSubviews];
     
+    CGRect frame = self.bounds;
+    frame.origin.x = self.contentInset.left;
+    frame.origin.y = self.contentInset.top;
+    frame.size.width -= (self.contentInset.left + self.contentInset.right);
+    frame.size.height -= (self.contentInset.top + self.contentInset.bottom);
+    self.contentView.frame = frame;
+    
     if (_isSelectedBackgroundSameWithContent)
-        self.selectedBackgroundView.frame = self.contentView.frame;
+        self.selectedBackgroundView.frame = frame;
     else
         self.selectedBackgroundView.frame = self.bounds;
 }

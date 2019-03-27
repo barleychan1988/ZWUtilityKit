@@ -69,7 +69,7 @@ NSString *const EadSeparatorLineCellID = @"EadSeparatorLineCellID";
 - (void)setContentInset:(UIEdgeInsets)contentInset
 {
     _contentInset = contentInset;
-    [_mainView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [[self mainView] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.contentView).with.insets(contentInset);
     }];
 }
