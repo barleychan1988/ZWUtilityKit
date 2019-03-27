@@ -49,7 +49,7 @@ NSString *const EadContentCellID = @"EadContentCellID";
     {
         m_contentView = [[cls alloc] init];
         [[self contentView] addSubview:m_contentView];
-        [m_contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [(UIView *)m_contentView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.contentView).with.insets(self.contentInset);
         }];
     }
