@@ -30,6 +30,10 @@
 
 - (UIBarButtonItem *)defaultLeftBackItem
 {
+    if ([self.topViewController respondsToSelector:@selector(defaultLeftBackItem)])
+    {
+        return [self.topViewController performSelector:@selector(defaultLeftBackItem)];
+    }
     return [self createNavButton:@"nav_back"
                        highImage:@"Header-Btn-Back-Darkred.png"
                            title:nil
