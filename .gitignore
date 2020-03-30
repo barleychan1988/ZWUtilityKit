@@ -1,15 +1,10 @@
 
-
-*.xcscmblueprint
-
-*.xcuserstate
-
-*/Podfile.lock
-*/*.DS_Store
-*/Pods/*
-*/*.xcworkspace
-*/xcuserdata/**/*.*
-TestUtilityKit/TestUtilityKit.xcodeproj/xcuserdata/eadkenny.xcuserdatad/xcschemes/xcschememanagement.plist
-
-TestUtilityKit/TestUtilityKit.xcodeproj/xcuserdata/jgw.xcuserdatad/xcschemes/xcschememanagement.plist
-TestUtilityKit/TestUtilityKit.xcodeproj/xcuserdata/eadkenny.xcuserdatad/xcschemes/TestUtilityKit.xcscheme
+**/.DS_Store
+**/Automation/**/iPA*/*
+**/Pods/**/*
+**/*.xcodeproj/*.xcworkspace
+**/*.xcodeproj/xcuserdata
+**/*.xcworkspace/xcuserdata
+**/*.xcworkspace/xcshareddata
+**/*.lock
+**/bin/*

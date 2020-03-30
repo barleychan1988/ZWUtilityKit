@@ -152,6 +152,9 @@ NSString *getAppDisplayName()
 {
     NSBundle *mainBundle = [NSBundle mainBundle];
     NSString *strAppName = [mainBundle objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    if (!strAppName || strAppName.length == 0) {
+      strAppName = [mainBundle objectForInfoDictionaryKey:@"CFBundleName"];
+    }
     return strAppName;
 }
 

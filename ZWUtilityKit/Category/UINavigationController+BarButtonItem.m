@@ -129,7 +129,10 @@
                              action:(SEL)btnAction
 {
     UIImage* image = [UIImage imageNamed:strImageName];
-    UIImage* imageHigh =[UIImage imageNamed:strHighImage];
+    UIImage* imageHigh = nil;
+    if (strHighImage.length > 0) {
+      imageHigh =[UIImage imageNamed:strHighImage];
+    }
     
     
     CGFloat width = image.size.width;
