@@ -6,6 +6,7 @@
 //
 
 #import "ZWLabelTextViewCell.h"
+#import "UtilityUIKit.h"
 
 NSString *const ZWLabelTextViewCellID = @"ZWLabelTextViewCellID";
 

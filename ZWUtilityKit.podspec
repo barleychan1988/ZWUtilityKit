@@ -38,6 +38,7 @@ Pod::Spec.new do |s|
         'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
         #'OTHER_LDFLAGS' => '"$(inherited)" "-lxml2" "-objc"'
     }
+    s.prefix_header_contents = ['#import "Masonry.h"']
 
     s.frameworks = 'SystemConfiguration','Security','CoreLocation','QuartzCore','CFNetwork','MessageUI'
 end
