@@ -113,6 +113,8 @@
 		D47404F51F5014E40046C7C4 /* ZWCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D47404F31F5014E40046C7C4 /* ZWCollectionCell.m */; };
 		D47404F81F5014F30046C7C4 /* ZWIconTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D47404F61F5014F30046C7C4 /* ZWIconTextFieldCell.h */; };
 		D47404F91F5014F30046C7C4 /* ZWIconTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D47404F71F5014F30046C7C4 /* ZWIconTextFieldCell.m */; };
+		D4FB1CFC2433556F001AD199 /* ZWTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = D4FB1CFA2433556F001AD199 /* ZWTextField.h */; };
+		D4FB1CFD2433556F001AD199 /* ZWTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FB1CFB2433556F001AD199 /* ZWTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -225,6 +227,8 @@
 		D47404F31F5014E40046C7C4 /* ZWCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWCollectionCell.m; path = UITableCell/ZWCollectionCell.m; sourceTree = "<group>"; };
 		D47404F61F5014F30046C7C4 /* ZWIconTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWIconTextFieldCell.h; path = UITableCell/ZWIconTextFieldCell.h; sourceTree = "<group>"; };
 		D47404F71F5014F30046C7C4 /* ZWIconTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWIconTextFieldCell.m; path = UITableCell/ZWIconTextFieldCell.m; sourceTree = "<group>"; };
+		D4FB1CFA2433556F001AD199 /* ZWTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZWTextField.h; path = UIKit/ZWTextField.h; sourceTree = "<group>"; };
+		D4FB1CFB2433556F001AD199 /* ZWTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZWTextField.m; path = UIKit/ZWTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +286,7 @@
 		794BAF471A4D4843000ACD77 /* ZWUtilityKit */ = {
 			isa = PBXGroup;
 			children = (
+				D4FB1CF924335529001AD199 /* UIKit */,
 				D466E1051D499898004D74BB /* ZWMacroDef.h */,
 				794BAF641A4D4974000ACD77 /* UtilityKit.h */,
 				794BAF651A4D4974000ACD77 /* UtilityKit.m */,
@@ -475,6 +480,15 @@
 			name = Third;
 			sourceTree = "<group>";
 		};
+		D4FB1CF924335529001AD199 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D4FB1CFA2433556F001AD199 /* ZWTextField.h */,
+				D4FB1CFB2433556F001AD199 /* ZWTextField.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -501,6 +515,7 @@
 				79D9460D1A7A2AF800926B9B /* Dictionary+SafeValue.h in Headers */,
 				C99846501ADE50C900287AAB /* ZWBannerView.h in Headers */,
 				C9B98ECC1AE0B0A5002DA92C /* NSString+DocumentPath.h in Headers */,
+				D4FB1CFC2433556F001AD199 /* ZWTextField.h in Headers */,
 				D46219051EDC760500D16E37 /* ZWTableViewCell.h in Headers */,
 				C99846541ADE50E900287AAB /* ZWCycleBannerView.h in Headers */,
 				79D64BDF1AB2C22D0094DEAF /* CustomAlertView.h in Headers */,
@@ -579,6 +594,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 794BAF1E1A4D476F000ACD77;
@@ -659,6 +675,7 @@
 				D45B76E61EDD04D800686D18 /* ZWIconLabelCell.m in Sources */,
 				D462190A1EDC763100D16E37 /* ZWSeperatorLineCell.m in Sources */,
 				79D9460E1A7A2AF800926B9B /* Dictionary+SafeValue.m in Sources */,
+				D4FB1CFD2433556F001AD199 /* ZWTextField.m in Sources */,
 				79D64BE01AB2C22D0094DEAF /* CustomAlertView.m in Sources */,
 				D43D129F1CF57E5E0042514B /* Geometry+ZWExtension.m in Sources */,
 				C9F279AF1BA19A6A00AFC0BD /* ZWStartEvaluateIntView.m in Sources */,

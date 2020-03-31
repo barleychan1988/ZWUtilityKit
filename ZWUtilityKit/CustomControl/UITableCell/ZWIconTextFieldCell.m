@@ -55,7 +55,7 @@ NSString *const ZWIconTextFieldCellID = @"ZWIconTextFieldCellID";
         make.size.mas_equalTo(self.icon.size);
     }];
     
-    UITextField *l = [[UITextField alloc] initWithFrame:self.bounds];
+    ZWTextField *l = [[ZWTextField alloc] initWithFrame:self.bounds];
     [self.contentView addSubview:_textField = l];
     [l mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView);
