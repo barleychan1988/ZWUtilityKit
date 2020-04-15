@@ -44,7 +44,7 @@ UIKIT_EXTERN NSString *_Nonnull const ZWLabelTipCellID;
 
 //是否现在必填项提示符（红色*）
 - (void)showRequiredTip:(BOOL)bShow;
-- (void)showAccessory:(BOOL)bShow customView:(UIView *)view;
+- (void)showAccessory:(BOOL)bShow customView:(nullable UIView *)view;
 - (void)showAccessory:(BOOL)bShow image:(nullable NSString *)strImage;
 
 @end

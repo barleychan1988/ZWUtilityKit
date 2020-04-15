@@ -8,6 +8,8 @@
 
 #import "ZWSeperatorLineCell.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 UIKIT_EXTERN NSString *_Nonnull const ZWCollectionCellID;
 
 @interface ZWCollectionCell : ZWSeperatorLineCell
@@ -15,3 +17,5 @@ UIKIT_EXTERN NSString *_Nonnull const ZWCollectionCellID;
 @property (nonatomic, readonly, retain, nonnull)UICollectionView *collectionView;
 
 @end
+
+NS_ASSUME_NONNULL_END

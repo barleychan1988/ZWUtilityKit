@@ -9,6 +9,8 @@
 #import "ZWAccessoryCell.h"
 #import "ZWTextField.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 UIKIT_EXTERN  NSString *_Nonnull const ZWIconTextFieldCellID;
 
 @interface ZWIconTextFieldCell : ZWAccessoryCell
@@ -18,3 +20,5 @@ UIKIT_EXTERN  NSString *_Nonnull const ZWIconTextFieldCellID;
 @property (nonatomic, assign)CGFloat fWidthDiff; //图标和文字之间的间距
 
 @end
+
+NS_ASSUME_NONNULL_END

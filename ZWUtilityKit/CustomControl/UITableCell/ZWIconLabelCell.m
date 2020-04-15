@@ -25,126 +25,61 @@ NSString *const ZWIconLabelCellID = @"ZWIconLabelCellID";
 
 - (void)initSubviews
 {
-    UIImageView *imgV = [[UIImageView alloc] init];
-    imgV.hidden = YES;
-    [self.contentView addSubview:_imageViewIcon = imgV];
-    [imgV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView);
-        make.centerY.equalTo(self.contentView);
-        make.size.mas_equalTo(self.icon.size);
-    }];
-    
-    UILabel *l = [[UILabel alloc] init];
-    [self.contentView addSubview:_textLabel = l];
-    [l mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView);
-            make.right.equalTo(self.contentView);
-            make.top.equalTo(self.contentView);
-            make.bottom.equalTo(self.contentView);
-        }];
+  UIImageView *imgV = [[UIImageView alloc] init];
+  imgV.hidden = YES;
+  [self.contentView addSubview:_imageViewIcon = imgV];
+  
+  UILabel *l = [[UILabel alloc] init];
+  [self.contentView addSubview:_textLabel = l];
 }
 
 - (NSString *)text
 {
-    return _textLabel.text;
+  return _textLabel.text;
 }
 
 - (void)setText:(NSString *)text
 {
-    _textLabel.text = text;
-    [self updateLayout];
+  _textLabel.text = text;
 }
 
 - (void)setIcon:(UIImage *)icon
 {
-    _icon = icon;
-    _imageViewIcon.image = _icon;
-    
-    if (icon == nil)
-    {
-        _imageViewIcon.hidden = YES;
-    }
-    else
-    {
-        _imageViewIcon.hidden = NO;
-    }
-    [self updateLayout];
-}
+  _icon = icon;
+  _imageViewIcon.image = _icon;
 
-- (void)setFWidthDiff:(CGFloat)fWidthDiff
-{
-    _fWidthDiff = fWidthDiff;
-    [self updateLayout];
+  if (icon == nil)
+  {
+    _imageViewIcon.hidden = YES;
+  }
+  else
+  {
+    _imageViewIcon.hidden = NO;
+  }
 }
 
 - (void)showAccessory:(BOOL)bShow image:(UIImage *)image
 {
     [super showAccessory:bShow image:image];
-    [self updateLayout];
 }
 
-- (void)updateLayout
-{
-    UIImageView *imageViewAccessory = (UIImageView *)self.accessoryView;
-    UIImageView *imageViewIcon = _imageViewIcon;
-    
-    BlockObject blockIcon;
-    BlockObject blockText;
-    if (_icon)
-    {
-        blockIcon = ^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(self.icon.size);
-            
-            make.left.equalTo(self.contentView);
-            make.centerY.equalTo(self.contentView);
-        };
-        [imageViewIcon mas_remakeConstraints:blockIcon];
-        
-        if (imageViewAccessory.superview)
-        {
-            blockText = ^(MASConstraintMaker *make) {
-                make.left.equalTo(imageViewIcon.mas_right).offset(self.fWidthDiff);
-                make.right.equalTo(self.contentView).offset(-self.fWidthDiff);
-                
-                make.top.equalTo(self.contentView);
-                make.bottom.equalTo(self.contentView);
-            };
-        }
-        else
-        {
-            blockText = ^(MASConstraintMaker *make) {
-                make.left.equalTo(imageViewIcon.mas_right).offset(self.fWidthDiff);
-                make.right.equalTo(self.contentView);
-                
-                make.top.equalTo(self.contentView);
-                make.bottom.equalTo(self.contentView);
-            };
-        }
-    }
-    else
-    {
-        if (imageViewAccessory.superview)
-        {
-            blockText = ^(MASConstraintMaker *make) {
-                make.left.equalTo(self.contentView);
-                make.right.equalTo(self.contentView).offset(-self.fWidthDiff);
-                
-                make.top.equalTo(self.contentView);
-                make.bottom.equalTo(self.contentView);
-            };
-        }
-        else
-        {
-            blockText = ^(MASConstraintMaker *make) {
-                make.left.equalTo(self.contentView);
-                make.right.equalTo(self.contentView);
-                
-                make.top.equalTo(self.contentView);
-                make.bottom.equalTo(self.contentView);
-            };
-        }
-    }
-    [_textLabel mas_remakeConstraints:blockText];
+- (void)layoutSubviews {
+  [super layoutSubviews];
+  
+  CGRect rectTmp = self.contentView.bounds;
+  if (_icon) {
+    rectTmp.size = _icon.size;
+    rectTmp.origin.y = (self.contentView.bounds.size.height - rectTmp.size.height) / 2;
+    _imageViewIcon.frame = rectTmp;
+    rectTmp.origin.x += rectTmp.size.width;
+  }
+  //
+  rectTmp.origin.x += _fWidthDiff;
+  rectTmp.origin.y = self.contentView.bounds.origin.y;
+  rectTmp.size.height = self.contentView.bounds.size.height;
+  CGFloat fAccessoryWidth = [self widthOfAccessory];
+  rectTmp.size.width = self.contentView.bounds.size.width - fAccessoryWidth - rectTmp.origin.x;
+  _textLabel.frame = rectTmp;
 }
 
 @end
@@ -168,95 +103,25 @@ NSString *const ZWIconLLCellID = @"ZWIconLLCellID";
     UILabel *l = [[UILabel alloc] init];
     l.textAlignment = NSTextAlignmentRight;
     [self.contentView addSubview:_detailTextLabel = l];
-    [l mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView);
-        make.top.equalTo(self.contentView);
-        make.bottom.equalTo(self.contentView);
-        make.left.equalTo(self.textLabel.mas_right);
-    }];
 }
 
-- (void)updateLayout
-{
-    UIImageView *imageViewAccessory = (UIImageView *)self.accessoryView;
-    UIImageView *imageViewIcon = self.imageViewIcon;
-    CGFloat fWidthDiff = self.fWidthDiff;
-    
-    UILabel *labelDetail = _detailTextLabel;
-    UILabel *labelText = self.textLabel;
-    CGFloat fWidthText = getSizeForLabelText(labelText.text, labelText.font, CGSizeZero).width;
-    
-    BlockObject blockIcon;
-    BlockObject blockText;
-    BlockObject blockDetailText;
-    
-    if (imageViewAccessory.superview)
-    {
-        blockDetailText = ^(MASConstraintMaker *make){
-            make.left.equalTo(labelText.mas_right);
-            if (fWidthText == 0)
-                make.width.equalTo(labelText.mas_width);
-            make.right.equalTo(self.contentView).offset(-fWidthDiff);
-            
-            make.top.equalTo(self.contentView);
-            make.bottom.equalTo(self.contentView);
-        };
-    }
-    else
-    {
-        blockDetailText = ^(MASConstraintMaker *make){
-            make.left.equalTo(labelText.mas_right);
-            if (fWidthText == 0)
-                make.width.equalTo(labelText.mas_width);
-            make.right.equalTo(self.contentView);
-            
-            make.top.equalTo(self.contentView);
-            make.bottom.equalTo(self.contentView);
-        };
-    }
-    
-    if (self.icon)
-    {
-        blockIcon = ^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(self.icon.size);
-            
-            make.left.equalTo(self.contentView);
-            make.centerY.equalTo(self.contentView);
-        };
-        [imageViewIcon mas_remakeConstraints:blockIcon];
-        
-        blockText = ^(MASConstraintMaker *make) {
-            make.left.equalTo(imageViewIcon.mas_right).offset(fWidthDiff);
-            make.right.equalTo(labelDetail.mas_left);
-            if (self.fTextWidth > fWidthText)
-                make.width.mas_equalTo(self.fTextWidth);
-            else if (fWidthText == 0)
-                make.width.equalTo(labelDetail.mas_width);
-            else
-                make.width.mas_equalTo(fWidthText);
-            
-            make.top.equalTo(self.contentView);
-            make.bottom.equalTo(self.contentView);
-        };
-    }
-    else
-    {
-        blockText = ^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView);
-            make.right.equalTo(labelDetail.mas_left);
-            if (self.fTextWidth > fWidthText)
-                make.width.mas_equalTo(self.fTextWidth);
-            else if (fWidthText == 0)
-                make.width.equalTo(labelDetail.mas_width);
-            else
-                make.width.mas_equalTo(fWidthText);
-            
-            make.top.equalTo(self.contentView);
-            make.bottom.equalTo(self.contentView);
-        };
-    }
-    [labelDetail mas_remakeConstraints:blockDetailText];
-    [labelText mas_remakeConstraints:blockText];
+- (void)layoutSubviews {
+  [super layoutSubviews];
+  
+  CGRect rectTmp = self.textLabel.frame;
+  if (_fTextWidth > 0) {
+    rectTmp.size.width = _fTextWidth;
+  } else {
+    CGFloat fWidthText = getSizeForLabelText(self.textLabel.text, self.textLabel.font, CGSizeZero).width;
+    rectTmp.size.width = fWidthText;
+  }
+  self.textLabel.frame = rectTmp;
+//
+  rectTmp.origin.x += rectTmp.size.width;
+  rectTmp.size.width = self.contentView.bounds.size.width - [self widthOfAccessory] - rectTmp.origin.x;
+  rectTmp.origin.y = self.contentView.bounds.origin.y;
+  rectTmp.size.height = self.contentView.bounds.size.height;
+  _detailTextLabel.frame = rectTmp;
 }
 
 @end
@@ -278,101 +143,25 @@ NSString *const ZWIconLabelTFCellID = @"ZWIconLableTFCellID";
     UITextField *l = [[UITextField alloc] init];
     l.textAlignment = NSTextAlignmentRight;
     [self.contentView addSubview:_detailTextField = l];
-    [l mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView);
-        make.top.equalTo(self.contentView);
-        make.bottom.equalTo(self.contentView);
-        make.left.equalTo(self.textLabel.mas_right);
-    }];
 }
 
-- (void)updateLayout
-{
-    UIImageView *imageViewAccessory = (UIImageView *)self.accessoryView;
-    UIImageView *imageViewIcon = self.imageViewIcon;
-    CGFloat fWidthDiff = self.fWidthDiff;
-    
-    UILabel *labelDetail = (UILabel *)_detailTextField;
-    UILabel *labelText = self.textLabel;
-    CGFloat fWidthText = getSizeForLabelText(labelText.text, labelText.font, CGSizeZero).width;
-    
-    BlockObject blockIcon;
-    BlockObject blockText;
-    BlockObject blockDetailText;
-    
-    if (imageViewAccessory.superview)
-    {
-        blockDetailText = ^(MASConstraintMaker *make){
-            make.left.equalTo(labelText.mas_right);
-            if (fWidthText == 0)
-                make.width.equalTo(labelText.mas_width);
-            make.right.equalTo(self.contentView).offset(-fWidthDiff);
-            
-            make.top.equalTo(self.contentView);
-            make.bottom.equalTo(self.contentView);
-        };
-    }
-    else
-    {
-        blockDetailText = ^(MASConstraintMaker *make){
-            make.left.equalTo(labelText.mas_right);
-            if (fWidthText == 0)
-                make.width.equalTo(labelText.mas_width);
-            make.right.equalTo(self.contentView);
-            
-            make.top.equalTo(self.contentView);
-            make.bottom.equalTo(self.contentView);
-        };
-    }
-    
-    if (self.icon)
-    {
-        blockIcon = ^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(self.icon.size);
-            
-            make.left.equalTo(self.contentView);
-            make.centerY.equalTo(self.contentView);
-        };
-        [imageViewIcon mas_remakeConstraints:blockIcon];
-        
-        blockText = ^(MASConstraintMaker *make) {
-            make.left.equalTo(imageViewIcon.mas_right).offset(fWidthDiff);
-            make.right.equalTo(labelDetail.mas_left);
-            if (self.fTextWidth > fWidthText)
-                make.width.mas_equalTo(self.fTextWidth);
-            else if (fWidthText == 0)
-                make.width.equalTo(labelDetail.mas_width);
-            else
-                make.width.mas_equalTo(fWidthText);
-            
-            make.top.equalTo(self.contentView);
-            make.bottom.equalTo(self.contentView);
-        };
-    }
-    else
-    {
-        blockText = ^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView);
-            make.right.equalTo(labelDetail.mas_left);
-            if (self.fTextWidth > fWidthText)
-                make.width.mas_equalTo(self.fTextWidth);
-            else if (fWidthText == 0)
-                make.width.equalTo(labelDetail.mas_width);
-            else
-                make.width.mas_equalTo(fWidthText);
-            
-            make.top.equalTo(self.contentView);
-            make.bottom.equalTo(self.contentView);
-        };
-    }
-    [labelDetail mas_remakeConstraints:blockDetailText];
-    [labelText mas_remakeConstraints:blockText];
-}
-
-- (void)showAccessory:(BOOL)bShow image:(UIImage *)image
-{
-    [super showAccessory:bShow image:image];
-    [self updateLayout];
+- (void)layoutSubviews {
+  [super layoutSubviews];
+  
+  CGRect rectTmp = self.textLabel.frame;
+  if (_fTextWidth > 0) {
+    rectTmp.size.width = _fTextWidth;
+  } else {
+    CGFloat fWidthText = getSizeForLabelText(self.textLabel.text, self.textLabel.font, CGSizeZero).width;
+    rectTmp.size.width = fWidthText;
+  }
+  self.textLabel.frame = rectTmp;
+//
+  rectTmp.origin.x += rectTmp.size.width;
+  rectTmp.size.width = self.contentView.bounds.size.width - [self widthOfAccessory] - rectTmp.origin.x;
+  rectTmp.origin.y = self.contentView.bounds.origin.y;
+  rectTmp.size.height = self.contentView.bounds.size.height;
+  _detailTextField.frame = rectTmp;
 }
 
 @end

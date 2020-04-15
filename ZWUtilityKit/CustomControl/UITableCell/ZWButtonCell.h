@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 UIKIT_EXTERN NSString * _Nullable const ZWButtonCellID;
 
 @interface ZWButtonCell : UITableViewCell
@@ -17,3 +19,5 @@ UIKIT_EXTERN NSString * _Nullable const ZWButtonCellID;
 - (void)addTarget:(nullable id)target action:(SEL _Nullable )action forControlEvents:(UIControlEvents)controlEvents;
 
 @end
+
+NS_ASSUME_NONNULL_END

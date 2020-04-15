@@ -8,6 +8,8 @@
 #import "ZWSeperatorLineCell.h"
 //#import "UITextView+Placeholder.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 UIKIT_EXTERN  NSString *_Nonnull const ZWLabelTextViewCellID;
 
 @interface ZWLabelTextViewCell : ZWSeperatorLineCell
@@ -21,3 +23,5 @@ UIKIT_EXTERN  NSString *_Nonnull const ZWLabelTextViewCellID;
 @property (nonatomic, assign)CGFloat fContentViewTopOffset;
 
 @end
+
+NS_ASSUME_NONNULL_END

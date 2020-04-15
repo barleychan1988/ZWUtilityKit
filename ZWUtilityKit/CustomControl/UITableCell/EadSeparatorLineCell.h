@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 UIKIT_EXTERN  NSString *_Nonnull const EadSeparatorLineCellID;
 
 @interface EadSeparatorLineCell : UITableViewCell
@@ -19,6 +21,8 @@ UIKIT_EXTERN  NSString *_Nonnull const EadSeparatorLineCellID;
 - (void)showBottomSeparatorLine:(BOOL)bShow color:(nullable UIColor *)color indent:(CGFloat)fIndent;
 
 @property (nonatomic, assign)UIEdgeInsets contentInset;//默认(0,15,0,15)
-@property (nonatomic, retain, readonly, nonnull)UIView * mainView;
+@property (nonatomic, retain, readonly)UIView * mainView;
 
 @end
+
+NS_ASSUME_NONNULL_END

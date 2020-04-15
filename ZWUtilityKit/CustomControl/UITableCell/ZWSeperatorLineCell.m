@@ -54,7 +54,6 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 - (void)initValues
 {
     _contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
-    _isSelectedBackgroundSameWithContent = YES;
     
     __weak ZWSeperatorLineCell *weakobject = self;
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
