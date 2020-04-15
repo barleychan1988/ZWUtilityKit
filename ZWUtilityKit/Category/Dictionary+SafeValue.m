@@ -240,7 +240,7 @@ NSInteger integerValueForKey(NSDictionary *dic, NSString *strKey)
 
 + (instancetype)objectWithData:(NSDictionary *)dicData
 {
-    if ([[self class] respondsToSelector:NSSelectorFromString(@"initWithDictionary:")])
+    if ([[self class] instancesRespondToSelector:NSSelectorFromString(@"initWithDictionary:")])
     {
         return [[[self class] alloc] initWithDictionary:dicData];
     }
