@@ -53,15 +53,7 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 
 - (void)initValues
 {
-    _contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
-    
-    __weak ZWSeperatorLineCell *weakobject = self;
-    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakobject).offset(15);
-        make.right.equalTo(weakobject).offset(-15);
-        make.top.equalTo(weakobject);
-        make.bottom.equalTo(weakobject);
-    }];
+  _contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
 }
 
 - (void)initSubviews
