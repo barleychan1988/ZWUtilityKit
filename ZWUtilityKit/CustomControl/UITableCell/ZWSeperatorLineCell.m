@@ -54,6 +54,18 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 - (void)initValues
 {
   _contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
+
+  if (@available(iOS 13.0, *)) {
+    self.backgroundColor = [UIColor colorWithDynamicProvider:^UIColor * (UITraitCollection * trait) {
+      if (trait.userInterfaceStyle == UIUserInterfaceStyleDark) {
+        return [UIColor colorWithRed:30/255.0 green:30/255.0 blue:30/255.0 alpha:1];
+      } else {
+        return [UIColor whiteColor];
+      }
+    }];
+  } else {
+    self.backgroundColor = [UIColor whiteColor];
+  }
 }
 
 - (void)initSubviews
