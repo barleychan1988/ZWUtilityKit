@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 UIKIT_EXTERN  NSString *_Nonnull const ZWSeperatorLineCellID;
+
+NS_ASSUME_NONNULL_BEGIN
 /*
  *  @brief： 分割线管理cell
  */
@@ -47,4 +49,8 @@ UIKIT_EXTERN  NSString *_Nonnull const ZWSeperatorLineCellID;
 @property (nonatomic, retain, readonly, nullable)UIView *topSeparatorLine;
 @property (nonatomic, retain, readonly, nullable)UIView *bottomSeparatorLine;
 
++ (UIColor *)defaultSeperatorLineColor;
+
 @end
+
+NS_ASSUME_NONNULL_END

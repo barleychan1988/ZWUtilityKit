@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZWTextField : UITextField
 
+@property (nonatomic, retain)UIColor *normalTextColor;
+@property (nonatomic, retain)UIColor *disableTextColor;
+
 @end
 
 NS_ASSUME_NONNULL_END

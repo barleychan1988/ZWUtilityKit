@@ -82,7 +82,7 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 - (void)showTopSeparatorLine:(BOOL)bShow color:(UIColor *)color
 {
     if (color == nil)
-        color = [self defaultSeperatorLineColor];
+        color = [[self class] defaultSeperatorLineColor];
     [m_viewTopLine removeFromSuperview];
     if (bShow)
     {
@@ -93,7 +93,7 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 - (void)showTopSeparatorLine:(BOOL)bShow color:(UIColor *)color indent:(CGFloat)fIndent
 {
     if (color == nil)
-        color = [self defaultSeperatorLineColor];
+        color = [[self class] defaultSeperatorLineColor];
     [m_viewTopLine removeFromSuperview];
     if (bShow)
     {
@@ -104,7 +104,7 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 - (void)showBottomSeparatorLine:(BOOL)bShow color:(UIColor *)color
 {
     if (color == nil)
-        color = [self defaultSeperatorLineColor];
+        color = [[self class] defaultSeperatorLineColor];
     [m_viewBottomLine removeFromSuperview];
     if (bShow)
     {
@@ -115,7 +115,7 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
 - (void)showBottomSeparatorLine:(BOOL)bShow color:(UIColor *)color indent:(CGFloat)fIndent
 {
     if (color == nil)
-        color = [self defaultSeperatorLineColor];
+        color = [[self class] defaultSeperatorLineColor];
     [m_viewBottomLine removeFromSuperview];
     if (bShow)
     {
@@ -279,9 +279,21 @@ NSString *const ZWSeperatorLineCellID = @"ZWSeperatorLineCellID";
         self.selectedBackgroundView.frame = self.bounds;
 }
 
-- (UIColor *)defaultSeperatorLineColor
++ (UIColor *)defaultSeperatorLineColor
 {
-    return [UIColor colorWithRed:(221)/255.0f green:(221)/255.0f blue:(221)/255.0f alpha:1];
+  UIColor *mainColor;
+  if (@available(iOS 13.0, *)) {
+    mainColor = [UIColor colorWithDynamicProvider:^UIColor * (UITraitCollection * trait) {
+      if (trait.userInterfaceStyle == UIUserInterfaceStyleDark) {
+        return [UIColor colorWithRed:(53)/255.0f green:(53)/255.0f blue:(53)/255.0f alpha:1];
+      } else {
+        return [UIColor colorWithRed:(221)/255.0f green:(221)/255.0f blue:(221)/255.0f alpha:1];
+      }
+    }];
+  } else {
+    mainColor = [UIColor colorWithRed:(221)/255.0f green:(221)/255.0f blue:(221)/255.0f alpha:1];
+  }
+  return mainColor;
 }
 
 @end

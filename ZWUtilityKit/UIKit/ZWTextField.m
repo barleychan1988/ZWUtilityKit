@@ -41,4 +41,18 @@
   self.leftViewSize = leftView.frame.size;
 }
 
+- (void)setEnabled:(BOOL)enabled {
+  [super setEnabled:enabled];
+  if (enabled) {
+    self.textColor = self.normalTextColor;
+  } else {
+    self.textColor = self.disableTextColor;
+  }
+}
+
+- (void)setNormalTextColor:(UIColor *)color {
+  _normalTextColor = color;
+  self.textColor = color;
+}
+
 @end
