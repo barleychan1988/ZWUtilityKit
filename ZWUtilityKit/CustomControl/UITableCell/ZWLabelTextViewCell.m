@@ -28,6 +28,7 @@ NSString *const ZWLabelTextViewCellID = @"ZWLabelTextViewCellID";
         make.height.mas_equalTo(self.contentView.mas_height);
     }];
     UITextView *textView = [[UITextView alloc] init];
+  textView.backgroundColor = [UIColor clearColor];
     _textViewContent = textView;
     [self.contentView addSubview:textView];
     [textView mas_makeConstraints:^(MASConstraintMaker *make) {

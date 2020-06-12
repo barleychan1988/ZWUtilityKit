@@ -176,7 +176,19 @@ typedef NS_ENUM(NSInteger, GridLineType)
 
 - (UIColor *)defaultLineColor
 {
-    return [UIColor colorWithRed:221/255.0 green:221/255.0 blue:221/255.0 alpha:1.0];
+  UIColor *mainColor;
+  if (@available(iOS 13.0, *)) {
+    mainColor = [UIColor colorWithDynamicProvider:^UIColor * (UITraitCollection * trait) {
+      if (trait.userInterfaceStyle == UIUserInterfaceStyleDark) {
+        return [UIColor colorWithRed:(53)/255.0f green:(53)/255.0f blue:(53)/255.0f alpha:1];
+      } else {
+        return [UIColor colorWithRed:(221)/255.0f green:(221)/255.0f blue:(221)/255.0f alpha:1];
+      }
+    }];
+  } else {
+    mainColor = [UIColor colorWithRed:(221)/255.0f green:(221)/255.0f blue:(221)/255.0f alpha:1];
+  }
+  return mainColor;
 }
 
 - (UIView *)addTopLineWithWidth:(CGFloat)width color:(UIColor *)color
